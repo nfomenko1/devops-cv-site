@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Фоменко Никита | DevOps Engineer</title>
+
+  <!-- Tailwind config (ваш static/js/script.js) ДОЛЖЕН быть до CDN -->
+  <script src="static/js/script.js"></script>
+
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Ваш CSS -->
+  <link rel="stylesheet" href="static/css/style.css" />
+</head>
+
+<body class="text-white font-sans min-h-screen scroll-smooth">
+
+  <div class="relative z-10 max-w-[1600px] mx-auto p-6">
+
+    <!-- HEADER -->
+    <header class="text-center py-12 fade-in">
+
+      <!-- Avatar: тонкая изумрудная обводка -->
+      <div class="w-32 h-32 mx-auto mb-6 rounded-full p-[1px]"
+           style="background: rgba(0,162,119,0.22);">
+        <img src="static/images/ava1.jpg"
+             alt="Никита Фоменko"
+             class="w-full h-full rounded-full object-cover"
+             style="border:1px solid rgba(148,163,184,0.22);" />
+      </div>
+
+      <h1 class="fio-title text-3xl sm:text-4xl font-extrabold mb-2">
+        Фоменко Никита Алексеевич
+      </h1>
+
+      <div class="w-28 mx-auto my-4 accent-line"></div>
+
+      <p class="text-lg text-slate-300 mb-2">DevOps Engineer</p>
+      <div class="w-20 mx-auto mb-6 accent-line"></div>
+
+      <!-- Contacts -->
+      <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-slate-300">
+        <span class="flex items-center space-x-2">
+          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
+          <span>nfomenko1@mail.ru</span>
+        </span>
+        <span class="flex items-center space-x-2">
+          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
+          <span>+7 991-324-27-44</span>
+        </span>
+        <span class="flex items-center space-x-2">
+          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
+          <span>Воронеж, RU</span>
+        </span>
+      </div>
+    </header>
+
+    <div class="flex flex-col xl:flex-row gap-6">
+
+      <!-- LEFT -->
+      <div class="flex-[1.2] space-y-6 fade-in">
+        <section class="glass glass-strong glass-outline rounded-2xl p-6">
+          <h2 class="text-2xl font-bold mb-4 text-slate-100">Опыт работы</h2>
+          <div class="w-20 mb-6 accent-line"></div>
+
+          <div class="work-card mb-6 p-4 rounded-xl border-l-4"
+               style="border-left-color: rgba(0,162,119,0.65);">
+            <h3 class="text-lg font-semibold text-slate-100">Старший специалист технической поддержки 2L</h3>
+            <p class="text-slate-300 font-medium">
+              <span class="company-emerald">Imredi, Воронеж</span>
+            </p>
+            <p class="text-sm text-slate-400">2024 — настоящее время</p>
+            <ul class="list-disc list-inside text-slate-300 text-sm ml-4 mt-3 space-y-1">
+              <li>Анализ API-интеграций и инцидентов L2</li>
+              <li>Мониторинг метрик через Grafana</li>
+              <li>Работа с REST/SOAP API</li>
+              <li>Документирование и эскалация задач</li>
+            </ul>
+          </div>
+
+          <div class="work-card p-4 rounded-xl border-l-4"
+               style="border-left-color: rgba(0,162,119,0.65);">
+            <h3 class="text-lg font-semibold text-slate-100">Ведущий специалист ТП 1L</h3>
+            <p class="text-slate-300 font-medium">
+              <span class="company-emerald">Банк ДОМ.РФ</span>
+            </p>
+            <p class="text-sm text-slate-400">2023 — 2024</p>
+            <ul class="list-disc list-inside text-slate-300 text-sm ml-4 mt-3 space-y-1">
+              <li>Active Directory, VPN, Citrix</li>
+              <li>Диагностика сервисов</li>
+              <li>Анализ логов ISE</li>
+            </ul>
+          </div>
+        </section>
+      </div>
+
+      <!-- CENTER -->
+      <div class="flex-[2] space-y-6 fade-in">
+        <section class="glass glass-strong glass-outline rounded-2xl p-10">
+          <h2 class="text-3xl font-extrabold text-center mb-4 text-slate-100">Мой путь DevOps</h2>
+          <div class="w-28 mx-auto mb-10 accent-line"></div>
+
+          <div class="grid md:grid-cols-2 gap-8">
+            <div onclick="openModal(0)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 1: Сети + Git</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(1)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 2: Linux (Основа)</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(2)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 3: Docker</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(3)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 4: PostgreSQL</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(4)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 5: CI/CD + Jenkins</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(5)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 6: Kubernetes (оркестрация)</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(6)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 7: Ansible (IaC)</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(7)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 8: Kafka (Message Broker)</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(8)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 9: ArgoCD (GitOps)</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+
+            <div onclick="openModal(9)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 10: Полная интеграция + мониторинг</h3>
+              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+            </div>
+          </div>
+
+          <div class="text-center mt-12">
+            <a href="https://github.com/nfomenko1/DevOps-learning"
+               target="_blank" rel="noopener noreferrer"
+               class="repo-btn inline-block px-8 py-4 rounded-2xl font-semibold transition-colors">
+              Мой DevOps-репозиторий
+            </a>
+          </div>
+        </section>
+      </div>
+
+      <!-- RIGHT -->
+      <div class="flex-[1.2] space-y-6 fade-in">
+
+        <section class="glass glass-strong glass-outline rounded-2xl p-6">
+          <h2 class="text-2xl font-bold mb-4 text-slate-100">О себе</h2>
+          <div class="w-16 mb-4 accent-line"></div>
+          <p class="text-slate-300 text-sm leading-relaxed">
+            DevOps-инженер из Воронежа. Развиваюсь в направлении автоматизации,
+            контейнеризации, CI/CD и построения инфраструктуры.
+          </p>
+        </section>
+
+        <section class="glass glass-strong glass-outline rounded-2xl p-6">
+          <h2 class="text-2xl font-bold mb-4 text-slate-100">Навыки</h2>
+          <div class="w-16 mb-4 accent-line"></div>
+
+          <div class="flex flex-wrap">
+            <span class="skill-badge skill-emerald">Linux</span>
+            <span class="skill-badge skill-emerald">Docker</span>
+            <span class="skill-badge skill-emerald">Kubernetes</span>
+            <span class="skill-badge skill-emerald">Git</span>
+            <span class="skill-badge skill-emerald">PostgreSQL</span>
+            <span class="skill-badge skill-emerald">CI/CD</span>
+            <span class="skill-badge skill-emerald">Ansible</span>
+            <span class="skill-badge skill-emerald">Monitoring</span>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL -->
+  <div id="devopsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
+    <div class="glass glass-strong glass-outline rounded-2xl p-10 w-[90%] max-w-3xl relative">
+      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-xl">✕</button>
+      <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-slate-100"></h3>
+      <p id="modalText" class="text-slate-300">Описание будет добавлено позже.</p>
+    </div>
+  </div>
+
+  <script>
+    function openModal(index){
+      document.getElementById("modalTitle").innerText =
+        document.querySelectorAll(".grid h3")[index].innerText;
+      document.getElementById("devopsModal").classList.remove("hidden");
+      document.getElementById("devopsModal").classList.add("flex");
+    }
+    function closeModal(){
+      document.getElementById("devopsModal").classList.add("hidden");
+      document.getElementById("devopsModal").classList.remove("flex");
+    }
+  </script>
+
+</body>
+</html>
