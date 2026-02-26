@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Фоменко Никита | DevOps Engineer</title>
 
-  <!-- Tailwind config (ваш static/js/script.js) ДОЛЖЕН быть до CDN -->
+  <!-- Tailwind config (static/js/script.js) ДОЛЖЕН быть до CDN -->
   <script src="static/js/script.js"></script>
 
   <!-- Tailwind CDN -->
@@ -18,9 +18,8 @@
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/static/favicon/resume.png" />
-</head>
 
- <!-- Ваш CSS -->
+  <!-- Ваш CSS -->
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
@@ -31,20 +30,22 @@
     <!-- HEADER -->
     <header class="text-center py-12 fade-in">
 
-      <!-- Avatar: тонкая изумрудная обводка -->
+      <!-- Avatar -->
       <div class="w-32 h-32 mx-auto mb-6 rounded-full p-[1px]"
            style="background: rgba(0,162,119,0.22);">
         <img src="static/images/avatar.jpg"
-             alt="Никита Фоменko"
+             alt="Никита Фоменко"
              class="w-full h-full rounded-full object-cover"
              style="border:1px solid rgba(148,163,184,0.22);" />
       </div>
 
-      <h1 class="fio-title text-3xl sm:text-4xl font-extrabold mb-2">
-        Фоменко Никита Алексеевич
-      </h1>
-
-      <div class="w-28 mx-auto my-4 accent-line"></div>
+      <!-- FIO + centered accent line -->
+      <div class="flex flex-col items-center">
+        <h1 class="fio-title text-3xl sm:text-4xl font-extrabold mb-2 text-center">
+          Фоменко Никита Алексеевич
+        </h1>
+        <div class="w-28 my-4 accent-line"></div>
+      </div>
 
       <p class="text-lg text-slate-300 mb-2">DevOps Engineer</p>
       <div class="w-20 mx-auto mb-6 accent-line"></div>
@@ -66,6 +67,7 @@
       </div>
     </header>
 
+    <!-- 3 columns -->
     <div class="flex flex-col xl:flex-row gap-6">
 
       <!-- LEFT -->
@@ -175,7 +177,6 @@
 
       <!-- RIGHT -->
       <div class="flex-[1.2] space-y-6 fade-in">
-
         <section class="glass glass-strong glass-outline rounded-2xl p-6">
           <h2 class="text-2xl font-bold mb-4 text-slate-100">О себе</h2>
           <div class="w-16 mb-4 accent-line"></div>
@@ -200,14 +201,158 @@
             <span class="skill-badge skill-emerald">Monitoring</span>
           </div>
         </section>
-
       </div>
     </div>
+
+    <!-- Monitoring Lab (FULL WIDTH under 3 columns) -->
+    <section class="glass glass-strong glass-outline rounded-2xl p-10 mt-6 fade-in">
+      <h2 class="text-3xl font-extrabold text-center mb-3 text-slate-100">Monitoring Lab</h2>
+      <div class="w-28 mx-auto mb-8 accent-line"></div>
+
+      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
+        <p class="text-slate-300 text-sm">
+          Live-виджеты для демонстрации практики мониторинга. Сейчас — демо-режим, позже подключим API.
+        </p>
+
+        <div class="flex flex-wrap gap-2">
+          <span class="status-pill status-demo">DEMO</span>
+          <span class="status-pill status-planned">API: planned</span>
+        </div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+
+        <div class="monitor-card block-gradient rounded-2xl p-6">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">System</h3>
+              <p class="text-slate-400 text-xs mt-1">VPS ресурсы (node_exporter)</p>
+            </div>
+            <span class="status-dot ok" title="OK"></span>
+          </div>
+
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">CPU</span>
+              <span class="metric" id="m_cpu">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">RAM</span>
+              <span class="metric" id="m_ram">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Disk</span>
+              <span class="metric" id="m_disk">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-card block-gradient rounded-2xl p-6">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Uptime</h3>
+              <p class="text-slate-400 text-xs mt-1">Доступность сервисов</p>
+            </div>
+            <span class="status-dot ok" title="OK"></span>
+          </div>
+
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Website</span>
+              <span class="metric" id="m_site">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">API</span>
+              <span class="metric" id="m_api">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Monitoring</span>
+              <span class="metric" id="m_mon">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-card block-gradient rounded-2xl p-6">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Deployments</h3>
+              <p class="text-slate-400 text-xs mt-1">CI/CD результаты (Jenkins)</p>
+            </div>
+            <span class="status-dot warn" title="Demo"></span>
+          </div>
+
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Last deploy</span>
+              <span class="metric" id="m_deploy_time">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Version</span>
+              <span class="metric" id="m_version">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Env</span>
+              <span class="metric" id="m_env">—</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="monitor-card block-gradient rounded-2xl p-6">
+          <div class="flex items-start justify-between gap-3">
+            <div>
+              <h3 class="text-lg font-bold text-slate-100">Backups</h3>
+              <p class="text-slate-400 text-xs mt-1">DB backup & restore practice</p>
+            </div>
+            <span class="status-dot ok" title="OK"></span>
+          </div>
+
+          <div class="mt-5 space-y-3 text-sm">
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Last backup</span>
+              <span class="metric" id="m_backup_last">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Next backup</span>
+              <span class="metric" id="m_backup_next">—</span>
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-slate-300">Retention</span>
+              <span class="metric" id="m_backup_retention">—</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-10">
+        <div class="text-slate-400 text-xs">
+          * Позже подключим API: <span class="text-slate-300">/api/metrics/summary</span> → обновление метрик в реальном времени.
+        </div>
+
+        <div class="flex flex-wrap gap-3">
+          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
+             href="#" title="Подключим позже">
+            Grafana (soon)
+          </a>
+          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
+             href="#" title="Подключим позже">
+            Prometheus (soon)
+          </a>
+          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
+             href="#" title="Подключим позже">
+            Alerts (soon)
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <!-- MODAL -->
-  <div id="devopsModal" class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50">
-    <div class="glass glass-strong glass-outline rounded-2xl p-10 w-[90%] max-w-3xl relative">
+  <!-- MODAL (click outside to close) -->
+  <div id="devopsModal"
+       class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
+       onclick="closeModal()">
+    <div class="modal-card glass glass-strong glass-outline rounded-2xl p-10 w-[90%] max-w-3xl relative"
+         onclick="event.stopPropagation()">
       <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-xl">✕</button>
       <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-slate-100"></h3>
       <p id="modalText" class="text-slate-300">Описание будет добавлено позже.</p>
@@ -218,13 +363,59 @@
     function openModal(index){
       document.getElementById("modalTitle").innerText =
         document.querySelectorAll(".grid h3")[index].innerText;
-      document.getElementById("devopsModal").classList.remove("hidden");
-      document.getElementById("devopsModal").classList.add("flex");
+
+      const modal = document.getElementById("devopsModal");
+      modal.classList.remove("hidden");
+      modal.classList.add("flex");
+
+      // lock background scroll
+      document.body.classList.add("modal-open");
     }
+
     function closeModal(){
-      document.getElementById("devopsModal").classList.add("hidden");
-      document.getElementById("devopsModal").classList.remove("flex");
+      const modal = document.getElementById("devopsModal");
+      modal.classList.add("hidden");
+      modal.classList.remove("flex");
+
+      // unlock background scroll
+      document.body.classList.remove("modal-open");
     }
+
+    // Close by ESC
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        const modal = document.getElementById("devopsModal");
+        if (!modal.classList.contains("hidden")) closeModal();
+      }
+    });
+
+    // Monitoring Lab demo values (later: API)
+    function setMetric(id, value) {
+      const el = document.getElementById(id);
+      if (el) el.innerText = value;
+    }
+
+    function fillDemoMetrics() {
+      setMetric("m_cpu", "18%");
+      setMetric("m_ram", "43%");
+      setMetric("m_disk", "62%");
+
+      setMetric("m_site", "UP ✅");
+      setMetric("m_api", "planned");
+      setMetric("m_mon", "planned");
+
+      setMetric("m_deploy_time", "—");
+      setMetric("m_version", "APP_TAG: —");
+      setMetric("m_env", "PROD");
+
+      setMetric("m_backup_last", "planned");
+      setMetric("m_backup_next", "planned");
+      setMetric("m_backup_retention", "7 days");
+    }
+
+    document.addEventListener("DOMContentLoaded", () => {
+      fillDemoMetrics();
+    });
   </script>
 
 </body>
