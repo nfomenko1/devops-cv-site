@@ -3,10 +3,6 @@
 :root{
   --bg0: #05020a;
 
-  --violet0: #2a0939;
-  --violet1: #380b51;
-  --violet2: #7712b3;
-
   --emerald2: #00a277;
 
   --card: rgba(15, 23, 42, 0.68);
@@ -131,25 +127,63 @@ body::after{
     0 10px 26px rgba(0,0,0,0.30);
 }
 
-/* accent line */
+/* accent line (делаем визуально “ровнее по центру”) */
 .accent-line{
-  height: 1px;
+  height: 2px; /* было 1px — на глаз ровнее */
+  border-radius: 999px;
   background: linear-gradient(
     90deg,
     rgba(0,162,119,0) 0%,
-    rgba(0,162,119,0.55) 50%,
+    rgba(0,162,119,0.60) 50%,
     rgba(0,162,119,0) 100%
   );
 }
 
-/* contacts */
-.contact-dot{ background: rgba(0,162,119,0.85); }
-.contact-link{
-  transition: color 180ms ease, opacity 180ms ease;
+/* role line чуть плотнее, чтобы глаз не “уезжал” */
+.role-line{
+  max-width: 88px;
 }
+
+/* ===== Contacts hover highlight + slight scale ===== */
+.contact-dot{ background: rgba(0,162,119,0.85); }
+
+.contact-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  transition: transform 220ms ease, color 220ms ease, opacity 220ms ease;
+  transform-origin: center;
+}
+
+.contact-link::after{
+  content:"";
+  position:absolute;
+  left: 14px;          /* чуть правее точки */
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  border-radius: 999px;
+  background: linear-gradient(
+    90deg,
+    rgba(0,162,119,0) 0%,
+    rgba(0,162,119,0.55) 45%,
+    rgba(0,162,119,0) 100%
+  );
+  opacity: 0;
+  transform: translateY(2px);
+  transition: opacity 220ms ease, transform 220ms ease;
+  pointer-events: none;
+}
+
 .contact-link:hover{
   color: rgba(236,253,245,0.98);
-  opacity: 0.98;
+  opacity: 1;
+  transform: scale(1.03);
+}
+
+.contact-link:hover::after{
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* fade-in */
@@ -234,7 +268,7 @@ body::after{
   box-shadow: 0 18px 44px rgba(0,0,0,0.34);
 }
 
-/* shine effect: чаще, но скорость прохода “как раньше” */
+/* shine effect: чаще, но не “летит” */
 .block-gradient{
   position: relative;
   overflow: hidden;
@@ -253,15 +287,14 @@ body::after{
   );
   transform: skewX(-18deg);
   opacity: 0.14;
-  /* было 6s — теперь чаще, но проход по времени сохранён */
   animation: shinePulse 3.6s ease-in-out infinite;
   pointer-events: none;
 }
 @keyframes shinePulse{
   0%   { left:-80%; }
-  15%  { left:-80%; }   /* пауза */
-  75%  { left:130%; }   /* проход (~2.16s) */
-  100% { left:130%; }   /* пауза */
+  15%  { left:-80%; }
+  75%  { left:130%; }
+  100% { left:130%; }
 }
 
 /* ===== Monitoring button card ===== */
@@ -304,7 +337,7 @@ body::after{
 .modal-overlay.is-closing{ opacity: 0; }
 
 .modal-card{
-  width: min(92vw, 860px);
+  width: min(92vw, 980px);
   border-radius: 18px;
   padding: 32px;
   position: relative;
@@ -340,44 +373,109 @@ body::after{
   color: rgba(241,245,249,0.96);
 }
 
-/* ===== Tables in Monitoring modal ===== */
-.table-card{
+/* ===== Monitoring charts (placeholders) ===== */
+.chart-card{
   background: rgba(2,6,23,0.34);
   border: 1px solid rgba(148,163,184,0.14);
   border-radius: 16px;
   padding: 16px;
 }
-.table-pill{
+
+.chart-head{
+  display:flex;
+  align-items:flex-start;
+  justify-content:space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.chart-title{
+  font-size: 18px;
+  font-weight: 800;
+  color: rgba(241,245,249,0.96);
+  line-height: 1.1;
+}
+
+.chart-subtitle{
+  margin-top: 6px;
+  font-size: 12px;
+  color: rgba(148,163,184,0.86);
+}
+
+.chart-kpi{
   font-size: 12px;
   font-weight: 800;
   padding: 6px 10px;
   border-radius: 999px;
-  border: 1px solid rgba(148,163,184,0.20);
-  background: rgba(148,163,184,0.06);
-  color: rgba(226,232,240,0.92);
+  border: 1px solid rgba(0,162,119,0.38);
+  background: rgba(0,162,119,0.08);
+  color: rgba(236,253,245,0.96);
+  white-space: nowrap;
 }
-.table-wrap{
+
+.chart-wrap{
+  border-radius: 14px;
   overflow: hidden;
-  border-radius: 12px;
   border: 1px solid rgba(148,163,184,0.12);
+  background: rgba(2,6,23,0.28);
 }
-.metrics-table{
-  width: 100%;
-  border-collapse: collapse;
-  font-size: 14px;
+
+.chart-placeholder{
+  position: relative;
+  height: 220px;
 }
-.metrics-table thead th{
-  text-align: left;
-  padding: 10px 12px;
-  color: rgba(226,232,240,0.90);
-  background: rgba(2,6,23,0.35);
-  border-bottom: 1px solid rgba(148,163,184,0.12);
+
+.chart-grid{
+  position:absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(148,163,184,0.10) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148,163,184,0.10) 1px, transparent 1px);
+  background-size: 44px 44px;
+  opacity: 0.35;
 }
-.metrics-table tbody td{
-  padding: 10px 12px;
-  color: rgba(226,232,240,0.86);
-  border-bottom: 1px solid rgba(148,163,184,0.10);
+
+.chart-line{
+  position:absolute;
+  left: 18px;
+  right: 18px;
+  top: 36px;
+  bottom: 36px;
+  border-radius: 14px;
+  opacity: 0.9;
+  background:
+    linear-gradient(180deg, rgba(0,162,119,0.0) 0%, rgba(0,162,119,0.10) 100%);
+  box-shadow: inset 0 0 0 1px rgba(0,162,119,0.18);
+
+  /* “линия” как будто график */
+  -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
+          mask-image: linear-gradient(90deg, transparent 0%, #000 12%, #000 88%, transparent 100%);
 }
-.metrics-table tbody tr:last-child td{
-  border-bottom: none;
+
+.chart-line::before{
+  content:"";
+  position:absolute;
+  left: 0;
+  right: 0;
+  bottom: 34%;
+  height: 2px;
+  background: rgba(236,253,245,0.86);
+  opacity: 0.85;
+}
+
+.chart-line.alt::before{
+  bottom: 52%;
+}
+
+.chart-line.disk::before{
+  bottom: 44%;
+}
+
+.chart-caption{
+  position:absolute;
+  left: 14px;
+  right: 14px;
+  bottom: 12px;
+  font-size: 12px;
+  color: rgba(148,163,184,0.86);
 }

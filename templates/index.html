@@ -46,10 +46,10 @@
         <div class="w-28 my-4 accent-line"></div>
       </div>
 
-      <!-- Role + centered line (фикс центровки) -->
-      <div class="flex flex-col items-center">
+      <!-- Role + centered line (визуально по центру) -->
+      <div class="role-block flex flex-col items-center">
         <p class="text-lg text-slate-300 mb-2 text-center">DevOps Engineer</p>
-        <div class="w-20 mb-6 accent-line"></div>
+        <div class="role-line w-20 mb-6 accent-line"></div>
       </div>
 
       <!-- Contacts -->
@@ -108,7 +108,7 @@
             </ul>
           </div>
 
-          <!-- HH link button (после опыта работы) -->
+          <!-- HH link button -->
           <div class="mt-6">
             <a href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
                target="_blank" rel="noopener noreferrer"
@@ -215,17 +215,20 @@
           </div>
         </section>
 
-        <!-- Monitoring button/card (вместо Monitoring Lab снизу) -->
+        <!-- Monitoring button/card -->
         <section onclick="openModalMonitoring()" class="monitor-launch glass glass-strong glass-outline rounded-2xl p-6 cursor-pointer">
           <div class="flex items-center justify-between">
             <div>
               <h2 class="text-2xl font-bold text-slate-100">Мониторинг</h2>
-              <p class="text-slate-300 text-sm mt-2">Открыть таблицы нагрузки (CPU/RAM/Disk)</p>
+              <!-- ПОЛОСКА ПОД ЗАГОЛОВКОМ -->
+              <div class="w-16 mt-3 accent-line"></div>
+
+              <p class="text-slate-300 text-sm mt-4">Открыть графики нагрузки (CPU/RAM/Disk)</p>
             </div>
             <span class="monitor-badge">OPEN</span>
           </div>
-          <div class="w-16 mt-4 accent-line"></div>
-          <p class="text-slate-400 text-xs mt-4">
+
+          <p class="text-slate-400 text-xs mt-5">
             (заготовка) Позже подключим данные через API / Prometheus.
           </p>
         </section>
@@ -234,7 +237,7 @@
     </div>
   </div>
 
-  <!-- MODAL (универсальная: DevOps + Monitoring) -->
+  <!-- MODAL -->
   <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
     <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
       <button onclick="closeModal()" class="modal-close">✕</button>
@@ -249,81 +252,73 @@
       <!-- Monitoring content -->
       <div id="modalMonitoring" class="hidden">
         <p class="text-slate-300 mb-6">
-          Здесь будут данные нагрузки (позже подключим API). Пока — пустые таблицы-шаблоны.
+          Здесь будут живые графики. Пока — заготовки (без источника данных).
         </p>
 
-        <div class="grid md:grid-cols-2 gap-6">
+        <!-- Charts grid -->
+        <div class="grid lg:grid-cols-2 gap-6">
           <!-- CPU -->
-          <div class="table-card">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="text-lg font-bold text-slate-100">CPU</h4>
-              <span class="table-pill">planned</span>
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h4 class="chart-title">CPU</h4>
+                <p class="chart-subtitle">Использование CPU (среднее)</p>
+              </div>
+              <span class="chart-kpi">CPU now: 6%</span>
             </div>
-            <div class="table-wrap">
-              <table class="metrics-table">
-                <thead>
-                  <tr>
-                    <th>Время</th>
-                    <th>Значение</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td></tr>
-                </tbody>
-              </table>
+
+            <div class="chart-wrap">
+              <!-- placeholder chart -->
+              <div class="chart-placeholder">
+                <div class="chart-grid"></div>
+                <div class="chart-line"></div>
+                <div class="chart-caption">График появится после подключения Prometheus/API</div>
+              </div>
             </div>
           </div>
 
           <!-- RAM -->
-          <div class="table-card">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="text-lg font-bold text-slate-100">RAM</h4>
-              <span class="table-pill">planned</span>
+          <div class="chart-card">
+            <div class="chart-head">
+              <div>
+                <h4 class="chart-title">RAM</h4>
+                <p class="chart-subtitle">Использование памяти</p>
+              </div>
+              <span class="chart-kpi">RAM now: 42%</span>
             </div>
-            <div class="table-wrap">
-              <table class="metrics-table">
-                <thead>
-                  <tr>
-                    <th>Время</th>
-                    <th>Значение</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td></tr>
-                </tbody>
-              </table>
+
+            <div class="chart-wrap">
+              <div class="chart-placeholder">
+                <div class="chart-grid"></div>
+                <div class="chart-line alt"></div>
+                <div class="chart-caption">График появится после подключения Prometheus/API</div>
+              </div>
             </div>
           </div>
 
-          <!-- Disk -->
-          <div class="table-card md:col-span-2">
-            <div class="flex items-center justify-between mb-3">
-              <h4 class="text-lg font-bold text-slate-100">Disk</h4>
-              <span class="table-pill">planned</span>
+          <!-- Disk (full width) -->
+          <div class="chart-card lg:col-span-2">
+            <div class="chart-head">
+              <div>
+                <h4 class="chart-title">Disk</h4>
+                <p class="chart-subtitle">Использование диска</p>
+              </div>
+              <span class="chart-kpi">Disk used: 61%</span>
             </div>
-            <div class="table-wrap">
-              <table class="metrics-table">
-                <thead>
-                  <tr>
-                    <th>Время</th>
-                    <th>Свободно</th>
-                    <th>Занято</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr><td>—</td><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td><td>—</td></tr>
-                  <tr><td>—</td><td>—</td><td>—</td></tr>
-                </tbody>
-              </table>
+
+            <div class="chart-wrap">
+              <div class="chart-placeholder">
+                <div class="chart-grid"></div>
+                <div class="chart-line disk"></div>
+                <div class="chart-caption">График появится после подключения Prometheus/API</div>
+              </div>
             </div>
           </div>
         </div>
 
+        <div class="text-slate-400 text-xs mt-6">
+          План: Prometheus → API endpoint → отрисовка графиков (Chart.js/ECharts).
+        </div>
       </div>
     </div>
   </div>
@@ -342,12 +337,10 @@
       overlay.classList.remove("hidden");
       overlay.classList.add("is-open");
       document.body.classList.add("modal-open");
-      // start card animation
       requestAnimationFrame(() => card.classList.add("is-open"));
     }
 
     function hideOverlay() {
-      // play closing animation
       overlay.classList.remove("is-open");
       card.classList.remove("is-open");
       overlay.classList.add("is-closing");
@@ -367,7 +360,6 @@
     }
 
     function openModalDevops(index) {
-      // title from clicked cards
       titleEl.innerText = document.querySelectorAll(".grid h3")[index].innerText;
 
       monitoringBlock.classList.add("hidden");
@@ -378,7 +370,7 @@
     }
 
     function openModalMonitoring() {
-      titleEl.innerText = "Мониторинг — таблицы нагрузки";
+      titleEl.innerText = "Мониторинг — графики нагрузки";
 
       devopsBlock.classList.add("hidden");
       monitoringBlock.classList.remove("hidden");
@@ -386,7 +378,6 @@
       showOverlay();
     }
 
-    // ESC closes modal
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape") closeModal();
     });
