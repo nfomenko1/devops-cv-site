@@ -1,3 +1,4 @@
+<!-- templates/index.html (полный файл) -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -31,15 +32,13 @@
     <header class="text-center py-12 fade-in">
 
       <!-- Avatar -->
-      <div class="w-32 h-32 mx-auto mb-6 rounded-full p-[1px]"
-           style="background: rgba(0,162,119,0.22);">
+      <div class="avatar-wrap w-32 h-32 mx-auto mb-6 rounded-full p-[2px]">
         <img src="static/images/avatar.jpg"
              alt="Никита Фоменко"
-             class="w-full h-full rounded-full object-cover"
-             style="border:1px solid rgba(148,163,184,0.22);" />
+             class="avatar-img w-full h-full rounded-full object-cover" />
       </div>
 
-      <!-- FIO + centered accent line -->
+      <!-- FIO + centered line -->
       <div class="flex flex-col items-center">
         <h1 class="fio-title text-3xl sm:text-4xl font-extrabold mb-2 text-center">
           Фоменко Никита Алексеевич
@@ -47,27 +46,31 @@
         <div class="w-28 my-4 accent-line"></div>
       </div>
 
-      <p class="text-lg text-slate-300 mb-2">DevOps Engineer</p>
-      <div class="w-20 mx-auto mb-6 accent-line"></div>
+      <!-- Role + centered line (фикс центровки) -->
+      <div class="flex flex-col items-center">
+        <p class="text-lg text-slate-300 mb-2 text-center">DevOps Engineer</p>
+        <div class="w-20 mb-6 accent-line"></div>
+      </div>
 
       <!-- Contacts -->
       <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-slate-300">
-        <span class="flex items-center space-x-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
+        <a class="contact-link flex items-center space-x-2" href="mailto:nfomenko1@mail.ru">
+          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
           <span>nfomenko1@mail.ru</span>
-        </span>
-        <span class="flex items-center space-x-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
+        </a>
+
+        <a class="contact-link flex items-center space-x-2" href="tel:+79913242744">
+          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
           <span>+7 991-324-27-44</span>
-        </span>
-        <span class="flex items-center space-x-2">
-          <span class="inline-block w-1.5 h-1.5 rounded-full" style="background: rgba(0,162,119,0.85);"></span>
-          <span>Воронеж, RU</span>
-        </span>
+        </a>
+
+        <a class="contact-link flex items-center space-x-2" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
+          <span>Telegram: @ooooppsssss</span>
+        </a>
       </div>
     </header>
 
-    <!-- 3 columns -->
     <div class="flex flex-col xl:flex-row gap-6">
 
       <!-- LEFT -->
@@ -80,7 +83,7 @@
                style="border-left-color: rgba(0,162,119,0.65);">
             <h3 class="text-lg font-semibold text-slate-100">Старший специалист технической поддержки 2L</h3>
             <p class="text-slate-300 font-medium">
-              <span class="company-emerald">Imredi</span>
+              <span class="company-emerald">Imredi, Воронеж</span>
             </p>
             <p class="text-sm text-slate-400">2026 — настоящее время</p>
             <ul class="list-disc list-inside text-slate-300 text-sm ml-4 mt-3 space-y-1">
@@ -104,6 +107,15 @@
               <li>Анализ логов ISE</li>
             </ul>
           </div>
+
+          <!-- HH link button (после опыта работы) -->
+          <div class="mt-6">
+            <a href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+               target="_blank" rel="noopener noreferrer"
+               class="repo-btn inline-block w-full text-center px-6 py-3 rounded-2xl font-semibold transition-colors">
+              Резюме на HH.ru
+            </a>
+          </div>
         </section>
       </div>
 
@@ -114,52 +126,52 @@
           <div class="w-28 mx-auto mb-10 accent-line"></div>
 
           <div class="grid md:grid-cols-2 gap-8">
-            <div onclick="openModal(0)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(0)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 1: Сети + Git</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(1)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(1)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 2: Linux (Основа)</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(2)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(2)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 3: Docker</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(3)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(3)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 4: PostgreSQL</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(4)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(4)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 5: CI/CD + Jenkins</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(5)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(5)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 6: Kubernetes (оркестрация)</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(6)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(6)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 7: Ansible (IaC)</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(7)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(7)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 8: Kafka (Message Broker)</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(8)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(8)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 9: ArgoCD (GitOps)</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
 
-            <div onclick="openModal(9)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
+            <div onclick="openModalDevops(9)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
               <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 10: Полная интеграция + мониторинг</h3>
               <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
             </div>
@@ -177,6 +189,7 @@
 
       <!-- RIGHT -->
       <div class="flex-[1.2] space-y-6 fade-in">
+
         <section class="glass glass-strong glass-outline rounded-2xl p-6">
           <h2 class="text-2xl font-bold mb-4 text-slate-100">О себе</h2>
           <div class="w-16 mb-4 accent-line"></div>
@@ -201,220 +214,181 @@
             <span class="skill-badge skill-emerald">Monitoring</span>
           </div>
         </section>
+
+        <!-- Monitoring button/card (вместо Monitoring Lab снизу) -->
+        <section onclick="openModalMonitoring()" class="monitor-launch glass glass-strong glass-outline rounded-2xl p-6 cursor-pointer">
+          <div class="flex items-center justify-between">
+            <div>
+              <h2 class="text-2xl font-bold text-slate-100">Мониторинг</h2>
+              <p class="text-slate-300 text-sm mt-2">Открыть таблицы нагрузки (CPU/RAM/Disk)</p>
+            </div>
+            <span class="monitor-badge">OPEN</span>
+          </div>
+          <div class="w-16 mt-4 accent-line"></div>
+          <p class="text-slate-400 text-xs mt-4">
+            (заготовка) Позже подключим данные через API / Prometheus.
+          </p>
+        </section>
+
       </div>
     </div>
-
-    <!-- Monitoring Lab (FULL WIDTH under 3 columns) -->
-    <section class="glass glass-strong glass-outline rounded-2xl p-10 mt-6 fade-in">
-      <h2 class="text-3xl font-extrabold text-center mb-3 text-slate-100">Monitoring Lab</h2>
-      <div class="w-28 mx-auto mb-8 accent-line"></div>
-
-      <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-4 mb-8">
-        <p class="text-slate-300 text-sm">
-          Live-виджеты для демонстрации практики мониторинга. Сейчас — демо-режим, позже подключим API.
-        </p>
-
-        <div class="flex flex-wrap gap-2">
-          <span class="status-pill status-demo">DEMO</span>
-          <span class="status-pill status-planned">API: planned</span>
-        </div>
-      </div>
-
-      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-
-        <div class="monitor-card block-gradient rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-lg font-bold text-slate-100">System</h3>
-              <p class="text-slate-400 text-xs mt-1">VPS ресурсы (node_exporter)</p>
-            </div>
-            <span class="status-dot ok" title="OK"></span>
-          </div>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">CPU</span>
-              <span class="metric" id="m_cpu">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">RAM</span>
-              <span class="metric" id="m_ram">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Disk</span>
-              <span class="metric" id="m_disk">—</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="monitor-card block-gradient rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-lg font-bold text-slate-100">Uptime</h3>
-              <p class="text-slate-400 text-xs mt-1">Доступность сервисов</p>
-            </div>
-            <span class="status-dot ok" title="OK"></span>
-          </div>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Website</span>
-              <span class="metric" id="m_site">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">API</span>
-              <span class="metric" id="m_api">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Monitoring</span>
-              <span class="metric" id="m_mon">—</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="monitor-card block-gradient rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-lg font-bold text-slate-100">Deployments</h3>
-              <p class="text-slate-400 text-xs mt-1">CI/CD результаты (Jenkins)</p>
-            </div>
-            <span class="status-dot warn" title="Demo"></span>
-          </div>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Last deploy</span>
-              <span class="metric" id="m_deploy_time">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Version</span>
-              <span class="metric" id="m_version">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Env</span>
-              <span class="metric" id="m_env">—</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="monitor-card block-gradient rounded-2xl p-6">
-          <div class="flex items-start justify-between gap-3">
-            <div>
-              <h3 class="text-lg font-bold text-slate-100">Backups</h3>
-              <p class="text-slate-400 text-xs mt-1">DB backup & restore practice</p>
-            </div>
-            <span class="status-dot ok" title="OK"></span>
-          </div>
-
-          <div class="mt-5 space-y-3 text-sm">
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Last backup</span>
-              <span class="metric" id="m_backup_last">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Next backup</span>
-              <span class="metric" id="m_backup_next">—</span>
-            </div>
-            <div class="flex items-center justify-between">
-              <span class="text-slate-300">Retention</span>
-              <span class="metric" id="m_backup_retention">—</span>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 mt-10">
-        <div class="text-slate-400 text-xs">
-          * Позже подключим API: <span class="text-slate-300">/api/metrics/summary</span> → обновление метрик в реальном времени.
-        </div>
-
-        <div class="flex flex-wrap gap-3">
-          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
-             href="#" title="Подключим позже">
-            Grafana (soon)
-          </a>
-          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
-             href="#" title="Подключим позже">
-            Prometheus (soon)
-          </a>
-          <a class="repo-btn inline-block px-5 py-3 rounded-2xl font-semibold transition-colors opacity-80 pointer-events-none"
-             href="#" title="Подключим позже">
-            Alerts (soon)
-          </a>
-        </div>
-      </div>
-    </section>
   </div>
 
-  <!-- MODAL (click outside to close) -->
-  <div id="devopsModal"
-       class="fixed inset-0 bg-black/60 backdrop-blur-sm hidden items-center justify-center z-50"
-       onclick="closeModal()">
-    <div class="modal-card glass glass-strong glass-outline rounded-2xl p-10 w-[90%] max-w-3xl relative"
-         onclick="event.stopPropagation()">
-      <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-100 text-xl">✕</button>
+  <!-- MODAL (универсальная: DevOps + Monitoring) -->
+  <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
+    <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="modal-close">✕</button>
+
       <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-slate-100"></h3>
-      <p id="modalText" class="text-slate-300">Описание будет добавлено позже.</p>
+
+      <!-- DevOps content -->
+      <div id="modalDevops" class="text-slate-300">
+        <p id="modalText">Описание будет добавлено позже.</p>
+      </div>
+
+      <!-- Monitoring content -->
+      <div id="modalMonitoring" class="hidden">
+        <p class="text-slate-300 mb-6">
+          Здесь будут данные нагрузки (позже подключим API). Пока — пустые таблицы-шаблоны.
+        </p>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          <!-- CPU -->
+          <div class="table-card">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-lg font-bold text-slate-100">CPU</h4>
+              <span class="table-pill">planned</span>
+            </div>
+            <div class="table-wrap">
+              <table class="metrics-table">
+                <thead>
+                  <tr>
+                    <th>Время</th>
+                    <th>Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- RAM -->
+          <div class="table-card">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-lg font-bold text-slate-100">RAM</h4>
+              <span class="table-pill">planned</span>
+            </div>
+            <div class="table-wrap">
+              <table class="metrics-table">
+                <thead>
+                  <tr>
+                    <th>Время</th>
+                    <th>Значение</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Disk -->
+          <div class="table-card md:col-span-2">
+            <div class="flex items-center justify-between mb-3">
+              <h4 class="text-lg font-bold text-slate-100">Disk</h4>
+              <span class="table-pill">planned</span>
+            </div>
+            <div class="table-wrap">
+              <table class="metrics-table">
+                <thead>
+                  <tr>
+                    <th>Время</th>
+                    <th>Свободно</th>
+                    <th>Занято</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr><td>—</td><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td><td>—</td></tr>
+                  <tr><td>—</td><td>—</td><td>—</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
     </div>
   </div>
 
   <script>
-    function openModal(index){
-      document.getElementById("modalTitle").innerText =
-        document.querySelectorAll(".grid h3")[index].innerText;
+    // --- smooth modal open/close ---
+    const overlay = document.getElementById("appModal");
+    const card = document.getElementById("modalCard");
 
-      const modal = document.getElementById("devopsModal");
-      modal.classList.remove("hidden");
-      modal.classList.add("flex");
+    const titleEl = document.getElementById("modalTitle");
+    const devopsBlock = document.getElementById("modalDevops");
+    const monitoringBlock = document.getElementById("modalMonitoring");
+    const textEl = document.getElementById("modalText");
 
-      // lock background scroll
+    function showOverlay() {
+      overlay.classList.remove("hidden");
+      overlay.classList.add("is-open");
       document.body.classList.add("modal-open");
+      // start card animation
+      requestAnimationFrame(() => card.classList.add("is-open"));
     }
 
-    function closeModal(){
-      const modal = document.getElementById("devopsModal");
-      modal.classList.add("hidden");
-      modal.classList.remove("flex");
+    function hideOverlay() {
+      // play closing animation
+      overlay.classList.remove("is-open");
+      card.classList.remove("is-open");
+      overlay.classList.add("is-closing");
+      card.classList.add("is-closing");
 
-      // unlock background scroll
-      document.body.classList.remove("modal-open");
+      window.setTimeout(() => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("is-closing");
+        card.classList.remove("is-closing");
+        document.body.classList.remove("modal-open");
+      }, 220);
     }
 
-    // Close by ESC
+    function closeModal() {
+      if (overlay.classList.contains("hidden")) return;
+      hideOverlay();
+    }
+
+    function openModalDevops(index) {
+      // title from clicked cards
+      titleEl.innerText = document.querySelectorAll(".grid h3")[index].innerText;
+
+      monitoringBlock.classList.add("hidden");
+      devopsBlock.classList.remove("hidden");
+      textEl.innerText = "Описание будет добавлено позже.";
+
+      showOverlay();
+    }
+
+    function openModalMonitoring() {
+      titleEl.innerText = "Мониторинг — таблицы нагрузки";
+
+      devopsBlock.classList.add("hidden");
+      monitoringBlock.classList.remove("hidden");
+
+      showOverlay();
+    }
+
+    // ESC closes modal
     document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        const modal = document.getElementById("devopsModal");
-        if (!modal.classList.contains("hidden")) closeModal();
-      }
-    });
-
-    // Monitoring Lab demo values (later: API)
-    function setMetric(id, value) {
-      const el = document.getElementById(id);
-      if (el) el.innerText = value;
-    }
-
-    function fillDemoMetrics() {
-      setMetric("m_cpu", "18%");
-      setMetric("m_ram", "43%");
-      setMetric("m_disk", "62%");
-
-      setMetric("m_site", "UP ✅");
-      setMetric("m_api", "planned");
-      setMetric("m_mon", "planned");
-
-      setMetric("m_deploy_time", "—");
-      setMetric("m_version", "APP_TAG: —");
-      setMetric("m_env", "PROD");
-
-      setMetric("m_backup_last", "planned");
-      setMetric("m_backup_next", "planned");
-      setMetric("m_backup_retention", "7 days");
-    }
-
-    document.addEventListener("DOMContentLoaded", () => {
-      fillDemoMetrics();
+      if (e.key === "Escape") closeModal();
     });
   </script>
 
