@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Фоменко Никита | DevOps Engineer</title>
 
-  <!-- Tailwind config (если у тебя есть static/js/script.js с config — оставляем) -->
+  <!-- Tailwind config (если есть) -->
   <script src="static/js/script.js"></script>
 
   <!-- Tailwind CDN -->
@@ -15,18 +15,17 @@
   <!-- Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="/static/favicon/resume.png" />
 
-  <!-- Your CSS -->
+  <!-- CSS -->
   <link rel="stylesheet" href="static/css/style.css" />
 </head>
 
 <body class="text-white font-sans min-h-screen scroll-smooth">
 
-  <!-- Background blobs + grid are in CSS -->
   <div class="relative z-10">
 
     <!-- NAVBAR -->
@@ -36,7 +35,7 @@
           <!-- Logo -->
           <a href="#top" class="flex items-center gap-3">
             <div class="logo-mark">
-              <span class="logo-dot"></span>
+              <span class="logo-nf">NF</span>
             </div>
             <div class="leading-tight">
               <div class="text-sm font-extrabold tracking-wide text-slate-100">NFOMENKO</div>
@@ -47,10 +46,9 @@
           <!-- Desktop nav -->
           <nav class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
             <a class="nav-link" href="#experience">Опыт</a>
-            <a class="nav-link" href="#features">Чем полезен</a>
+            <a class="nav-link" href="#skills">Практика</a>
             <a class="nav-link" href="#roadmap">Roadmap</a>
             <a class="nav-link" href="#projects">Проекты</a>
-            <a class="nav-link" href="#monitoring">Мониторинг</a>
             <a class="nav-link" href="#contacts">Контакты</a>
           </nav>
 
@@ -81,10 +79,9 @@
 
           <div class="grid gap-2 text-sm text-slate-200">
             <a class="drawer-link" href="#experience">Опыт</a>
-            <a class="drawer-link" href="#features">Чем полезен</a>
+            <a class="drawer-link" href="#skills">Практика</a>
             <a class="drawer-link" href="#roadmap">Roadmap</a>
             <a class="drawer-link" href="#projects">Проекты</a>
-            <a class="drawer-link" href="#monitoring">Мониторинг</a>
             <a class="drawer-link" href="#contacts">Контакты</a>
           </div>
 
@@ -121,21 +118,20 @@
             </div>
 
             <h1 class="hero-title fadeInUp" style="animation-delay: 0.12s;">
-              Строю <span class="grad-text">надёжные</span> релизы и
-              <span class="grad-text">наблюдаемую</span> инфраструктуру
+              DevOps Engineer
+              <span class="grad-text">в процессе роста</span>
             </h1>
 
             <p class="hero-sub fadeInUp" style="animation-delay: 0.18s;">
-              Автоматизация, контейнеризация, CI/CD, оркестрация и мониторинг.
-              Этот сайт — живое портфолио: roadmap обучения, проекты и заготовка observability.
+              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
+              Цель — уверенный уровень Junior/Middle.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-3 mt-7 fadeInUp" style="animation-delay: 0.26s;">
-              <a class="btn-primary" href="#projects">Посмотреть проекты</a>
-              <a class="btn-ghost" href="#contacts">Контакты</a>
+              <a class="btn-primary" href="#projects">Проекты</a>
+              <a class="btn-ghost" href="#roadmap">Roadmap</a>
             </div>
 
-            <!-- quick chips -->
             <div class="mt-8 flex flex-wrap gap-2 fadeInUp" style="animation-delay: 0.32s;">
               <span class="chip">Linux</span>
               <span class="chip">Docker</span>
@@ -146,59 +142,58 @@
             </div>
           </div>
 
-          <!-- Right hero card -->
+          <!-- Right hero card (Open to work + contacts) -->
           <div class="hero-right fadeInUp" style="animation-delay: 0.16s;">
             <div class="glass glass-strong rounded-3xl p-6 sm:p-8 hero-card">
+
               <div class="flex items-start justify-between gap-4">
                 <div>
                   <div class="text-xs text-slate-400">Статус</div>
-                  <div class="text-lg font-extrabold text-slate-100 mt-1">Открыт к собеседованиям</div>
+                  <div class="text-lg font-extrabold text-slate-100 mt-1">Открыт к предложениям</div>
+                  <div class="text-sm text-slate-400 mt-1">Junior/Middle DevOps (цель)</div>
                 </div>
-                <span class="badge badge-live">LIVE</span>
+                <span class="badge badge-live">АКТИВЕН</span>
               </div>
 
               <div class="mt-6 grid gap-3">
                 <div class="mini-row">
-                  <div class="mini-k">Фокус</div>
-                  <div class="mini-v">Junior/Middle DevOps • практический опыт</div>
-                </div>
-                <div class="mini-row">
-                  <div class="mini-k">Репозиторий</div>
+                  <div class="mini-k">Telegram</div>
                   <div class="mini-v">
-                    <a class="link-accent" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
-                      DevOps-learning
+                    <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                      @ooooppsssss
                     </a>
                   </div>
                 </div>
                 <div class="mini-row">
-                  <div class="mini-k">Сайт</div>
-                  <div class="mini-v">devops-cv.ru (этот проект)</div>
+                  <div class="mini-k">Email</div>
+                  <div class="mini-v">
+                    <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+                  </div>
+                </div>
+                <div class="mini-row">
+                  <div class="mini-k">Телефон</div>
+                  <div class="mini-v">
+                    <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+                  </div>
                 </div>
               </div>
 
               <div class="mt-7 hr-grad"></div>
 
-              <div class="mt-6 grid sm:grid-cols-2 gap-4">
-                <div class="kpi-card">
-                  <div class="kpi-top">
-                    <div class="kpi-name">Roadmap</div>
-                    <span class="kpi-badge">10 блоков</span>
-                  </div>
-                  <div class="kpi-val"><span class="grad-text">4</span> / 10</div>
-                  <div class="kpi-sub">Пройдено (пока)</div>
-                </div>
-                <div class="kpi-card">
-                  <div class="kpi-top">
-                    <div class="kpi-name">CI/CD</div>
-                    <span class="kpi-badge">pipeline</span>
-                  </div>
-                  <div class="kpi-val"><span class="grad-text">Ready</span></div>
-                  <div class="kpi-sub">Build → Push → Deploy</div>
-                </div>
+              <div class="mt-6 grid sm:grid-cols-2 gap-3">
+                <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                  Написать
+                </a>
+                <a class="btn-ghost w-full text-center" href="mailto:nfomenko1@mail.ru">
+                  Email
+                </a>
               </div>
 
-              <div class="mt-6">
-                <a class="btn-primary w-full text-center" href="#roadmap">Открыть roadmap</a>
+              <div class="mt-5">
+                <a class="btn-ghost w-full text-center" href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+                   target="_blank" rel="noopener noreferrer">
+                  Резюме на HH.ru
+                </a>
               </div>
 
             </div>
@@ -211,7 +206,7 @@
       <section id="experience" class="section reveal">
         <div class="section-head">
           <h2 class="section-title">Опыт работы</h2>
-          <div class="section-sub">Кратко и по делу — детали можно расширить позже</div>
+          <div class="section-sub">Кратко. Без воды. Подробности можно расширить позже.</div>
         </div>
 
         <div class="grid lg:grid-cols-2 gap-6 mt-8">
@@ -246,128 +241,52 @@
             </ul>
           </div>
         </div>
-
-        <div class="mt-6">
-          <a href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
-             target="_blank" rel="noopener noreferrer"
-             class="btn-ghost inline-block">
-            Резюме на HH.ru
-          </a>
-        </div>
       </section>
 
-      <!-- FEATURES -->
-      <section id="features" class="section reveal">
+      <!-- PRACTICE / SKILLS -->
+      <section id="skills" class="section reveal">
         <div class="section-head">
-          <h2 class="section-title">Чем полезен</h2>
-          <div class="section-sub">Заготовка под твои реальные кейсы и формулировки</div>
+          <h2 class="section-title">Практика и навыки (в обучении)</h2>
+          <div class="section-sub">
+            То, что отрабатываю руками на проектах и инфраструктурных задачах.
+          </div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
           <div class="feature-card">
             <div class="feature-ic">⚙️</div>
-            <div class="feature-title">CI/CD пайплайны</div>
-            <div class="feature-text">Сборка, тесты, пуш образов, деплой и откат. (заготовка)</div>
+            <div class="feature-title">CI/CD</div>
+            <div class="feature-text">Jenkins pipeline: build → push → deploy (в проекте).</div>
           </div>
 
           <div class="feature-card">
             <div class="feature-ic">🐳</div>
-            <div class="feature-title">Контейнеризация</div>
-            <div class="feature-text">Docker, Docker Compose, оптимизация образов. (заготовка)</div>
+            <div class="feature-title">Docker / Compose</div>
+            <div class="feature-text">Контейнеризация приложения, сборка образов, docker-compose.</div>
           </div>
 
           <div class="feature-card">
             <div class="feature-ic">☸️</div>
-            <div class="feature-title">Оркестрация</div>
-            <div class="feature-text">Kubernetes: деплойменты, сервисы, ingress. (заготовка)</div>
+            <div class="feature-title">Kubernetes</div>
+            <div class="feature-text">Деплойменты/сервисы/ingress — план и практика по roadmap.</div>
           </div>
 
           <div class="feature-card">
             <div class="feature-ic">🧩</div>
-            <div class="feature-title">IaC / Automation</div>
-            <div class="feature-text">Ansible и инфраструктурные практики. (заготовка)</div>
+            <div class="feature-title">Automation</div>
+            <div class="feature-text">Ansible и автоматизация окружений (в процессе).</div>
           </div>
 
           <div class="feature-card">
             <div class="feature-ic">📈</div>
-            <div class="feature-title">Observability</div>
-            <div class="feature-text">Метрики, дашборды, алерты. (заготовка)</div>
+            <div class="feature-title">Observability (заготовка)</div>
+            <div class="feature-text">Схема: Prometheus → API → графики. Подключу позже.</div>
           </div>
 
           <div class="feature-card">
             <div class="feature-ic">🧯</div>
-            <div class="feature-title">Incident response</div>
-            <div class="feature-text">Разбор инцидентов, логи, RCA, коммуникация. (заготовка)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- STATS -->
-      <section id="stats" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Цифры</h2>
-          <div class="section-sub">Можно оставить как есть или заменить на реальные метрики позже</div>
-        </div>
-
-        <div class="mt-6 hr-grad"></div>
-
-        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-8">
-          <div class="stat-card">
-            <div class="stat-val" data-count="10">0</div>
-            <div class="stat-sub">Блоков roadmap</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-val" data-count="4">0</div>
-            <div class="stat-sub">Пройдено блоков</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-val" data-count="15">0</div>
-            <div class="stat-sub">Деплоев (заготовка)</div>
-          </div>
-
-          <div class="stat-card">
-            <div class="stat-val" data-count="99">0</div>
-            <div class="stat-sub">Uptime % (заготовка)</div>
-          </div>
-        </div>
-      </section>
-
-      <!-- HOW IT WORKS -->
-      <section id="how" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Как я строю DevOps-процесс</h2>
-          <div class="section-sub">Это прям “архитектура словами” для собеседований</div>
-        </div>
-
-        <div class="how-wrap mt-8">
-          <div class="how-step">
-            <div class="how-badge">1</div>
-            <div class="how-body">
-              <div class="how-title">Build & Test</div>
-              <div class="how-text">Сборка, проверка, подготовка артефактов. (заготовка)</div>
-            </div>
-          </div>
-
-          <div class="how-line"></div>
-
-          <div class="how-step">
-            <div class="how-badge">2</div>
-            <div class="how-body">
-              <div class="how-title">Deploy</div>
-              <div class="how-text">Выкат в окружение + стратегия отката. (заготовка)</div>
-            </div>
-          </div>
-
-          <div class="how-line"></div>
-
-          <div class="how-step">
-            <div class="how-badge">3</div>
-            <div class="how-body">
-              <div class="how-title">Observe</div>
-              <div class="how-text">Метрики/логи/алерты → реакция на инциденты. (заготовка)</div>
-            </div>
+            <div class="feature-title">Инциденты</div>
+            <div class="feature-text">Логи/метрики/эскалация/разбор — как база под DevOps.</div>
           </div>
         </div>
       </section>
@@ -375,89 +294,89 @@
       <!-- ROADMAP -->
       <section id="roadmap" class="section reveal">
         <div class="section-head">
-          <h2 class="section-title">Мой путь DevOps</h2>
-          <div class="section-sub">Кликабельные блоки → модалка (потом заполнишь описания)</div>
+          <h2 class="section-title">Roadmap обучения</h2>
+          <div class="section-sub">Кликабельные блоки — описания добавишь позже.</div>
         </div>
 
         <div class="grid md:grid-cols-2 gap-6 mt-8">
           <div onclick="openModalRoadmap(0)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 1: Сети + Git</div>
-              <span class="badge badge-done">DONE</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(1)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 2: Linux (Основа)</div>
-              <span class="badge badge-done">DONE</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(2)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 3: Docker</div>
-              <span class="badge badge-done">DONE</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(3)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 4: PostgreSQL</div>
-              <span class="badge badge-done">DONE</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(4)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 5: CI/CD + Jenkins</div>
-              <span class="badge badge-progress">IN PROGRESS</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(5)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 6: Kubernetes</div>
-              <span class="badge badge-next">NEXT</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(6)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 7: Ansible</div>
-              <span class="badge badge-next">NEXT</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(7)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 8: Kafka</div>
-              <span class="badge badge-next">NEXT</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(8)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 9: ArgoCD</div>
-              <span class="badge badge-next">NEXT</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
 
           <div onclick="openModalRoadmap(9)" class="road-card cursor-pointer">
             <div class="road-top">
               <div class="road-title">Блок 10: Интеграция + мониторинг</div>
-              <span class="badge badge-next">NEXT</span>
+              <span class="badge badge-done">ВЫПОЛНЕНО</span>
             </div>
-            <div class="road-sub">Открыть подробности</div>
+            <div class="road-sub">Открыть</div>
           </div>
         </div>
       </section>
@@ -466,15 +385,17 @@
       <section id="projects" class="section reveal">
         <div class="section-head">
           <h2 class="section-title">Проекты</h2>
-          <div class="section-sub">Заготовка: ссылки + короткое описание (потом расширим)</div>
+          <div class="section-sub">Два основных проекта — без лишнего.</div>
         </div>
 
-        <div class="grid lg:grid-cols-3 gap-6 mt-8">
+        <div class="grid lg:grid-cols-2 gap-6 mt-8">
           <div class="proj-card">
             <div class="proj-title">DevOps CV Site</div>
-            <div class="proj-text">Личный сайт-портфолио, CI/CD, заготовка observability.</div>
+            <div class="proj-text">Личный сайт-портфолио: структура, дизайн, CI/CD и заготовки.</div>
             <div class="proj-tags">
-              <span class="chip">Docker</span><span class="chip">CI/CD</span><span class="chip">Nginx</span>
+              <span class="chip">Docker</span>
+              <span class="chip">CI/CD</span>
+              <span class="chip">Nginx</span>
             </div>
             <div class="proj-actions">
               <a class="btn-ghost" href="https://devops-cv.ru" target="_blank" rel="noopener noreferrer">Открыть</a>
@@ -486,7 +407,9 @@
             <div class="proj-title">DevOps-learning</div>
             <div class="proj-text">Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.</div>
             <div class="proj-tags">
-              <span class="chip">Linux</span><span class="chip">K8s</span><span class="chip">Ansible</span>
+              <span class="chip">Linux</span>
+              <span class="chip">K8s</span>
+              <span class="chip">Ansible</span>
             </div>
             <div class="proj-actions">
               <a class="btn-primary w-full text-center" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
@@ -494,123 +417,42 @@
               </a>
             </div>
           </div>
-
-          <div class="proj-card">
-            <div class="proj-title">CI/CD Pipeline</div>
-            <div class="proj-text">Jenkins pipeline: build → push → deploy (manual prod). (заготовка)</div>
-            <div class="proj-tags">
-              <span class="chip">Jenkins</span><span class="chip">GHCR</span><span class="chip">Compose</span>
-            </div>
-            <div class="proj-actions">
-              <a class="btn-ghost" href="#experience">Смотреть опыт</a>
-              <a class="btn-primary" href="#monitoring">Дальше</a>
-            </div>
-          </div>
         </div>
       </section>
 
-      <!-- MONITORING -->
-      <section id="monitoring" class="section reveal">
+      <!-- CONTACTS (simple, no big banner) -->
+      <section id="contacts" class="section reveal">
         <div class="section-head">
-          <h2 class="section-title">Мониторинг</h2>
-          <div class="section-sub">Пока — красивая заготовка, позже подключим Prometheus/API</div>
+          <h2 class="section-title">Контакты</h2>
+          <div class="section-sub">Быстро связаться.</div>
         </div>
 
         <div class="glass glass-strong rounded-3xl p-6 mt-8">
-          <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
-            <div>
-              <div class="text-slate-100 font-extrabold text-xl">Observability Dashboard</div>
-              <div class="text-slate-400 text-sm mt-1">CPU • RAM • Disk — плейсхолдеры графиков</div>
-            </div>
-            <button onclick="openModalMonitoring()" class="btn-primary">
-              Открыть графики
-            </button>
-          </div>
-
-          <div class="mt-6 grid lg:grid-cols-3 gap-4">
-            <div class="mini-kpi">
-              <div class="mini-kpi-top">
-                <div class="mini-kpi-name">CPU</div>
-                <span class="mini-kpi-badge">now</span>
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div class="text-slate-300 text-sm">
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
               </div>
-              <div class="mini-kpi-val"><span class="grad-text">6%</span></div>
-              <div class="mini-kpi-sub">заглушка</div>
-            </div>
-
-            <div class="mini-kpi">
-              <div class="mini-kpi-top">
-                <div class="mini-kpi-name">RAM</div>
-                <span class="mini-kpi-badge">now</span>
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
               </div>
-              <div class="mini-kpi-val"><span class="grad-text">42%</span></div>
-              <div class="mini-kpi-sub">заглушка</div>
-            </div>
-
-            <div class="mini-kpi">
-              <div class="mini-kpi-top">
-                <div class="mini-kpi-name">Disk</div>
-                <span class="mini-kpi-badge">used</span>
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                  Telegram: @ooooppsssss
+                </a>
               </div>
-              <div class="mini-kpi-val"><span class="grad-text">61%</span></div>
-              <div class="mini-kpi-sub">заглушка</div>
             </div>
-          </div>
 
-          <div class="text-slate-400 text-xs mt-5">
-            План: Prometheus → API endpoint → отрисовка графиков (Chart.js/ECharts).
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACTS -->
-      <section id="contacts" class="section reveal">
-        <div class="cta-banner">
-          <div class="cta-left">
-            <div class="cta-title">Открыт к предложениям и собеседованиям</div>
-            <div class="cta-sub">Можно написать в Telegram или на почту — отвечаю быстро.</div>
-
-            <div class="mt-5 flex flex-col sm:flex-row gap-3">
+            <div class="flex flex-col sm:flex-row gap-3">
               <a class="btn-primary" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
                 Написать в Telegram
               </a>
               <a class="btn-ghost" href="mailto:nfomenko1@mail.ru">
-                nfomenko1@mail.ru
+                Написать на почту
               </a>
-            </div>
-
-            <div class="mt-6 text-sm text-slate-300">
-              <div class="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-6">
-                <div class="contact-pill">
-                  <span class="dot"></span>
-                  <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-                </div>
-                <div class="contact-pill">
-                  <span class="dot"></span>
-                  <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-                </div>
-                <div class="contact-pill">
-                  <span class="dot"></span>
-                  <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                    Telegram: @ooooppsssss
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="cta-right">
-            <div class="cta-card glass glass-strong rounded-3xl p-6">
-              <div class="text-slate-100 font-extrabold">Быстрые ссылки</div>
-              <div class="mt-4 grid gap-2 text-sm">
-                <a class="quick-link" href="#roadmap">Roadmap</a>
-                <a class="quick-link" href="#projects">Проекты</a>
-                <a class="quick-link" href="#monitoring">Мониторинг</a>
-                <a class="quick-link" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">GitHub</a>
-              </div>
-
-              <div class="mt-6">
-                <a class="btn-primary w-full text-center" href="#top">Наверх</a>
-              </div>
             </div>
           </div>
         </div>
@@ -618,11 +460,11 @@
 
       <!-- FOOTER -->
       <footer class="footer mt-16">
-        <div class="grid md:grid-cols-4 gap-8">
-          <div class="md:col-span-1">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
             <div class="flex items-center gap-3">
               <div class="logo-mark">
-                <span class="logo-dot"></span>
+                <span class="logo-nf">NF</span>
               </div>
               <div>
                 <div class="text-sm font-extrabold text-slate-100">NFOMENKO</div>
@@ -630,29 +472,23 @@
               </div>
             </div>
             <div class="text-slate-400 text-sm mt-4">
-              Портфолио: обучение, проекты, и подготовка observability.
+              Портфолио: обучение, проекты, инфраструктурная практика.
             </div>
           </div>
 
           <div>
             <div class="footer-title">Навигация</div>
             <a class="footer-link" href="#experience">Опыт</a>
+            <a class="footer-link" href="#skills">Практика</a>
             <a class="footer-link" href="#roadmap">Roadmap</a>
             <a class="footer-link" href="#projects">Проекты</a>
-          </div>
-
-          <div>
-            <div class="footer-title">Контакты</div>
-            <a class="footer-link" href="mailto:nfomenko1@mail.ru">Почта</a>
-            <a class="footer-link" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
-            <a class="footer-link" href="tel:+79913242744">Телефон</a>
           </div>
 
           <div>
             <div class="footer-title">Профили</div>
             <a class="footer-link" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
             <a class="footer-link" href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748" target="_blank" rel="noopener noreferrer">HH.ru</a>
-            <a class="footer-link" href="#monitoring">Observability</a>
+            <a class="footer-link" href="https://devops-cv.ru" target="_blank" rel="noopener noreferrer">devops-cv.ru</a>
           </div>
         </div>
 
@@ -664,83 +500,24 @@
     </main>
   </div>
 
-  <!-- MODAL (Roadmap + Monitoring) -->
+  <!-- MODAL (Roadmap) -->
   <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
     <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
       <button onclick="closeModal()" class="modal-close" aria-label="Close">✕</button>
 
       <div class="flex items-start justify-between gap-4 mb-4">
         <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-100"></h3>
-        <span id="modalBadge" class="badge badge-next">INFO</span>
+        <span id="modalBadge" class="badge badge-done">ВЫПОЛНЕНО</span>
       </div>
 
       <div id="modalBody" class="text-slate-300 text-sm leading-relaxed">
-        Заготовка. Позже сюда добавишь описание, практику и ссылки на коммиты.
+        Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки на практику/коммиты → вопросы собеса.
       </div>
 
       <div class="mt-6 hr-grad"></div>
 
-      <div id="modalMonitoring" class="hidden mt-6">
-        <p class="text-slate-300 mb-6">
-          Здесь будут живые графики. Пока — заготовки (без источника данных).
-        </p>
-
-        <div class="grid lg:grid-cols-2 gap-6">
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">CPU</h4>
-                <p class="chart-subtitle">Использование CPU (среднее)</p>
-              </div>
-              <span class="chart-kpi">CPU now: 6%</span>
-            </div>
-            <div class="chart-wrap">
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">RAM</h4>
-                <p class="chart-subtitle">Использование памяти</p>
-              </div>
-              <span class="chart-kpi">RAM now: 42%</span>
-            </div>
-            <div class="chart-wrap">
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line alt"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-
-          <div class="chart-card lg:col-span-2">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">Disk</h4>
-                <p class="chart-subtitle">Использование диска</p>
-              </div>
-              <span class="chart-kpi">Disk used: 61%</span>
-            </div>
-            <div class="chart-wrap">
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line disk"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-slate-400 text-xs mt-6">
-          План: Prometheus → API endpoint → отрисовка графиков (Chart.js/ECharts).
-        </div>
+      <div class="text-slate-400 text-xs mt-5">
+        Подсказка: держи структуру описания одинаковой для всех блоков — будет выглядеть очень профессионально.
       </div>
     </div>
   </div>
@@ -782,25 +559,27 @@
     drawer?.addEventListener("click", (e) => { if (e.target === drawer) closeDrawer(); });
     drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
 
-    // --- modal ---
+    // --- modal + active card highlight ---
     const overlay = document.getElementById("appModal");
     const card = document.getElementById("modalCard");
     const titleEl = document.getElementById("modalTitle");
     const badgeEl = document.getElementById("modalBadge");
     const bodyEl = document.getElementById("modalBody");
-    const monitoringEl = document.getElementById("modalMonitoring");
+
+    const roadCards = Array.from(document.querySelectorAll(".road-card"));
+    let activeCard = null;
 
     const roadmapData = [
-      { title: "Блок 1: Сети + Git", status: "DONE", badge: "badge-done" },
-      { title: "Блок 2: Linux (Основа)", status: "DONE", badge: "badge-done" },
-      { title: "Блок 3: Docker", status: "DONE", badge: "badge-done" },
-      { title: "Блок 4: PostgreSQL", status: "DONE", badge: "badge-done" },
-      { title: "Блок 5: CI/CD + Jenkins", status: "IN PROGRESS", badge: "badge-progress" },
-      { title: "Блок 6: Kubernetes", status: "NEXT", badge: "badge-next" },
-      { title: "Блок 7: Ansible", status: "NEXT", badge: "badge-next" },
-      { title: "Блок 8: Kafka", status: "NEXT", badge: "badge-next" },
-      { title: "Блок 9: ArgoCD", status: "NEXT", badge: "badge-next" },
-      { title: "Блок 10: Интеграция + мониторинг", status: "NEXT", badge: "badge-next" },
+      { title: "Блок 1: Сети + Git", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 2: Linux (Основа)", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 3: Docker", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 4: PostgreSQL", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 5: CI/CD + Jenkins", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 6: Kubernetes", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 7: Ansible", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 8: Kafka", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 9: ArgoCD", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 10: Интеграция + мониторинг", status: "ВЫПОЛНЕНО" },
     ];
 
     function showOverlay() {
@@ -824,31 +603,28 @@
       }, 220);
     }
 
+    function clearActive() {
+      if (activeCard) activeCard.classList.remove("active");
+      activeCard = null;
+    }
+
     function closeModal() {
       if (overlay.classList.contains("hidden")) return;
       hideOverlay();
+      clearActive();
     }
 
     function openModalRoadmap(index) {
       const d = roadmapData[index];
       titleEl.innerText = d.title;
       badgeEl.innerText = d.status;
-      badgeEl.className = `badge ${d.badge}`;
+      badgeEl.className = "badge badge-done";
 
-      monitoringEl.classList.add("hidden");
-      bodyEl.classList.remove("hidden");
-      bodyEl.innerText = "Заготовка. Позже: что изучил → что сделал руками → ссылки на практику/коммиты → вопросы собеса.";
+      bodyEl.innerText = "Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки на практику/коммиты → вопросы собеса.";
 
-      showOverlay();
-    }
-
-    function openModalMonitoring() {
-      titleEl.innerText = "Мониторинг — графики нагрузки";
-      badgeEl.innerText = "PLACEHOLDER";
-      badgeEl.className = "badge badge-next";
-
-      bodyEl.classList.add("hidden");
-      monitoringEl.classList.remove("hidden");
+      clearActive();
+      activeCard = roadCards[index];
+      if (activeCard) activeCard.classList.add("active");
 
       showOverlay();
     }
@@ -869,35 +645,6 @@
     }, { threshold: 0.12 });
 
     revealEls.forEach(el => io.observe(el));
-
-    // --- counters (stats) ---
-    function animateCount(el, to) {
-      const start = 0;
-      const duration = 2000;
-      const t0 = performance.now();
-
-      function step(now) {
-        const p = Math.min((now - t0) / duration, 1);
-        const val = Math.floor(start + (to - start) * p);
-        el.innerText = val;
-        if (p < 1) requestAnimationFrame(step);
-      }
-      requestAnimationFrame(step);
-    }
-
-    const statObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (!entry.isIntersecting) return;
-        entry.target.querySelectorAll("[data-count]").forEach((el) => {
-          if (el.dataset.done) return;
-          el.dataset.done = "1";
-          animateCount(el, Number(el.getAttribute("data-count") || "0"));
-        });
-      });
-    }, { threshold: 0.25 });
-
-    const statsSection = document.getElementById("stats");
-    if (statsSection) statObserver.observe(statsSection);
   </script>
 
 </body>
