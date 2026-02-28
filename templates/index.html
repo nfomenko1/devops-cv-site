@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Фоменко Никита | DevOps Engineer</title>
+  <title>FOMENKO N.A. | DevOps Engineer</title>
 
   <!-- Tailwind config (если есть) -->
   <script src="static/js/script.js"></script>
@@ -28,19 +28,17 @@
   <div class="relative z-10">
 
     <!-- NAVBAR -->
-    <!-- navbar-scrolled добавлен сразу, чтобы панель была темнее/отделена как раньше -->
     <header id="navbar" class="navbar navbar-scrolled fixed top-0 left-0 right-0 z-40">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-3">
-        <!-- nav-shell нужен для центровки меню на lg+ -->
         <div class="nav-shell">
 
           <!-- Left: Logo -->
           <a href="#top" class="nav-left flex items-center gap-3">
             <div class="logo-mark">
-              <span class="logo-nf">NF</span>
+              <span class="logo-nf">FN</span>
             </div>
             <div class="leading-tight">
-              <div class="text-sm font-extrabold tracking-wide text-slate-100">NFOMENKO</div>
+              <div class="text-sm font-extrabold tracking-wide text-slate-100">FOMENKO N.A.</div>
               <div class="text-xs text-slate-400 -mt-0.5">DevOps Engineer</div>
             </div>
           </a>
@@ -52,7 +50,6 @@
             <a class="nav-link" href="#roadmap">Roadmap</a>
             <a class="nav-link" href="#projects">Проекты</a>
             <a class="nav-link" href="#monitoring">Мониторинг</a>
-            <a class="nav-link" href="#contacts">Контакты</a>
           </nav>
 
           <!-- Right: Mobile burger -->
@@ -79,7 +76,6 @@
             <a class="drawer-link" href="#roadmap">Roadmap</a>
             <a class="drawer-link" href="#projects">Проекты</a>
             <a class="drawer-link" href="#monitoring">Мониторинг</a>
-            <a class="drawer-link" href="#contacts">Контакты</a>
           </div>
 
           <div class="mt-4 grid grid-cols-2 gap-2">
@@ -172,24 +168,31 @@
 
               <div class="mt-7 hr-grad"></div>
 
-              <!-- Contacts moved here -->
+              <!-- Contacts: bullets, column -->
               <div class="mt-6">
-                <div class="mini-label about-label">Контакты:</div>
+                <div class="mini-label about-label">Контакты</div>
 
-                <div class="mt-3 contact-inline">
-                  <a class="contact-pill" href="mailto:nfomenko1@mail.ru">Email: nfomenko1@mail.ru</a>
-                  <span class="contact-sep">•</span>
-                  <a class="contact-pill" href="tel:+79913242744">Тел: +7 991-324-27-44</a>
-                  <span class="contact-sep">•</span>
-                  <a class="contact-pill" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                    Telegram: @ooooppsssss
-                  </a>
+                <div class="contact-block text-slate-300 text-sm">
+                  <div class="contact-row">
+                    <span class="dot"></span>
+                    <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+                  </div>
+
+                  <div class="contact-row">
+                    <span class="dot"></span>
+                    <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+                  </div>
+
+                  <div class="contact-row">
+                    <span class="dot"></span>
+                    <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+                  </div>
                 </div>
               </div>
 
-              <!-- HH остаётся снизу -->
-              <div class="mt-5">
-                <a class="btn-ghost w-full text-center"
+              <!-- HH button aligned right (desktop) -->
+              <div class="mt-5 flex justify-end">
+                <a class="btn-ghost w-full sm:w-auto text-center sm:min-w-[260px]"
                    href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
                    target="_blank" rel="noopener noreferrer">
                   Резюме на HH.ru
@@ -462,43 +465,16 @@
         </div>
       </section>
 
-      <!-- CONTACTS (simplified) -->
-      <section id="contacts" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Контакты</h2>
-          <div class="section-sub">Коротко и по делу. Основные контакты — в первом экране.</div>
-        </div>
-
-        <div class="glass glass-strong rounded-3xl p-6 mt-8">
-          <div class="text-slate-300 text-sm">
-            <div class="contact-row">
-              <span class="dot"></span>
-              <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-            </div>
-            <div class="contact-row">
-              <span class="dot"></span>
-              <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-            </div>
-            <div class="contact-row">
-              <span class="dot"></span>
-              <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                Telegram: @ooooppsssss
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- FOOTER -->
       <footer class="footer mt-16">
         <div class="grid md:grid-cols-3 gap-8">
           <div>
             <div class="flex items-center gap-3">
               <div class="logo-mark">
-                <span class="logo-nf">NF</span>
+                <span class="logo-nf">FN</span>
               </div>
               <div>
-                <div class="text-sm font-extrabold text-slate-100">NFOMENKO</div>
+                <div class="text-sm font-extrabold text-slate-100">FOMENKO N.A.</div>
                 <div class="text-xs text-slate-400">DevOps Engineer</div>
               </div>
             </div>
@@ -514,7 +490,6 @@
             <a class="footer-link" href="#roadmap">Roadmap</a>
             <a class="footer-link" href="#projects">Проекты</a>
             <a class="footer-link" href="#monitoring">Мониторинг</a>
-            <a class="footer-link" href="#contacts">Контакты</a>
           </div>
 
           <div>
@@ -526,7 +501,7 @@
         </div>
 
         <div class="footer-bottom mt-10">
-          <div class="text-slate-500 text-xs">© <span id="y"></span> Фоменко Никита. Все права защищены.</div>
+          <div class="text-slate-500 text-xs">© <span id="y"></span> Fomenko N.A. Все права защищены.</div>
         </div>
       </footer>
 
@@ -564,7 +539,7 @@
     function onScrollNav() {
       if (!navbar) return;
       if (window.scrollY > 50) navbar.classList.add("navbar-scrolled");
-      else navbar.classList.add("navbar-scrolled"); // держим всегда как ты хотел
+      else navbar.classList.add("navbar-scrolled"); // держим всегда
     }
     window.addEventListener("scroll", onScrollNav);
     onScrollNav();
