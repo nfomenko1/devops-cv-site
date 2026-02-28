@@ -31,10 +31,11 @@
     <!-- navbar-scrolled добавлен сразу, чтобы панель была темнее/отделена как раньше -->
     <header id="navbar" class="navbar navbar-scrolled fixed top-0 left-0 right-0 z-40">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-3">
-        <div class="flex items-center justify-between">
+        <!-- nav-shell нужен для центровки меню на lg+ -->
+        <div class="nav-shell">
 
           <!-- Left: Logo -->
-          <a href="#top" class="flex items-center gap-3">
+          <a href="#top" class="nav-left flex items-center gap-3">
             <div class="logo-mark">
               <span class="logo-nf">NF</span>
             </div>
@@ -45,7 +46,7 @@
           </a>
 
           <!-- Center: Desktop nav -->
-          <nav class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
+          <nav class="nav-center hidden lg:flex items-center gap-6 text-sm text-slate-300">
             <a class="nav-link" href="#experience">Опыт</a>
             <a class="nav-link" href="#skills">Практика</a>
             <a class="nav-link" href="#roadmap">Roadmap</a>
@@ -55,9 +56,11 @@
           </nav>
 
           <!-- Right: Mobile burger -->
-          <button id="burger" class="lg:hidden burger" aria-label="Open menu">
-            <span></span><span></span><span></span>
-          </button>
+          <div class="nav-right flex justify-end">
+            <button id="burger" class="lg:hidden burger" aria-label="Open menu">
+              <span></span><span></span><span></span>
+            </button>
+          </div>
 
         </div>
       </div>
@@ -159,9 +162,9 @@
                 <span class="badge badge-live">АКТИВЕН</span>
               </div>
 
-              <!-- About inside right card -->
+              <!-- About -->
               <div class="mt-6">
-                <div class="mini-label">О себе</div>
+                <div class="mini-label about-label">О себе</div>
                 <div class="about-placeholder mt-3">
                   Описание будет добавлено позже.
                 </div>
@@ -169,16 +172,23 @@
 
               <div class="mt-7 hr-grad"></div>
 
-              <div class="mt-6 grid sm:grid-cols-2 gap-3">
-                <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                  Telegram
-                </a>
-                <a class="btn-ghost w-full text-center" href="mailto:nfomenko1@mail.ru">
-                  Email
-                </a>
+              <!-- Contacts moved here -->
+              <div class="mt-6">
+                <div class="mini-label about-label">Контакты:</div>
+
+                <div class="mt-3 contact-inline">
+                  <a class="contact-pill" href="mailto:nfomenko1@mail.ru">Email: nfomenko1@mail.ru</a>
+                  <span class="contact-sep">•</span>
+                  <a class="contact-pill" href="tel:+79913242744">Тел: +7 991-324-27-44</a>
+                  <span class="contact-sep">•</span>
+                  <a class="contact-pill" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                    Telegram: @ooooppsssss
+                  </a>
+                </div>
               </div>
 
-              <div class="mt-4">
+              <!-- HH остаётся снизу -->
+              <div class="mt-5">
                 <a class="btn-ghost w-full text-center"
                    href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
                    target="_blank" rel="noopener noreferrer">
@@ -452,42 +462,29 @@
         </div>
       </section>
 
-      <!-- CONTACTS -->
+      <!-- CONTACTS (simplified) -->
       <section id="contacts" class="section reveal">
         <div class="section-head">
           <h2 class="section-title">Контакты</h2>
-          <div class="section-sub">Быстро связаться.</div>
+          <div class="section-sub">Коротко и по делу. Основные контакты — в первом экране.</div>
         </div>
 
         <div class="glass glass-strong rounded-3xl p-6 mt-8">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-
-            <div class="text-slate-300 text-sm">
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-              </div>
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-              </div>
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                  Telegram: @ooooppsssss
-                </a>
-              </div>
+          <div class="text-slate-300 text-sm">
+            <div class="contact-row">
+              <span class="dot"></span>
+              <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
             </div>
-
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a class="btn-primary" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                Написать в Telegram
-              </a>
-              <a class="btn-ghost" href="mailto:nfomenko1@mail.ru">
-                Написать на почту
+            <div class="contact-row">
+              <span class="dot"></span>
+              <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+            </div>
+            <div class="contact-row">
+              <span class="dot"></span>
+              <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                Telegram: @ooooppsssss
               </a>
             </div>
-
           </div>
         </div>
       </section>
@@ -539,7 +536,6 @@
   <!-- MODAL -->
   <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
     <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
-      <button onclick="closeModal()" class="modal-close" aria-label="Close">✕</button>
 
       <div class="flex items-start justify-between gap-4 mb-4">
         <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-100"></h3>
