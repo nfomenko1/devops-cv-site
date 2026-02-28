@@ -487,18 +487,16 @@ body::after{
 .status-goal{
   margin-top: 10px;
 }
-.goal-badge{
-  display:inline-flex;
-  align-items:center;
-  gap: 8px;
-  padding: 8px 12px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 900;
-  color: rgba(236,253,245,0.95);
-  background: linear-gradient(180deg, rgba(0,200,150,0.18), rgba(56,189,248,0.10));
-  border: 1px solid rgba(56,189,248,0.20);
-  box-shadow: 0 14px 40px rgba(0,0,0,0.20);
+.status-goal-row{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.status-goal-text{
+  font-size: 14px;
+  font-weight: 800;
+  color: rgba(148,163,184,0.92);
 }
 
 /* Avatar */
@@ -560,7 +558,7 @@ body::after{
 .contact-table{
   margin-top: 14px;
   display: grid;
-  gap: 12px;
+  gap: 8px;
 }
 .contact-row2{
   display: grid;
