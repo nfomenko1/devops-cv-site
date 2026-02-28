@@ -6,7 +6,7 @@
   <title>FOMENKO N.A. | DevOps Engineer</title>
 
   <!-- Tailwind config (если есть) -->
-  <script src="static/js/script.js"></script>
+  <script src="/static/js/script.js"></script>
 
   <!-- Tailwind CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
@@ -16,11 +16,16 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicon (PNG 32x32) -->
-  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon.png" />
+  <!-- Favicons (правильный набор) -->
+  <link rel="icon" href="/static/favicon/favicon.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="/static/favicon/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="/static/favicon/android-chrome-192x192.png">
+  <link rel="icon" type="image/png" sizes="512x512" href="/static/favicon/android-chrome-512x512.png">
 
   <!-- CSS -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <link rel="stylesheet" href="/static/css/style.css" />
 </head>
 
 <body class="text-white font-sans min-h-screen scroll-smooth">
@@ -35,7 +40,7 @@
           <!-- Left: Logo -->
           <a href="#top" class="nav-left flex items-center gap-3">
             <div class="logo-mark">
-              <span class="logo-nf">FN</span>
+              <img class="logo-img" src="/static/favicon/android-chrome-192x192.png" alt="FN Logo" />
             </div>
             <div class="leading-tight">
               <div class="text-sm font-extrabold tracking-wide text-slate-100">FOMENKO N.A.</div>
@@ -87,12 +92,10 @@
     </header>
 
     <!-- PAGE -->
-    <!-- было pt-28 -> стало pt-24 (контент выше) -->
     <main id="top" class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-24 pb-16">
 
       <!-- HERO -->
-      <!-- было pt-10 sm:pt-14 -> стало pt-6 sm:pt-10 (выше начало) -->
-      <section class="hero pt-6 sm:pt-10 pb-10 sm:pb-14">
+      <section class="hero pt-6 sm:pt-10 pb-8 sm:pb-10">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
 
           <!-- Left hero -->
@@ -101,7 +104,7 @@
             <!-- Avatar + FIO -->
             <div class="flex items-center gap-4 mb-6 fadeInUp" style="animation-delay: 0.05s;">
               <div class="avatar-wrap w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2px]">
-                <img src="static/images/avatar.jpg" alt="Никита Фоменко"
+                <img src="/static/images/avatar.jpg" alt="Никита Фоменко"
                      class="avatar-img w-full h-full rounded-full object-cover" />
               </div>
 
@@ -151,18 +154,23 @@
           <div class="hero-right fadeInUp" style="animation-delay: 0.16s;">
             <div class="glass glass-strong rounded-3xl p-6 sm:p-8 hero-card">
 
-              <div class="flex items-start justify-between gap-4">
-                <div>
-                  <div class="text-xs text-slate-400">Статус</div>
-                  <div class="text-lg font-extrabold text-slate-100 mt-1">Открыт к предложениям</div>
-                  <div class="text-sm text-slate-400 mt-1">Junior/Middle DevOps (цель)</div>
+              <!-- Status header -->
+              <div class="status-top">
+                <div class="status-meta">
+                  <div class="status-label">Статус</div>
+                  <span class="badge badge-live">АКТИВЕН</span>
                 </div>
-                <span class="badge badge-live">АКТИВЕН</span>
+
+                <div class="status-title">Открыт к предложениям</div>
+
+                <div class="status-goal">
+                  <span class="goal-badge">Цель: Junior → Middle DevOps</span>
+                </div>
               </div>
 
               <!-- About -->
               <div class="mt-6">
-                <div class="mini-label about-label">О себе</div>
+                <div class="mini-label about-label about-label-strong">О себе</div>
                 <div class="about-placeholder mt-3">
                   Описание будет добавлено позже.
                 </div>
@@ -170,36 +178,40 @@
 
               <div class="mt-7 hr-grad"></div>
 
-              <!-- Contacts + HH in 2 columns (desktop) -->
+              <!-- Contacts -->
               <div class="mt-6">
-                <div class="mini-label about-label">Контакты</div>
+                <div class="mini-label about-label about-label-strong">Контакты</div>
 
-                <div class="contact-grid">
-                  <!-- left -->
-                  <div class="contact-block text-slate-300 text-sm">
-                    <div class="contact-row">
+                <!-- 2-column table by rows -->
+                <div class="contact-table">
+                  <div class="contact-row2">
+                    <div class="contact-left">
                       <span class="dot"></span>
                       <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
                     </div>
-
-                    <div class="contact-row">
-                      <span class="dot"></span>
-                      <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-                    </div>
-
-                    <div class="contact-row">
-                      <span class="dot"></span>
-                      <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    <div class="contact-right">
+                      <a class="btn-ghost w-full text-center"
+                         href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+                         target="_blank" rel="noopener noreferrer">
+                        Резюме на HH.ru
+                      </a>
                     </div>
                   </div>
 
-                  <!-- right -->
-                  <div class="resume-block">
-                    <a class="btn-ghost w-full text-center"
-                       href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
-                       target="_blank" rel="noopener noreferrer">
-                      Резюме на HH.ru
-                    </a>
+                  <div class="contact-row2">
+                    <div class="contact-left">
+                      <span class="dot"></span>
+                      <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+                    </div>
+                    <div class="contact-right contact-right-empty"></div>
+                  </div>
+
+                  <div class="contact-row2">
+                    <div class="contact-left">
+                      <span class="dot"></span>
+                      <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    </div>
+                    <div class="contact-right contact-right-empty"></div>
                   </div>
                 </div>
               </div>
@@ -211,7 +223,7 @@
       </section>
 
       <!-- EXPERIENCE -->
-      <section id="experience" class="section reveal">
+      <section id="experience" class="section reveal section-first">
         <div class="section-head">
           <h2 class="section-title">Опыт работы</h2>
           <div class="section-sub">Кратко. Без воды. Подробности можно расширить позже.</div>
@@ -399,8 +411,6 @@
             <div class="proj-title">DevOps CV Site</div>
             <div class="proj-text">Личный сайт-портфолио: структура, дизайн, CI/CD и заготовки.</div>
 
-            <!-- УБРАЛИ proj-tags (чипы навыков) -->
-
             <div class="proj-actions">
               <a class="btn-ghost" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">
                 Репозиторий
@@ -411,8 +421,6 @@
           <div class="proj-card">
             <div class="proj-title">DevOps-learning</div>
             <div class="proj-text">Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.</div>
-
-            <!-- УБРАЛИ proj-tags (чипы навыков) -->
 
             <div class="proj-actions">
               <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
@@ -472,7 +480,7 @@
           <div>
             <div class="flex items-center gap-3">
               <div class="logo-mark">
-                <span class="logo-nf">FN</span>
+                <img class="logo-img" src="/static/favicon/android-chrome-192x192.png" alt="FN Logo" />
               </div>
               <div>
                 <div class="text-sm font-extrabold text-slate-100">FOMENKO N.A.</div>
@@ -535,12 +543,12 @@
     const y = document.getElementById("y");
     if (y) y.innerText = new Date().getFullYear();
 
-    // navbar blur after scroll (оставили, но navbar уже темный изначально)
+    // navbar blur after scroll (держим всегда тёмным)
     const navbar = document.getElementById("navbar");
     function onScrollNav() {
       if (!navbar) return;
       if (window.scrollY > 50) navbar.classList.add("navbar-scrolled");
-      else navbar.classList.add("navbar-scrolled"); // держим всегда
+      else navbar.classList.add("navbar-scrolled");
     }
     window.addEventListener("scroll", onScrollNav);
     onScrollNav();
