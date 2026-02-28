@@ -49,18 +49,9 @@
             <a class="nav-link" href="#skills">Практика</a>
             <a class="nav-link" href="#roadmap">Roadmap</a>
             <a class="nav-link" href="#projects">Проекты</a>
+            <a class="nav-link" href="#monitoring">Мониторинг</a>
             <a class="nav-link" href="#contacts">Контакты</a>
           </nav>
-
-          <!-- Right actions -->
-          <div class="hidden lg:flex items-center gap-3">
-            <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
-            <a class="btn-primary" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-              Связаться
-            </a>
-          </div>
 
           <!-- Mobile burger -->
           <button id="burger" class="lg:hidden burger" aria-label="Open menu">
@@ -82,13 +73,12 @@
             <a class="drawer-link" href="#skills">Практика</a>
             <a class="drawer-link" href="#roadmap">Roadmap</a>
             <a class="drawer-link" href="#projects">Проекты</a>
+            <a class="drawer-link" href="#monitoring">Мониторинг</a>
             <a class="drawer-link" href="#contacts">Контакты</a>
           </div>
 
           <div class="mt-4 grid grid-cols-2 gap-2">
-            <a class="btn-ghost w-full text-center" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
-              GitHub
-            </a>
+            <a class="btn-ghost w-full text-center" href="mailto:nfomenko1@mail.ru">Email</a>
             <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
               Telegram
             </a>
@@ -104,16 +94,18 @@
       <section class="hero pt-10 sm:pt-14 pb-10 sm:pb-16">
         <div class="grid lg:grid-cols-2 gap-10 items-center">
 
+          <!-- LEFT -->
           <div class="hero-left">
             <!-- Avatar row -->
             <div class="flex items-center gap-4 mb-6 fadeInUp" style="animation-delay: 0.05s;">
-              <div class="avatar-wrap w-14 h-14 rounded-full p-[2px]">
+              <div class="avatar-wrap w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2px]">
                 <img src="static/images/avatar.jpg" alt="Никита Фоменко"
                      class="avatar-img w-full h-full rounded-full object-cover" />
               </div>
+
               <div class="text-sm text-slate-300">
-                <div class="font-semibold text-slate-100">Фоменко Никита Алексеевич</div>
-                <div class="text-slate-400">DevOps Engineer • CI/CD • Kubernetes • Observability</div>
+                <div class="fio-big font-extrabold text-slate-100">Фоменко Никита Алексеевич</div>
+                <div class="text-slate-400">DevOps Engineer</div>
               </div>
             </div>
 
@@ -132,17 +124,26 @@
               <a class="btn-ghost" href="#roadmap">Roadmap</a>
             </div>
 
-            <div class="mt-8 flex flex-wrap gap-2 fadeInUp" style="animation-delay: 0.32s;">
-              <span class="chip">Linux</span>
-              <span class="chip">Docker</span>
-              <span class="chip">Kubernetes</span>
-              <span class="chip">Git</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">Grafana</span>
+            <div class="mt-8 fadeInUp" style="animation-delay: 0.32s;">
+              <div class="mini-label">Навыки</div>
+
+              <div class="mt-3 flex flex-wrap gap-2">
+                <span class="chip">Linux</span>
+                <span class="chip">Docker</span>
+                <span class="chip">Kubernetes</span>
+                <span class="chip">Git</span>
+                <span class="chip">CI/CD</span>
+                <span class="chip">PostgreSQL</span>
+                <span class="chip">Ansible</span>
+                <span class="chip">Nginx</span>
+                <span class="chip">Grafana</span>
+                <span class="chip">Prometheus</span>
+                <span class="chip">Bash</span>
+              </div>
             </div>
           </div>
 
-          <!-- Right hero card (Open to work + contacts) -->
+          <!-- RIGHT -->
           <div class="hero-right fadeInUp" style="animation-delay: 0.16s;">
             <div class="glass glass-strong rounded-3xl p-6 sm:p-8 hero-card">
 
@@ -155,34 +156,19 @@
                 <span class="badge badge-live">АКТИВЕН</span>
               </div>
 
-              <div class="mt-6 grid gap-3">
-                <div class="mini-row">
-                  <div class="mini-k">Telegram</div>
-                  <div class="mini-v">
-                    <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                      @ooooppsssss
-                    </a>
-                  </div>
-                </div>
-                <div class="mini-row">
-                  <div class="mini-k">Email</div>
-                  <div class="mini-v">
-                    <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-                  </div>
-                </div>
-                <div class="mini-row">
-                  <div class="mini-k">Телефон</div>
-                  <div class="mini-v">
-                    <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-                  </div>
-                </div>
+              <!-- About (moved here) -->
+              <div class="mt-6">
+                <div class="mini-label">О себе</div>
+                <p class="about-placeholder mt-3">
+                  Описание будет добавлено позже.
+                </p>
               </div>
 
-              <div class="mt-7 hr-grad"></div>
+              <div class="mt-6 hr-grad"></div>
 
               <div class="mt-6 grid sm:grid-cols-2 gap-3">
                 <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                  Написать
+                  Telegram
                 </a>
                 <a class="btn-ghost w-full text-center" href="mailto:nfomenko1@mail.ru">
                   Email
@@ -190,7 +176,8 @@
               </div>
 
               <div class="mt-5">
-                <a class="btn-ghost w-full text-center" href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+                <a class="btn-ghost w-full text-center"
+                   href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
                    target="_blank" rel="noopener noreferrer">
                   Резюме на HH.ru
                 </a>
@@ -398,8 +385,9 @@
               <span class="chip">Nginx</span>
             </div>
             <div class="proj-actions">
-              <a class="btn-ghost" href="https://devops-cv.ru" target="_blank" rel="noopener noreferrer">Открыть</a>
-              <a class="btn-primary" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a class="btn-ghost" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">
+                Репозиторий
+              </a>
             </div>
           </div>
 
@@ -412,240 +400,10 @@
               <span class="chip">Ansible</span>
             </div>
             <div class="proj-actions">
-              <a class="btn-primary w-full text-center" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
-                Открыть репозиторий
+              <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
+                Репозиторий
               </a>
             </div>
           </div>
         </div>
-      </section>
-
-      <!-- CONTACTS (simple, no big banner) -->
-      <section id="contacts" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Контакты</h2>
-          <div class="section-sub">Быстро связаться.</div>
-        </div>
-
-        <div class="glass glass-strong rounded-3xl p-6 mt-8">
-          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
-            <div class="text-slate-300 text-sm">
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-              </div>
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-              </div>
-              <div class="contact-row">
-                <span class="dot"></span>
-                <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                  Telegram: @ooooppsssss
-                </a>
-              </div>
-            </div>
-
-            <div class="flex flex-col sm:flex-row gap-3">
-              <a class="btn-primary" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-                Написать в Telegram
-              </a>
-              <a class="btn-ghost" href="mailto:nfomenko1@mail.ru">
-                Написать на почту
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FOOTER -->
-      <footer class="footer mt-16">
-        <div class="grid md:grid-cols-3 gap-8">
-          <div>
-            <div class="flex items-center gap-3">
-              <div class="logo-mark">
-                <span class="logo-nf">NF</span>
-              </div>
-              <div>
-                <div class="text-sm font-extrabold text-slate-100">NFOMENKO</div>
-                <div class="text-xs text-slate-400">DevOps Engineer</div>
-              </div>
-            </div>
-            <div class="text-slate-400 text-sm mt-4">
-              Портфолио: обучение, проекты, инфраструктурная практика.
-            </div>
-          </div>
-
-          <div>
-            <div class="footer-title">Навигация</div>
-            <a class="footer-link" href="#experience">Опыт</a>
-            <a class="footer-link" href="#skills">Практика</a>
-            <a class="footer-link" href="#roadmap">Roadmap</a>
-            <a class="footer-link" href="#projects">Проекты</a>
-          </div>
-
-          <div>
-            <div class="footer-title">Профили</div>
-            <a class="footer-link" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
-            <a class="footer-link" href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748" target="_blank" rel="noopener noreferrer">HH.ru</a>
-            <a class="footer-link" href="https://devops-cv.ru" target="_blank" rel="noopener noreferrer">devops-cv.ru</a>
-          </div>
-        </div>
-
-        <div class="footer-bottom mt-10">
-          <div class="text-slate-500 text-xs">© <span id="y"></span> Фоменко Никита. Все права защищены.</div>
-        </div>
-      </footer>
-
-    </main>
-  </div>
-
-  <!-- MODAL (Roadmap) -->
-  <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
-    <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
-      <button onclick="closeModal()" class="modal-close" aria-label="Close">✕</button>
-
-      <div class="flex items-start justify-between gap-4 mb-4">
-        <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-100"></h3>
-        <span id="modalBadge" class="badge badge-done">ВЫПОЛНЕНО</span>
-      </div>
-
-      <div id="modalBody" class="text-slate-300 text-sm leading-relaxed">
-        Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки на практику/коммиты → вопросы собеса.
-      </div>
-
-      <div class="mt-6 hr-grad"></div>
-
-      <div class="text-slate-400 text-xs mt-5">
-        Подсказка: держи структуру описания одинаковой для всех блоков — будет выглядеть очень профессионально.
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // --- footer year ---
-    document.getElementById("y").innerText = new Date().getFullYear();
-
-    // --- navbar blur after scroll ---
-    const navbar = document.getElementById("navbar");
-    function onScrollNav() {
-      if (window.scrollY > 50) navbar.classList.add("navbar-scrolled");
-      else navbar.classList.remove("navbar-scrolled");
-    }
-    window.addEventListener("scroll", onScrollNav);
-    onScrollNav();
-
-    // --- mobile drawer ---
-    const burger = document.getElementById("burger");
-    const drawer = document.getElementById("drawer");
-    const drawerClose = document.getElementById("drawerClose");
-
-    function openDrawer() {
-      drawer.classList.remove("hidden");
-      setTimeout(() => drawer.classList.add("is-open"), 0);
-      document.body.classList.add("modal-open");
-    }
-    function closeDrawer() {
-      drawer.classList.remove("is-open");
-      drawer.classList.add("is-closing");
-      setTimeout(() => {
-        drawer.classList.add("hidden");
-        drawer.classList.remove("is-closing");
-        document.body.classList.remove("modal-open");
-      }, 220);
-    }
-    burger?.addEventListener("click", openDrawer);
-    drawerClose?.addEventListener("click", closeDrawer);
-    drawer?.addEventListener("click", (e) => { if (e.target === drawer) closeDrawer(); });
-    drawer?.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
-
-    // --- modal + active card highlight ---
-    const overlay = document.getElementById("appModal");
-    const card = document.getElementById("modalCard");
-    const titleEl = document.getElementById("modalTitle");
-    const badgeEl = document.getElementById("modalBadge");
-    const bodyEl = document.getElementById("modalBody");
-
-    const roadCards = Array.from(document.querySelectorAll(".road-card"));
-    let activeCard = null;
-
-    const roadmapData = [
-      { title: "Блок 1: Сети + Git", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 2: Linux (Основа)", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 3: Docker", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 4: PostgreSQL", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 5: CI/CD + Jenkins", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 6: Kubernetes", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 7: Ansible", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 8: Kafka", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 9: ArgoCD", status: "ВЫПОЛНЕНО" },
-      { title: "Блок 10: Интеграция + мониторинг", status: "ВЫПОЛНЕНО" },
-    ];
-
-    function showOverlay() {
-      overlay.classList.remove("hidden");
-      overlay.classList.add("is-open");
-      document.body.classList.add("modal-open");
-      requestAnimationFrame(() => card.classList.add("is-open"));
-    }
-
-    function hideOverlay() {
-      overlay.classList.remove("is-open");
-      card.classList.remove("is-open");
-      overlay.classList.add("is-closing");
-      card.classList.add("is-closing");
-
-      window.setTimeout(() => {
-        overlay.classList.add("hidden");
-        overlay.classList.remove("is-closing");
-        card.classList.remove("is-closing");
-        document.body.classList.remove("modal-open");
-      }, 220);
-    }
-
-    function clearActive() {
-      if (activeCard) activeCard.classList.remove("active");
-      activeCard = null;
-    }
-
-    function closeModal() {
-      if (overlay.classList.contains("hidden")) return;
-      hideOverlay();
-      clearActive();
-    }
-
-    function openModalRoadmap(index) {
-      const d = roadmapData[index];
-      titleEl.innerText = d.title;
-      badgeEl.innerText = d.status;
-      badgeEl.className = "badge badge-done";
-
-      bodyEl.innerText = "Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки на практику/коммиты → вопросы собеса.";
-
-      clearActive();
-      activeCard = roadCards[index];
-      if (activeCard) activeCard.classList.add("active");
-
-      showOverlay();
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") {
-        closeModal();
-        if (drawer && !drawer.classList.contains("hidden")) closeDrawer();
-      }
-    });
-
-    // --- reveal sections (IntersectionObserver) ---
-    const revealEls = document.querySelectorAll(".reveal");
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) entry.target.classList.add("is-visible");
-      });
-    }, { threshold: 0.12 });
-
-    revealEls.forEach(el => io.observe(el));
-  </script>
-
-</body>
-</html>
+      </section
