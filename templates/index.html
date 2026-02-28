@@ -16,8 +16,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/static/favicon/resume.png" />
+  <!-- Favicon (PNG 32x32) -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon.png" />
 
   <!-- CSS -->
   <link rel="stylesheet" href="static/css/style.css" />
@@ -87,10 +87,12 @@
     </header>
 
     <!-- PAGE -->
-    <main id="top" class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-28 pb-16">
+    <!-- было pt-28 -> стало pt-24 (контент выше) -->
+    <main id="top" class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-24 pb-16">
 
       <!-- HERO -->
-      <section class="hero pt-10 sm:pt-14 pb-10 sm:pb-16">
+      <!-- было pt-10 sm:pt-14 -> стало pt-6 sm:pt-10 (выше начало) -->
+      <section class="hero pt-6 sm:pt-10 pb-10 sm:pb-14">
         <div class="grid lg:grid-cols-2 gap-10 items-start">
 
           <!-- Left hero -->
@@ -168,35 +170,38 @@
 
               <div class="mt-7 hr-grad"></div>
 
-              <!-- Contacts: bullets, column -->
+              <!-- Contacts + HH in 2 columns (desktop) -->
               <div class="mt-6">
                 <div class="mini-label about-label">Контакты</div>
 
-                <div class="contact-block text-slate-300 text-sm">
-                  <div class="contact-row">
-                    <span class="dot"></span>
-                    <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+                <div class="contact-grid">
+                  <!-- left -->
+                  <div class="contact-block text-slate-300 text-sm">
+                    <div class="contact-row">
+                      <span class="dot"></span>
+                      <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+                    </div>
+
+                    <div class="contact-row">
+                      <span class="dot"></span>
+                      <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+                    </div>
+
+                    <div class="contact-row">
+                      <span class="dot"></span>
+                      <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+                    </div>
                   </div>
 
-                  <div class="contact-row">
-                    <span class="dot"></span>
-                    <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-                  </div>
-
-                  <div class="contact-row">
-                    <span class="dot"></span>
-                    <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+                  <!-- right -->
+                  <div class="resume-block">
+                    <a class="btn-ghost w-full text-center"
+                       href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+                       target="_blank" rel="noopener noreferrer">
+                      Резюме на HH.ru
+                    </a>
                   </div>
                 </div>
-              </div>
-
-              <!-- HH button aligned right (desktop) -->
-              <div class="mt-5 flex justify-end">
-                <a class="btn-ghost w-full sm:w-auto text-center sm:min-w-[260px]"
-                   href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
-                   target="_blank" rel="noopener noreferrer">
-                  Резюме на HH.ru
-                </a>
               </div>
 
             </div>
@@ -393,11 +398,9 @@
           <div class="proj-card">
             <div class="proj-title">DevOps CV Site</div>
             <div class="proj-text">Личный сайт-портфолио: структура, дизайн, CI/CD и заготовки.</div>
-            <div class="proj-tags">
-              <span class="chip">Docker</span>
-              <span class="chip">CI/CD</span>
-              <span class="chip">Nginx</span>
-            </div>
+
+            <!-- УБРАЛИ proj-tags (чипы навыков) -->
+
             <div class="proj-actions">
               <a class="btn-ghost" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">
                 Репозиторий
@@ -408,11 +411,9 @@
           <div class="proj-card">
             <div class="proj-title">DevOps-learning</div>
             <div class="proj-text">Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.</div>
-            <div class="proj-tags">
-              <span class="chip">Linux</span>
-              <span class="chip">K8s</span>
-              <span class="chip">Ansible</span>
-            </div>
+
+            <!-- УБРАЛИ proj-tags (чипы навыков) -->
+
             <div class="proj-actions">
               <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
                 Репозиторий
