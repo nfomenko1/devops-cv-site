@@ -1,387 +1,594 @@
-<!-- templates/index.html (полный файл) -->
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="scroll-smooth">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Фоменко Никита | DevOps Engineer</title>
+  <title>DevOps Resume / Portfolio</title>
 
-  <!-- Tailwind config (static/js/script.js) ДОЛЖЕН быть до CDN -->
-  <script src="static/js/script.js"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
 
-  <!-- Tailwind CDN -->
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'deep-bg': '#05020a',
+          },
+        },
+      },
+    };
+  </script>
 
-  <!-- Inter -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/png" href="/static/favicon/resume.png" />
-
-  <!-- Ваш CSS -->
-  <link rel="stylesheet" href="static/css/style.css" />
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="style.css" />
 </head>
+<body class="min-h-screen bg-deep-bg text-slate-100 antialiased relative overflow-hidden">
 
-<body class="text-white font-sans min-h-screen scroll-smooth">
+  <!-- Liquid background blobs -->
+  <div class="blob blob-emerald"></div>
+  <div class="blob blob-violet"></div>
+  <div class="blob blob-indigo"></div>
 
-  <div class="relative z-10 max-w-[1600px] mx-auto p-6">
-
+  <div class="relative z-10">
     <!-- HEADER -->
-    <header class="text-center py-12 fade-in">
+    <header class="pt-8 sm:pt-10 lg:pt-14">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="glass-shell-main rounded-3xl px-5 sm:px-8 lg:px-10 py-6 sm:py-8 lg:py-9 fade-in-up">
+          <div class="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
+            <div class="flex items-center gap-5">
+              <div class="avatar-glow h-20 w-20 sm:h-24 sm:w-24 rounded-full border border-emerald-400/60 overflow-hidden flex items-center justify-center bg-gradient-to-br from-emerald-500/40 via-slate-900 to-violet-700/50 text-3xl sm:text-4xl font-semibold">
+                <span class="tracking-tight">DN</span>
+              </div>
+              <div>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-semibold tracking-tight">
+                  Дмитрий Николаев
+                </h1>
+                <p class="mt-1.5 text-sm sm:text-base text-slate-300">
+                  DevOps Engineer · Infrastructure · Reliability
+                </p>
+              </div>
+            </div>
 
-      <!-- Avatar -->
-      <div class="avatar-wrap w-32 h-32 mx-auto mb-6 rounded-full p-[2px]">
-        <img src="static/images/avatar.jpg"
-             alt="Никита Фоменко"
-             class="avatar-img w-full h-full rounded-full object-cover" />
-      </div>
-
-      <!-- FIO + centered line -->
-      <div class="flex flex-col items-center">
-        <h1 class="fio-title text-3xl sm:text-4xl font-extrabold mb-2 text-center">
-          Фоменко Никита Алексеевич
-        </h1>
-        <div class="w-28 my-4 accent-line"></div>
-      </div>
-
-      <!-- Role + centered line (визуально по центру) -->
-      <div class="role-block flex flex-col items-center">
-        <p class="text-lg text-slate-300 mb-2 text-center">DevOps Engineer</p>
-        <div class="role-line w-20 mb-6 accent-line"></div>
-      </div>
-
-      <!-- Contacts -->
-      <div class="flex flex-col sm:flex-row justify-center items-center sm:space-x-6 space-y-2 sm:space-y-0 text-sm text-slate-300">
-        <a class="contact-link flex items-center space-x-2" href="mailto:nfomenko1@mail.ru">
-          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
-          <span>nfomenko1@mail.ru</span>
-        </a>
-
-        <a class="contact-link flex items-center space-x-2" href="tel:+79913242744">
-          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
-          <span>+7 991-324-27-44</span>
-        </a>
-
-        <a class="contact-link flex items-center space-x-2" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-          <span class="inline-block w-1.5 h-1.5 rounded-full contact-dot"></span>
-          <span>Telegram: @ooooppsssss</span>
-        </a>
+            <div class="flex-1 md:max-w-md">
+              <div class="flex items-center gap-3 mb-4">
+                <span class="accent-line flex-1 h-px rounded-full"></span>
+                <span class="text-[11px] sm:text-xs tracking-[0.38em] uppercase text-emerald-300/80">
+                  DevOps Resume · Portfolio
+                </span>
+                <span class="accent-line flex-1 h-px rounded-full"></span>
+              </div>
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-end gap-3 sm:gap-5 text-sm sm:text-[15px]">
+                <a
+                  href="mailto:devops.resume@example.com"
+                  class="contact-link"
+                >
+                  <span class="text-slate-300">email</span>
+                  <span class="font-medium">devops.resume@example.com</span>
+                </a>
+                <a
+                  href="tel:+79990000000"
+                  class="contact-link"
+                >
+                  <span class="text-slate-300">phone</span>
+                  <span class="font-medium">+7 (999) 000-00-00</span>
+                </a>
+                <a
+                  href="https://t.me/devops_resume"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="contact-link"
+                >
+                  <span class="text-slate-300">telegram</span>
+                  <span class="font-medium">@devops_resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </header>
 
-    <div class="flex flex-col xl:flex-row gap-6">
+    <!-- MAIN GRID -->
+    <main class="mt-8 sm:mt-10 lg:mt-14 pb-12 lg:pb-16">
+      <div class="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-10">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-7 lg:gap-9 items-start">
+          <!-- LEFT COLUMN – EXPERIENCE -->
+          <section class="space-y-5 fade-in-up">
+            <div class="glass-card border border-emerald-500/40/0.5 rounded-3xl px-5 sm:px-6 py-5 sm:py-6 lg:py-7">
+              <div class="flex items-center justify-between gap-3 mb-4">
+                <h2 class="text-lg sm:text-xl font-semibold tracking-tight">
+                  Опыт работы
+                </h2>
+                <span class="text-[11px] uppercase tracking-[0.22em] text-emerald-300/80">
+                  production
+                </span>
+              </div>
 
-      <!-- LEFT -->
-      <div class="flex-[1.2] space-y-6 fade-in">
-        <section class="glass glass-strong glass-outline rounded-2xl p-6">
-          <h2 class="text-2xl font-bold mb-4 text-slate-100">Опыт работы</h2>
-          <div class="w-20 mb-6 accent-line"></div>
+              <div class="space-y-4 sm:space-y-4.5">
+                <!-- Job 1 -->
+                <article class="job-card relative pl-4 sm:pl-5 py-3 sm:py-3.5">
+                  <div class="job-border"></div>
+                  <div class="space-y-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="text-sm sm:text-[15px] font-semibold">
+                        Senior DevOps Engineer
+                      </h3>
+                      <span class="text-[11px] text-slate-400 whitespace-nowrap">
+                        2021 — наст. время
+                      </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300">
+                      Финтех · Kubernetes, GitOps, сервисные меши. Ответственность за доставку и надёжность высоконагруженных платформ.
+                    </p>
+                    <p class="text-[11px] sm:text-xs text-emerald-300/90">
+                      Stack: k8s, ArgoCD, Prometheus, Grafana, Terraform, Istio
+                    </p>
+                  </div>
+                </article>
 
-          <div class="work-card mb-6 p-4 rounded-xl border-l-4"
-               style="border-left-color: rgba(0,162,119,0.65);">
-            <h3 class="text-lg font-semibold text-slate-100">Старший специалист технической поддержки 2L</h3>
-            <p class="text-slate-300 font-medium">
-              <span class="company-emerald">Imredi, Воронеж</span>
-            </p>
-            <p class="text-sm text-slate-400">2026 — настоящее время</p>
-            <ul class="list-disc list-inside text-slate-300 text-sm ml-4 mt-3 space-y-1">
-              <li>Анализ API-интеграций и инцидентов L2</li>
-              <li>Мониторинг метрик через Grafana</li>
-              <li>Работа с REST/SOAP API</li>
-              <li>Документирование и эскалация задач</li>
-            </ul>
-          </div>
+                <!-- Job 2 -->
+                <article class="job-card relative pl-4 sm:pl-5 py-3 sm:py-3.5">
+                  <div class="job-border"></div>
+                  <div class="space-y-1">
+                    <div class="flex items-center justify-between gap-2">
+                      <h3 class="text-sm sm:text-[15px] font-semibold">
+                        DevOps / SRE Engineer
+                      </h3>
+                      <span class="text-[11px] text-slate-400 whitespace-nowrap">
+                        2018 — 2021
+                      </span>
+                    </div>
+                    <p class="text-xs sm:text-sm text-slate-300">
+                      Продуктовая компания · Автоматизация CI/CD, миграция в облако, построение процессинга логов и алёртинга.
+                    </p>
+                    <p class="text-[11px] sm:text-xs text-emerald-300/90">
+                      Stack: AWS, Ansible, ELK, GitLab CI, Docker
+                    </p>
+                  </div>
+                </article>
+              </div>
 
-          <div class="work-card p-4 rounded-xl border-l-4"
-               style="border-left-color: rgba(0,162,119,0.65);">
-            <h3 class="text-lg font-semibold text-slate-100">Ведущий специалист технической поддержки 1L</h3>
-            <p class="text-slate-300 font-medium">
-              <span class="company-emerald">Банк ДОМ.РФ</span>
-            </p>
-            <p class="text-sm text-slate-400">2023 — 2024</p>
-            <ul class="list-disc list-inside text-slate-300 text-sm ml-4 mt-3 space-y-1">
-              <li>Active Directory, VPN, Citrix</li>
-              <li>Диагностика сервисов</li>
-              <li>Анализ логов ISE</li>
-            </ul>
-          </div>
+              <div class="mt-5 pt-4 border-t border-slate-700/60 flex justify-between items-center gap-3">
+                <span class="text-[11px] uppercase tracking-[0.22em] text-slate-400">
+                  full cv
+                </span>
+                <a
+                  href="https://hh.ru/"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="repo-btn inline-flex items-center gap-2"
+                >
+                  <span>Резюме на HH.ru</span>
+                  <svg class="w-4 h-4" viewBox="0 0 20 20" fill="none">
+                    <path
+                      d="M6 14L14 6M10 6H14V10"
+                      stroke="currentColor"
+                      stroke-width="1.4"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </section>
 
-          <!-- HH link button -->
-          <div class="mt-6">
-            <a href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
-               target="_blank" rel="noopener noreferrer"
-               class="repo-btn inline-block w-full text-center px-6 py-3 rounded-2xl font-semibold transition-colors">
-              Резюме на HH.ru
-            </a>
-          </div>
-        </section>
+          <!-- CENTER COLUMN – DEVOPS JOURNEY -->
+          <section class="fade-in-up">
+            <div class="glass-card rounded-3xl px-5 sm:px-6 lg:px-7 py-5 sm:py-6 lg:py-7">
+              <div class="flex items-center justify-between gap-3 mb-4 sm:mb-5">
+                <div>
+                  <h2 class="text-lg sm:text-xl font-semibold tracking-tight">
+                    Мой путь DevOps
+                  </h2>
+                  <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-md">
+                    10 последовательных этапов, от базового Linux до гибкой наблюдаемости и платформенной инженерии.
+                  </p>
+                </div>
+                <span class="hidden sm:inline-flex text-[11px] uppercase tracking-[0.22em] text-emerald-300/80">
+                  roadmap
+                </span>
+              </div>
+
+              <div class="grid grid-cols-1 sm:grid-cols-2 gap-3.5 sm:gap-4 lg:gap-5">
+                <!-- 10 DevOps Journey Cards -->
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Linux & Networking"
+                  data-description="Уверенная работа в Linux: управление процессами, системные сервисы, безопасность, сетевые стеки, routing, firewall. Фундамент для последующей автоматизации и контейнеризации."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">01 · Fundamentals</p>
+                      <p class="step-title">Linux &amp; Networking</p>
+                    </div>
+                    <span class="step-pill">bash · net</span>
+                  </div>
+                  <p class="step-body">
+                    Shell, systemd, tcpdump, базовая диагностика и hardening.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Git & CI/CD"
+                  data-description="Построение надёжных пайплайнов CI/CD: стратегии ветвления, code review, качество сборок, артефакты, progressive delivery. Автоматизация тестов и проверок."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">02 · Delivery</p>
+                      <p class="step-title">Git &amp; CI/CD</p>
+                    </div>
+                    <span class="step-pill">GitLab · GH Actions</span>
+                  </div>
+                  <p class="step-body">
+                    Полный цикл: build → test → security checks → deploy.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Containers & Docker"
+                  data-description="Проектирование container-friendly сервисов, multi-stage образы, минимизация attack surface, безопасное хранение секретов, оптимизация слоёв для быстрой доставки."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">03 · Runtime</p>
+                      <p class="step-title">Containers &amp; Docker</p>
+                    </div>
+                    <span class="step-pill">Docker</span>
+                  </div>
+                  <p class="step-body">
+                    Лёгкие, воспроизводимые окружения для всего стека.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Kubernetes Basics"
+                  data-description="Базовая архитектура Kubernetes: pods, deployments, services, ingress, namespaces. Разбор примитивов, паттернов обновлений и управления состоянием."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">04 · Orchestration</p>
+                      <p class="step-title">Kubernetes Basics</p>
+                    </div>
+                    <span class="step-pill">k8s</span>
+                  </div>
+                  <p class="step-body">
+                    От манифестов до устойчивых кластеров под прод-нагрузкой.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Infrastructure as Code"
+                  data-description="Описывание инфраструктуры декларативно: Terraform, Ansible. Идемпотентность, модули, remote state, review инфраструктурных изменений как кода."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">05 · IaC</p>
+                      <p class="step-title">Infrastructure as Code</p>
+                    </div>
+                    <span class="step-pill">Terraform · Ansible</span>
+                  </div>
+                  <p class="step-body">
+                    Репозитории инфраструктуры с прозрачной историей изменений.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Observability Stack"
+                  data-description="Построение наблюдаемости: метрики, логи и трейсинг. Prometheus, Loki, Grafana, Alertmanager — единый слой прозрачности для сервисов и платформы."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">06 · Observability</p>
+                      <p class="step-title">Monitoring &amp; Alerts</p>
+                    </div>
+                    <span class="step-pill">Prom · Grafana</span>
+                  </div>
+                  <p class="step-body">
+                    От дешбордов до надёжного алёртинга по SLO/SLA.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Cloud Platforms"
+                  data-description="Проектирование облачных ландшафтов: VPC, IAM, managed-сервисы, cost-оптимизация, отказоустойчивость, выбор managed vs self-hosted."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">07 · Cloud</p>
+                      <p class="step-title">Cloud Platforms</p>
+                    </div>
+                    <span class="step-pill">AWS · GCP · Yandex</span>
+                  </div>
+                  <p class="step-body">
+                    Баланс стоимости, надёжности и скорости поставки.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Security & Compliance"
+                  data-description="Практики SecDevOps: secrets management, image scanning, policies-as-code, минимизация прав, audit trails и работа с инцидентами."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">08 · Security</p>
+                      <p class="step-title">Security by Design</p>
+                    </div>
+                    <span class="step-pill">DevSecOps</span>
+                  </div>
+                  <p class="step-body">
+                    Безопасность встроена в процессы, а не добавлена сверху.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="Platform Engineering"
+                  data-description="Создание внутренних платформ: self-service среды для разработчиков, готовые шаблоны пайплайнов и сервисов, golden paths под задачи бизнеса."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">09 · Platform</p>
+                      <p class="step-title">Internal Platforms</p>
+                    </div>
+                    <span class="step-pill">IDP</span>
+                  </div>
+                  <p class="step-body">
+                    Платформа как продукт с фокусом на DX и надёжность.
+                  </p>
+                </button>
+
+                <button
+                  class="devops-step glass-card-soft group"
+                  data-title="SRE & Reliability"
+                  data-description="SRE-подход: SLO, error budget, capacity planning, incident response. Метрики надёжности, постмортемы и непрерывное улучшение."
+                >
+                  <div class="flex items-start justify-between gap-3">
+                    <div>
+                      <p class="step-label">10 · Reliability</p>
+                      <p class="step-title">SRE Practices</p>
+                    </div>
+                    <span class="step-pill">SLO · SLI</span>
+                  </div>
+                  <p class="step-body">
+                    Баланс скорости изменений и устойчивости системы.
+                  </p>
+                </button>
+              </div>
+            </div>
+          </section>
+
+          <!-- RIGHT COLUMN – ABOUT / SKILLS / MONITORING -->
+          <section class="space-y-5 fade-in-up">
+            <!-- About -->
+            <div class="glass-card rounded-3xl px-5 sm:px-6 py-5 sm:py-6">
+              <div class="flex items-center justify-between gap-3 mb-3.5">
+                <h2 class="text-lg font-semibold tracking-tight">
+                  О себе
+                </h2>
+                <span class="text-[11px] uppercase tracking-[0.22em] text-emerald-300/80">
+                  profile
+                </span>
+              </div>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+                Строю инфраструктуру вокруг продукта, а не наоборот. Люблю измеримую
+                надёжность, прозрачную наблюдаемость и аккуратную автоматизацию, которая
+                снижает когнитивную нагрузку на команды разработки.
+              </p>
+            </div>
+
+            <!-- Skills -->
+            <div class="glass-card rounded-3xl px-5 sm:px-6 py-5 sm:py-6">
+              <div class="flex items-center justify-between gap-3 mb-3.5">
+                <h2 class="text-lg font-semibold tracking-tight">
+                  Навыки
+                </h2>
+                <span class="text-[11px] uppercase tracking-[0.22em] text-emerald-300/80">
+                  toolset
+                </span>
+              </div>
+
+              <div class="flex flex-wrap gap-2.5">
+                <span class="skill-badge">Kubernetes</span>
+                <span class="skill-badge">Docker</span>
+                <span class="skill-badge">Terraform</span>
+                <span class="skill-badge">Ansible</span>
+                <span class="skill-badge">Helm</span>
+                <span class="skill-badge">GitLab CI</span>
+                <span class="skill-badge">Prometheus</span>
+                <span class="skill-badge">Grafana</span>
+                <span class="skill-badge">Loki</span>
+                <span class="skill-badge">AWS / GCP</span>
+                <span class="skill-badge">Linux</span>
+                <span class="skill-badge">Python / Go (tools)</span>
+              </div>
+            </div>
+
+            <!-- Monitoring -->
+            <button
+              id="monitoringTrigger"
+              type="button"
+              class="glass-card rounded-3xl px-5 sm:px-6 py-5 sm:py-6 w-full text-left cursor-pointer group"
+            >
+              <div class="flex items-center justify-between gap-3 mb-2">
+                <h2 class="text-lg font-semibold tracking-tight">
+                  Мониторинг
+                </h2>
+                <span class="inline-flex items-center gap-1 text-[11px] uppercase tracking-[0.22em] text-emerald-300/80">
+                  live demo
+                  <span class="w-1.5 h-1.5 rounded-full bg-emerald-400/90 shadow-[0_0_12px_rgba(52,211,153,0.9)] animate-pulse"></span>
+                </span>
+              </div>
+              <div class="h-px w-16 bg-emerald-400/80 rounded-full mb-4"></div>
+              <p class="text-xs sm:text-sm text-slate-300 max-w-sm">
+                Мини-демо панели нагрузки: CPU, RAM и диски. В реальном проекте сюда
+                подключается API метрик или Prometheus.
+              </p>
+              <div class="mt-4 flex items-center gap-2 text-[13px] text-emerald-200 group-hover:text-emerald-100 transition-colors">
+                <span>Открыть мониторинг</span>
+                <svg class="w-4 h-4 group-hover:translate-x-0.5 transition-transform" viewBox="0 0 20 20" fill="none">
+                  <path
+                    d="M4.5 10H15.5M11 5.5L15.5 10L11 14.5"
+                    stroke="currentColor"
+                    stroke-width="1.4"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+            </button>
+          </section>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <!-- MODAL OVERLAY -->
+  <div
+    id="modalOverlay"
+    class="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center opacity-0 pointer-events-none transition-opacity duration-200 z-40"
+  >
+    <!-- DevOps Modal -->
+    <div
+      id="devopsModal"
+      class="modal-panel hidden opacity-0 scale-95 transition-all duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="devopsModalTitle"
+    >
+      <div class="flex items-start justify-between gap-4 mb-4 sm:mb-5">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.22em] text-emerald-300/80 mb-1.5">
+            DevOps этап
+          </p>
+          <h3 id="devopsModalTitle" class="text-lg sm:text-xl font-semibold tracking-tight">
+            DevOps Stage
+          </h3>
+        </div>
+        <button
+          class="modal-close shrink-0 w-8 h-8 inline-flex items-center justify-center rounded-full border border-slate-600/70 hover:border-emerald-400/80 text-slate-300 hover:text-emerald-200 transition-colors"
+          aria-label="Закрыть"
+          type="button"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M5 5L15 15M15 5L5 15"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
+      </div>
+      <div id="devopsModalBody" class="text-sm sm:text-[15px] text-slate-200 leading-relaxed">
+        Подробное описание этапа будет подставлено при клике по карточке дорожной карты.
+      </div>
+    </div>
+
+    <!-- Monitoring Modal -->
+    <div
+      id="monitoringModal"
+      class="modal-panel hidden opacity-0 scale-95 transition-all duration-200"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="monitoringModalTitle"
+    >
+      <div class="flex items-start justify-between gap-4 mb-4 sm:mb-5">
+        <div>
+          <p class="text-[11px] uppercase tracking-[0.22em] text-emerald-300/80 mb-1.5">
+            Monitoring Demo
+          </p>
+          <h3 id="monitoringModalTitle" class="text-lg sm:text-xl font-semibold tracking-tight">
+            Нагрузка сервисов
+          </h3>
+          <p class="mt-1 text-xs sm:text-sm text-slate-300 max-w-md">
+            Статические демо-графики. В реальном сценарии сюда можно подключить API
+            (Prometheus, VictoriaMetrics, CloudWatch и т.п.).
+          </p>
+        </div>
+        <button
+          class="modal-close shrink-0 w-8 h-8 inline-flex items-center justify-center rounded-full border border-slate-600/70 hover:border-emerald-400/80 text-slate-300 hover:text-emerald-200 transition-colors"
+          aria-label="Закрыть"
+          type="button"
+        >
+          <svg class="w-3.5 h-3.5" viewBox="0 0 20 20" fill="none">
+            <path
+              d="M5 5L15 15M15 5L5 15"
+              stroke="currentColor"
+              stroke-width="1.4"
+              stroke-linecap="round"
+            />
+          </svg>
+        </button>
       </div>
 
-      <!-- CENTER -->
-      <div class="flex-[2] space-y-6 fade-in">
-        <section class="glass glass-strong glass-outline rounded-2xl p-10">
-          <h2 class="text-3xl font-extrabold text-center mb-4 text-slate-100">Мой путь DevOps</h2>
-          <div class="w-28 mx-auto mb-10 accent-line"></div>
-
-          <div class="grid md:grid-cols-2 gap-8">
-            <div onclick="openModalDevops(0)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 1: Сети + Git</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 sm:gap-5">
+        <!-- CPU -->
+        <section class="metric-card">
+          <header class="metric-header">
+            <span class="metric-title">CPU</span>
+            <span class="metric-kpi">
+              CPU now: <span class="font-semibold text-emerald-300">6%</span>
+            </span>
+          </header>
+          <div class="metric-body">
+            <div class="metric-chart-shell">
+              <canvas id="cpuChart" class="metric-chart"></canvas>
             </div>
-
-            <div onclick="openModalDevops(1)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 2: Linux (Основа)</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(2)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 3: Docker</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(3)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 4: PostgreSQL</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(4)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 5: CI/CD + Jenkins</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(5)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 6: Kubernetes (оркестрация)</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(6)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 7: Ansible (IaC)</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(7)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 8: Kafka (Message Broker)</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(8)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 9: ArgoCD (GitOps)</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-
-            <div onclick="openModalDevops(9)" class="devops-card block-gradient p-6 rounded-2xl cursor-pointer">
-              <h3 class="text-xl font-bold mb-2 text-slate-100">Блок 10: Полная интеграция + мониторинг</h3>
-              <p class="text-slate-300 text-sm">Нажмите для подробностей</p>
-            </div>
-          </div>
-
-          <div class="text-center mt-12">
-            <a href="https://github.com/nfomenko1/DevOps-learning"
-               target="_blank" rel="noopener noreferrer"
-               class="repo-btn inline-block px-8 py-4 rounded-2xl font-semibold transition-colors">
-              Мой DevOps-репозиторий
-            </a>
-          </div>
-        </section>
-      </div>
-
-      <!-- RIGHT -->
-      <div class="flex-[1.2] space-y-6 fade-in">
-
-        <section class="glass glass-strong glass-outline rounded-2xl p-6">
-          <h2 class="text-2xl font-bold mb-4 text-slate-100">О себе</h2>
-          <div class="w-16 mb-4 accent-line"></div>
-          <p class="text-slate-300 text-sm leading-relaxed">
-            DevOps-инженер. Развиваюсь в направлении автоматизации,
-            контейнеризации, CI/CD и построения инфраструктуры.
-          </p>
-        </section>
-
-        <section class="glass glass-strong glass-outline rounded-2xl p-6">
-          <h2 class="text-2xl font-bold mb-4 text-slate-100">Навыки</h2>
-          <div class="w-16 mb-4 accent-line"></div>
-
-          <div class="flex flex-wrap">
-            <span class="skill-badge skill-emerald">Linux</span>
-            <span class="skill-badge skill-emerald">Docker</span>
-            <span class="skill-badge skill-emerald">Kubernetes</span>
-            <span class="skill-badge skill-emerald">Git</span>
-            <span class="skill-badge skill-emerald">PostgreSQL</span>
-            <span class="skill-badge skill-emerald">CI/CD</span>
-            <span class="skill-badge skill-emerald">Ansible</span>
-            <span class="skill-badge skill-emerald">Monitoring</span>
           </div>
         </section>
 
-        <!-- Monitoring button/card -->
-        <section onclick="openModalMonitoring()" class="monitor-launch glass glass-strong glass-outline rounded-2xl p-6 cursor-pointer">
-          <div class="flex items-center justify-between">
-            <div>
-              <h2 class="text-2xl font-bold text-slate-100">Мониторинг</h2>
-              <!-- ПОЛОСКА ПОД ЗАГОЛОВКОМ -->
-              <div class="w-16 mt-3 accent-line"></div>
-
-              <p class="text-slate-300 text-sm mt-4">Открыть графики нагрузки (CPU/RAM/Disk)</p>
+        <!-- RAM -->
+        <section class="metric-card">
+          <header class="metric-header">
+            <span class="metric-title">RAM</span>
+            <span class="metric-kpi">
+              RAM now: <span class="font-semibold text-emerald-300">42%</span>
+            </span>
+          </header>
+          <div class="metric-body">
+            <div class="metric-chart-shell">
+              <canvas id="ramChart" class="metric-chart"></canvas>
             </div>
-            <span class="monitor-badge">OPEN</span>
           </div>
-
-          <p class="text-slate-400 text-xs mt-5">
-            (заготовка) Позже подключим данные через API / Prometheus.
-          </p>
         </section>
 
+        <!-- Disk -->
+        <section class="metric-card">
+          <header class="metric-header">
+            <span class="metric-title">Disk</span>
+            <span class="metric-kpi">
+              Disk used: <span class="font-semibold text-emerald-300">61%</span>
+            </span>
+          </header>
+          <div class="metric-body">
+            <div class="metric-chart-shell">
+              <canvas id="diskChart" class="metric-chart"></canvas>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </div>
 
-  <!-- MODAL -->
-  <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
-    <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
-      <button onclick="closeModal()" class="modal-close">✕</button>
-
-      <h3 id="modalTitle" class="text-2xl font-bold mb-4 text-slate-100"></h3>
-
-      <!-- DevOps content -->
-      <div id="modalDevops" class="text-slate-300">
-        <p id="modalText">Описание будет добавлено позже.</p>
-      </div>
-
-      <!-- Monitoring content -->
-      <div id="modalMonitoring" class="hidden">
-        <p class="text-slate-300 mb-6">
-          Здесь будут живые графики. Пока — заготовки (без источника данных).
-        </p>
-
-        <!-- Charts grid -->
-        <div class="grid lg:grid-cols-2 gap-6">
-          <!-- CPU -->
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">CPU</h4>
-                <p class="chart-subtitle">Использование CPU (среднее)</p>
-              </div>
-              <span class="chart-kpi">CPU now: 6%</span>
-            </div>
-
-            <div class="chart-wrap">
-              <!-- placeholder chart -->
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- RAM -->
-          <div class="chart-card">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">RAM</h4>
-                <p class="chart-subtitle">Использование памяти</p>
-              </div>
-              <span class="chart-kpi">RAM now: 42%</span>
-            </div>
-
-            <div class="chart-wrap">
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line alt"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Disk (full width) -->
-          <div class="chart-card lg:col-span-2">
-            <div class="chart-head">
-              <div>
-                <h4 class="chart-title">Disk</h4>
-                <p class="chart-subtitle">Использование диска</p>
-              </div>
-              <span class="chart-kpi">Disk used: 61%</span>
-            </div>
-
-            <div class="chart-wrap">
-              <div class="chart-placeholder">
-                <div class="chart-grid"></div>
-                <div class="chart-line disk"></div>
-                <div class="chart-caption">График появится после подключения Prometheus/API</div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-slate-400 text-xs mt-6">
-          План: Prometheus → API endpoint → отрисовка графиков (Chart.js/ECharts).
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script>
-    // --- smooth modal open/close ---
-    const overlay = document.getElementById("appModal");
-    const card = document.getElementById("modalCard");
-
-    const titleEl = document.getElementById("modalTitle");
-    const devopsBlock = document.getElementById("modalDevops");
-    const monitoringBlock = document.getElementById("modalMonitoring");
-    const textEl = document.getElementById("modalText");
-
-    function showOverlay() {
-      overlay.classList.remove("hidden");
-      overlay.classList.add("is-open");
-      document.body.classList.add("modal-open");
-      requestAnimationFrame(() => card.classList.add("is-open"));
-    }
-
-    function hideOverlay() {
-      overlay.classList.remove("is-open");
-      card.classList.remove("is-open");
-      overlay.classList.add("is-closing");
-      card.classList.add("is-closing");
-
-      window.setTimeout(() => {
-        overlay.classList.add("hidden");
-        overlay.classList.remove("is-closing");
-        card.classList.remove("is-closing");
-        document.body.classList.remove("modal-open");
-      }, 220);
-    }
-
-    function closeModal() {
-      if (overlay.classList.contains("hidden")) return;
-      hideOverlay();
-    }
-
-    function openModalDevops(index) {
-      titleEl.innerText = document.querySelectorAll(".grid h3")[index].innerText;
-
-      monitoringBlock.classList.add("hidden");
-      devopsBlock.classList.remove("hidden");
-      textEl.innerText = "Описание будет добавлено позже.";
-
-      showOverlay();
-    }
-
-    function openModalMonitoring() {
-      titleEl.innerText = "Мониторинг — графики нагрузки";
-
-      devopsBlock.classList.add("hidden");
-      monitoringBlock.classList.remove("hidden");
-
-      showOverlay();
-    }
-
-    document.addEventListener("keydown", (e) => {
-      if (e.key === "Escape") closeModal();
-    });
-  </script>
-
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- App script -->
+  <script src="script.js"></script>
 </body>
 </html>
