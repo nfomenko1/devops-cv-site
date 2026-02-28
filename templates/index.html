@@ -1,4 +1,3 @@
-<!-- templates/index.html (полный файл) -->
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -29,10 +28,12 @@
   <div class="relative z-10">
 
     <!-- NAVBAR -->
-    <header id="navbar" class="navbar fixed top-0 left-0 right-0 z-40">
+    <!-- navbar-scrolled добавлен сразу, чтобы панель была темнее/отделена как раньше -->
+    <header id="navbar" class="navbar navbar-scrolled fixed top-0 left-0 right-0 z-40">
       <div class="max-w-[1200px] mx-auto px-4 sm:px-6 py-3">
         <div class="flex items-center justify-between">
-          <!-- Logo -->
+
+          <!-- Left: Logo -->
           <a href="#top" class="flex items-center gap-3">
             <div class="logo-mark">
               <span class="logo-nf">NF</span>
@@ -43,7 +44,7 @@
             </div>
           </a>
 
-          <!-- Desktop nav -->
+          <!-- Center: Desktop nav -->
           <nav class="hidden lg:flex items-center gap-6 text-sm text-slate-300">
             <a class="nav-link" href="#experience">Опыт</a>
             <a class="nav-link" href="#skills">Практика</a>
@@ -53,10 +54,11 @@
             <a class="nav-link" href="#contacts">Контакты</a>
           </nav>
 
-          <!-- Mobile burger -->
+          <!-- Right: Mobile burger -->
           <button id="burger" class="lg:hidden burger" aria-label="Open menu">
             <span></span><span></span><span></span>
           </button>
+
         </div>
       </div>
 
@@ -79,24 +81,23 @@
 
           <div class="mt-4 grid grid-cols-2 gap-2">
             <a class="btn-ghost w-full text-center" href="mailto:nfomenko1@mail.ru">Email</a>
-            <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
-              Telegram
-            </a>
+            <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
           </div>
         </div>
       </div>
     </header>
 
-    <!-- PAGE WRAP -->
-    <main id="top" class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-24 pb-16">
+    <!-- PAGE -->
+    <main id="top" class="max-w-[1200px] mx-auto px-4 sm:px-6 pt-28 pb-16">
 
       <!-- HERO -->
       <section class="hero pt-10 sm:pt-14 pb-10 sm:pb-16">
-        <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <div class="grid lg:grid-cols-2 gap-10 items-start">
 
-          <!-- LEFT -->
+          <!-- Left hero -->
           <div class="hero-left">
-            <!-- Avatar row -->
+
+            <!-- Avatar + FIO -->
             <div class="flex items-center gap-4 mb-6 fadeInUp" style="animation-delay: 0.05s;">
               <div class="avatar-wrap w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2px]">
                 <img src="static/images/avatar.jpg" alt="Никита Фоменко"
@@ -124,6 +125,7 @@
               <a class="btn-ghost" href="#roadmap">Roadmap</a>
             </div>
 
+            <!-- Skills chips -->
             <div class="mt-8 fadeInUp" style="animation-delay: 0.32s;">
               <div class="mini-label">Навыки</div>
 
@@ -141,9 +143,10 @@
                 <span class="chip">Bash</span>
               </div>
             </div>
+
           </div>
 
-          <!-- RIGHT -->
+          <!-- Right hero card -->
           <div class="hero-right fadeInUp" style="animation-delay: 0.16s;">
             <div class="glass glass-strong rounded-3xl p-6 sm:p-8 hero-card">
 
@@ -156,15 +159,15 @@
                 <span class="badge badge-live">АКТИВЕН</span>
               </div>
 
-              <!-- About (moved here) -->
+              <!-- About inside right card -->
               <div class="mt-6">
                 <div class="mini-label">О себе</div>
-                <p class="about-placeholder mt-3">
+                <div class="about-placeholder mt-3">
                   Описание будет добавлено позже.
-                </p>
+                </div>
               </div>
 
-              <div class="mt-6 hr-grad"></div>
+              <div class="mt-7 hr-grad"></div>
 
               <div class="mt-6 grid sm:grid-cols-2 gap-3">
                 <a class="btn-primary w-full text-center" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
@@ -175,7 +178,7 @@
                 </a>
               </div>
 
-              <div class="mt-5">
+              <div class="mt-4">
                 <a class="btn-ghost w-full text-center"
                    href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
                    target="_blank" rel="noopener noreferrer">
@@ -230,13 +233,11 @@
         </div>
       </section>
 
-      <!-- PRACTICE / SKILLS -->
+      <!-- PRACTICE -->
       <section id="skills" class="section reveal">
         <div class="section-head">
           <h2 class="section-title">Практика и навыки (в обучении)</h2>
-          <div class="section-sub">
-            То, что отрабатываю руками на проектах и инфраструктурных задачах.
-          </div>
+          <div class="section-sub">То, что отрабатываю руками на проектах и инфраструктурных задачах.</div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
@@ -273,7 +274,7 @@
           <div class="feature-card">
             <div class="feature-ic">🧯</div>
             <div class="feature-title">Инциденты</div>
-            <div class="feature-text">Логи/метрики/эскалация/разбор — как база под DevOps.</div>
+            <div class="feature-text">Логи/метрики/эскалация/разбор — база под DevOps.</div>
           </div>
         </div>
       </section>
@@ -406,4 +407,291 @@
             </div>
           </div>
         </div>
-      </section
+      </section>
+
+      <!-- MONITORING -->
+      <section id="monitoring" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Мониторинг</h2>
+          <div class="section-sub">Пока — заготовка. Позже подключим Prometheus/API.</div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 mt-8">
+          <div class="glass glass-outline rounded-3xl p-6">
+            <div class="chart-head">
+              <div>
+                <div class="chart-title">CPU</div>
+                <div class="chart-sub">Использование CPU (заглушка)</div>
+              </div>
+              <span class="badge badge-done">SOON</span>
+            </div>
+            <div class="chart-box"></div>
+          </div>
+
+          <div class="glass glass-outline rounded-3xl p-6">
+            <div class="chart-head">
+              <div>
+                <div class="chart-title">RAM</div>
+                <div class="chart-sub">Использование памяти (заглушка)</div>
+              </div>
+              <span class="badge badge-done">SOON</span>
+            </div>
+            <div class="chart-box"></div>
+          </div>
+
+          <div class="glass glass-outline rounded-3xl p-6 lg:col-span-2">
+            <div class="chart-head">
+              <div>
+                <div class="chart-title">Disk</div>
+                <div class="chart-sub">Использование диска (заглушка)</div>
+              </div>
+              <span class="badge badge-done">SOON</span>
+            </div>
+            <div class="chart-box"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- CONTACTS -->
+      <section id="contacts" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Контакты</h2>
+          <div class="section-sub">Быстро связаться.</div>
+        </div>
+
+        <div class="glass glass-strong rounded-3xl p-6 mt-8">
+          <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+
+            <div class="text-slate-300 text-sm">
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+              </div>
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
+              </div>
+              <div class="contact-row">
+                <span class="dot"></span>
+                <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                  Telegram: @ooooppsssss
+                </a>
+              </div>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-3">
+              <a class="btn-primary" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                Написать в Telegram
+              </a>
+              <a class="btn-ghost" href="mailto:nfomenko1@mail.ru">
+                Написать на почту
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      <!-- FOOTER -->
+      <footer class="footer mt-16">
+        <div class="grid md:grid-cols-3 gap-8">
+          <div>
+            <div class="flex items-center gap-3">
+              <div class="logo-mark">
+                <span class="logo-nf">NF</span>
+              </div>
+              <div>
+                <div class="text-sm font-extrabold text-slate-100">NFOMENKO</div>
+                <div class="text-xs text-slate-400">DevOps Engineer</div>
+              </div>
+            </div>
+            <div class="text-slate-400 text-sm mt-4">
+              Портфолио: обучение, проекты, инфраструктурная практика.
+            </div>
+          </div>
+
+          <div>
+            <div class="footer-title">Навигация</div>
+            <a class="footer-link" href="#experience">Опыт</a>
+            <a class="footer-link" href="#skills">Практика</a>
+            <a class="footer-link" href="#roadmap">Roadmap</a>
+            <a class="footer-link" href="#projects">Проекты</a>
+            <a class="footer-link" href="#monitoring">Мониторинг</a>
+            <a class="footer-link" href="#contacts">Контакты</a>
+          </div>
+
+          <div>
+            <div class="footer-title">Профили</div>
+            <a class="footer-link" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a class="footer-link" href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748" target="_blank" rel="noopener noreferrer">HH.ru</a>
+            <a class="footer-link" href="https://devops-cv.ru" target="_blank" rel="noopener noreferrer">devops-cv.ru</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom mt-10">
+          <div class="text-slate-500 text-xs">© <span id="y"></span> Фоменко Никита. Все права защищены.</div>
+        </div>
+      </footer>
+
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="appModal" class="modal-overlay hidden" onclick="closeModal()">
+    <div id="modalCard" class="modal-card" onclick="event.stopPropagation()">
+      <button onclick="closeModal()" class="modal-close" aria-label="Close">✕</button>
+
+      <div class="flex items-start justify-between gap-4 mb-4">
+        <h3 id="modalTitle" class="text-2xl font-extrabold text-slate-100"></h3>
+        <span id="modalBadge" class="badge badge-done">ВЫПОЛНЕНО</span>
+      </div>
+
+      <div id="modalBody" class="text-slate-300 text-sm leading-relaxed">
+        Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки → вопросы собеса.
+      </div>
+
+      <div class="mt-6 hr-grad"></div>
+
+      <div class="text-slate-400 text-xs mt-5">
+        Подсказка: держи структуру описания одинаковой для всех блоков.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // footer year
+    const y = document.getElementById("y");
+    if (y) y.innerText = new Date().getFullYear();
+
+    // navbar blur after scroll (оставили, но navbar уже темный изначально)
+    const navbar = document.getElementById("navbar");
+    function onScrollNav() {
+      if (!navbar) return;
+      if (window.scrollY > 50) navbar.classList.add("navbar-scrolled");
+      else navbar.classList.add("navbar-scrolled"); // держим всегда как ты хотел
+    }
+    window.addEventListener("scroll", onScrollNav);
+    onScrollNav();
+
+    // mobile drawer
+    const burger = document.getElementById("burger");
+    const drawer = document.getElementById("drawer");
+    const drawerClose = document.getElementById("drawerClose");
+
+    function openDrawer() {
+      if (!drawer) return;
+      drawer.classList.remove("hidden");
+      setTimeout(() => drawer.classList.add("is-open"), 0);
+      document.body.classList.add("modal-open");
+    }
+    function closeDrawer() {
+      if (!drawer) return;
+      drawer.classList.remove("is-open");
+      drawer.classList.add("is-closing");
+      setTimeout(() => {
+        drawer.classList.add("hidden");
+        drawer.classList.remove("is-closing");
+        document.body.classList.remove("modal-open");
+      }, 220);
+    }
+    burger && burger.addEventListener("click", openDrawer);
+    drawerClose && drawerClose.addEventListener("click", closeDrawer);
+    drawer && drawer.addEventListener("click", (e) => { if (e.target === drawer) closeDrawer(); });
+    drawer && drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
+
+    // modal + active card highlight
+    const overlay = document.getElementById("appModal");
+    const card = document.getElementById("modalCard");
+    const titleEl = document.getElementById("modalTitle");
+    const badgeEl = document.getElementById("modalBadge");
+    const bodyEl = document.getElementById("modalBody");
+
+    const roadCards = Array.from(document.querySelectorAll(".road-card"));
+    let activeCard = null;
+
+    const roadmapData = [
+      { title: "Блок 1: Сети + Git", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 2: Linux (Основа)", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 3: Docker", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 4: PostgreSQL", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 5: CI/CD + Jenkins", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 6: Kubernetes", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 7: Ansible", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 8: Kafka", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 9: ArgoCD", status: "ВЫПОЛНЕНО" },
+      { title: "Блок 10: Интеграция + мониторинг", status: "ВЫПОЛНЕНО" },
+    ];
+
+    function showOverlay() {
+      if (!overlay || !card) return;
+      overlay.classList.remove("hidden");
+      overlay.classList.add("is-open");
+      document.body.classList.add("modal-open");
+      requestAnimationFrame(() => card.classList.add("is-open"));
+    }
+
+    function hideOverlay() {
+      if (!overlay || !card) return;
+      overlay.classList.remove("is-open");
+      card.classList.remove("is-open");
+      overlay.classList.add("is-closing");
+      card.classList.add("is-closing");
+
+      window.setTimeout(() => {
+        overlay.classList.add("hidden");
+        overlay.classList.remove("is-closing");
+        card.classList.remove("is-closing");
+        document.body.classList.remove("modal-open");
+      }, 220);
+    }
+
+    function clearActive() {
+      if (activeCard) activeCard.classList.remove("active");
+      activeCard = null;
+    }
+
+    function closeModal() {
+      if (!overlay) return;
+      if (overlay.classList.contains("hidden")) return;
+      hideOverlay();
+      clearActive();
+    }
+
+    function openModalRoadmap(index) {
+      const d = roadmapData[index];
+      if (titleEl) titleEl.innerText = d.title;
+      if (badgeEl) {
+        badgeEl.innerText = d.status;
+        badgeEl.className = "badge badge-done";
+      }
+      if (bodyEl) {
+        bodyEl.innerText = "Заготовка. Позже добавишь: что изучил → что сделал руками → ссылки → вопросы собеса.";
+      }
+
+      clearActive();
+      activeCard = roadCards[index];
+      if (activeCard) activeCard.classList.add("active");
+
+      showOverlay();
+    }
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        closeModal();
+        if (drawer && !drawer.classList.contains("hidden")) closeDrawer();
+      }
+    });
+
+    // reveal sections
+    const revealEls = document.querySelectorAll(".reveal");
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) entry.target.classList.add("is-visible");
+      });
+    }, { threshold: 0.12 });
+
+    revealEls.forEach(el => io.observe(el));
+  </script>
+
+</body>
+</html>
