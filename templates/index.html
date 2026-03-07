@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>FOMENKO N.A. | DevOps Engineer</title>
 
-  <!-- Tailwind config (если есть) -->
+  <!-- Tailwind config -->
   <script src="/static/js/script.js"></script>
 
   <!-- Tailwind CDN -->
@@ -16,7 +16,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 
-  <!-- Favicons (правильный набор) -->
+  <!-- Favicons -->
   <link rel="icon" href="/static/favicon/favicon.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/static/favicon/favicon-16.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/static/favicon/favicon-32.png">
@@ -51,9 +51,9 @@
           <!-- Center: Desktop nav -->
           <nav class="nav-center hidden lg:flex items-center gap-6 text-sm text-slate-300">
             <a class="nav-link" href="#experience">Опыт</a>
-            <a class="nav-link" href="#skills">Практика</a>
-            <a class="nav-link" href="#roadmap">Roadmap</a>
             <a class="nav-link" href="#projects">Проекты</a>
+            <a class="nav-link" href="#infrastructure">Infrastructure</a>
+            <a class="nav-link" href="#roadmap">Roadmap</a>
             <a class="nav-link" href="#monitoring">Мониторинг</a>
           </nav>
 
@@ -77,9 +77,9 @@
 
           <div class="grid gap-2 text-sm text-slate-200">
             <a class="drawer-link" href="#experience">Опыт</a>
-            <a class="drawer-link" href="#skills">Практика</a>
-            <a class="drawer-link" href="#roadmap">Roadmap</a>
             <a class="drawer-link" href="#projects">Проекты</a>
+            <a class="drawer-link" href="#infrastructure">Infrastructure</a>
+            <a class="drawer-link" href="#roadmap">Roadmap</a>
             <a class="drawer-link" href="#monitoring">Мониторинг</a>
           </div>
 
@@ -103,14 +103,14 @@
 
             <!-- Avatar + FIO -->
             <div class="flex items-center gap-4 mb-6 fadeInUp" style="animation-delay: 0.05s;">
-              <div class="avatar-wrap w-18 h-18 sm:w-20 sm:h-20 rounded-full p-[2px]">
+              <div class="avatar-wrap w-20 h-20 sm:w-24 sm:h-24 rounded-full p-[2px]">
                 <img src="/static/images/avatar.jpg" alt="Никита Фоменко"
                      class="avatar-img w-full h-full rounded-full object-cover" />
               </div>
 
               <div class="text-sm text-slate-300">
                 <div class="fio-big font-extrabold text-slate-100">Фоменко Никита Алексеевич</div>
-                <div class="text-slate-400">DevOps Engineer</div>
+                <div class="fio-sub text-slate-400">DevOps Engineer</div>
               </div>
             </div>
 
@@ -120,8 +120,8 @@
             </h1>
 
             <p class="hero-sub fadeInUp" style="animation-delay: 0.18s;">
-              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
-              Цель — уверенный уровень Junior/Middle.
+              Личный сайт-портфолио: практика по DevOps roadmap, проекты и
+              инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle.
             </p>
 
             <div class="flex flex-col sm:flex-row gap-3 mt-7 fadeInUp" style="animation-delay: 0.26s;">
@@ -131,7 +131,7 @@
 
             <!-- Skills chips -->
             <div class="mt-8 fadeInUp" style="animation-delay: 0.32s;">
-              <div class="mini-label">Навыки</div>
+              <div class="mini-label mini-label-hero">Навыки</div>
 
               <div class="mt-3 flex flex-wrap gap-2">
                 <span class="chip">Linux</span>
@@ -164,9 +164,10 @@
                 <div class="status-title">Открыт к предложениям</div>
 
                 <div class="status-goal">
-				  <div class="status-goal-row">
+                  <div class="status-goal-row">
                     <span class="dot"></span>
-					<span class="status-goal-text">Цель: Junior → Middle DevOps</span>
+                    <span class="status-goal-text">Цель: Junior → Middle DevOps</span>
+                  </div>
                 </div>
               </div>
 
@@ -184,37 +185,29 @@
               <div class="mt-6">
                 <div class="mini-label about-label about-label-strong">Контакты</div>
 
-                <!-- 2-column table by rows -->
                 <div class="contact-table">
-                  <div class="contact-row2">
-                    <div class="contact-left">
-                      <span class="dot"></span>
-                      <a class="link-accent" href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
-                    </div>
-                    <div class="contact-right">
-                      <a class="btn-ghost w-full text-center"
-                         href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
-                         target="_blank" rel="noopener noreferrer">
-                        Резюме на HH.ru
-                      </a>
-                    </div>
-                  </div>
+                  <a class="contact-line" href="mailto:nfomenko1@mail.ru">
+                    <span class="dot"></span>
+                    <span>nfomenko1@mail.ru</span>
+                  </a>
 
-                  <div class="contact-row2">
-                    <div class="contact-left">
-                      <span class="dot"></span>
-                      <a class="link-accent" href="tel:+79913242744">+7 991-324-27-44</a>
-                    </div>
-                    <div class="contact-right contact-right-empty"></div>
-                  </div>
+                  <a class="contact-line" href="tel:+79913242744">
+                    <span class="dot"></span>
+                    <span>+7 991-324-27-44</span>
+                  </a>
 
-                  <div class="contact-row2">
-                    <div class="contact-left">
-                      <span class="dot"></span>
-                      <a class="link-accent" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
-                    </div>
-                    <div class="contact-right contact-right-empty"></div>
-                  </div>
+                  <a class="contact-line" href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">
+                    <span class="dot"></span>
+                    <span>Telegram</span>
+                  </a>
+                </div>
+
+                <div class="contact-actions">
+                  <a class="btn-ghost w-full text-center"
+                     href="https://voronezh.hh.ru/resume/6bceaaf3ff0db8b38c0039ed1f47654a747748"
+                     target="_blank" rel="noopener noreferrer">
+                    Резюме на HH.ru
+                  </a>
                 </div>
               </div>
 
@@ -237,8 +230,8 @@
               <div>
                 <div class="work-title">Старший специалист технической поддержки 2L</div>
                 <div class="work-company">Imredi, Воронеж</div>
+                <div class="work-date work-date-below">2026 — настоящее время</div>
               </div>
-              <div class="work-date">2026 — настоящее время</div>
             </div>
             <ul class="work-list mt-4">
               <li>Анализ API-интеграций и инцидентов L2</li>
@@ -253,8 +246,8 @@
               <div>
                 <div class="work-title">Ведущий специалист технической поддержки 1L</div>
                 <div class="work-company">Банк ДОМ.РФ</div>
+                <div class="work-date work-date-below">2023 — 2024</div>
               </div>
-              <div class="work-date">2023 — 2024</div>
             </div>
             <ul class="work-list mt-4">
               <li>Active Directory, VPN, Citrix</li>
@@ -265,48 +258,80 @@
         </div>
       </section>
 
-      <!-- PRACTICE -->
-      <section id="skills" class="section reveal">
+      <!-- PROJECTS -->
+      <section id="projects" class="section reveal">
         <div class="section-head">
-          <h2 class="section-title">Практика и навыки (в обучении)</h2>
-          <div class="section-sub">То, что отрабатываю руками на проектах и инфраструктурных задачах.</div>
+          <h2 class="section-title">Проекты</h2>
+          <div class="section-sub">Два основных проекта — без лишнего.</div>
+        </div>
+
+        <div class="grid lg:grid-cols-2 gap-6 mt-8">
+          <div class="proj-card">
+            <div class="proj-title">DevOps CV Site</div>
+            <div class="proj-text">Личный сайт-портфолио: структура, дизайн, CI/CD и заготовки.</div>
+
+            <div class="proj-actions">
+              <a class="btn-ghost" href="https://github.com/nfomenko1/devops-cv-site" target="_blank" rel="noopener noreferrer">
+                Репозиторий
+              </a>
+            </div>
+          </div>
+
+          <div class="proj-card">
+            <div class="proj-title">DevOps-learning</div>
+            <div class="proj-text">Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.</div>
+
+            <div class="proj-actions">
+              <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
+                Репозиторий
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INFRASTRUCTURE -->
+      <section id="infrastructure" class="section reveal">
+        <div class="section-head">
+          <h2 class="section-title">Infrastructure</h2>
+          <div class="section-sub">Базовая схема проекта: от кода до деплоя и доступа к приложению.</div>
         </div>
 
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8">
-          <div class="feature-card">
-            <div class="feature-ic">⚙️</div>
-            <div class="feature-title">CI/CD</div>
-            <div class="feature-text">Jenkins pipeline: build → push → deploy (в проекте).</div>
+          <div class="infra-card">
+            <div class="infra-ic">🧑‍💻</div>
+            <div class="infra-title">GitHub</div>
+            <div class="infra-text">Код проекта и история изменений хранятся в репозитории.</div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-ic">🐳</div>
-            <div class="feature-title">Docker / Compose</div>
-            <div class="feature-text">Контейнеризация приложения, сборка образов, docker-compose.</div>
+          <div class="infra-card">
+            <div class="infra-ic">⚙️</div>
+            <div class="infra-title">Jenkins</div>
+            <div class="infra-text">Pipeline: checkout → build → push → deploy.</div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-ic">☸️</div>
-            <div class="feature-title">Kubernetes</div>
-            <div class="feature-text">Деплойменты/сервисы/ingress — план и практика по roadmap.</div>
+          <div class="infra-card">
+            <div class="infra-ic">🐳</div>
+            <div class="infra-title">Docker + GHCR</div>
+            <div class="infra-text">Сборка Docker-образа и публикация в GitHub Container Registry.</div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-ic">🧩</div>
-            <div class="feature-title">Automation</div>
-            <div class="feature-text">Ansible и автоматизация окружений (в процессе).</div>
+          <div class="infra-card">
+            <div class="infra-ic">🖥️</div>
+            <div class="infra-title">VPS</div>
+            <div class="infra-text">Прод-среда на сервере, где выполняется запуск контейнера.</div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-ic">📈</div>
-            <div class="feature-title">Observability (заготовка)</div>
-            <div class="feature-text">Схема: Prometheus → API → графики. Подключу позже.</div>
+          <div class="infra-card">
+            <div class="infra-ic">🌐</div>
+            <div class="infra-title">Nginx</div>
+            <div class="infra-text">Reverse proxy для домена, маршрутизации и доступа к приложению.</div>
           </div>
 
-          <div class="feature-card">
-            <div class="feature-ic">🧯</div>
-            <div class="feature-title">Инциденты</div>
-            <div class="feature-text">Логи/метрики/эскалация/разбор — база под DevOps.</div>
+          <div class="infra-card">
+            <div class="infra-ic">🚀</div>
+            <div class="infra-title">Application</div>
+            <div class="infra-text">Сайт доступен по домену devops-cv.ru и работает в контейнере.</div>
           </div>
         </div>
       </section>
@@ -401,38 +426,6 @@
         </div>
       </section>
 
-      <!-- PROJECTS -->
-      <section id="projects" class="section reveal">
-        <div class="section-head">
-          <h2 class="section-title">Проекты</h2>
-          <div class="section-sub">Два основных проекта — без лишнего.</div>
-        </div>
-
-        <div class="grid lg:grid-cols-2 gap-6 mt-8">
-          <div class="proj-card">
-            <div class="proj-title">DevOps CV Site</div>
-            <div class="proj-text">Личный сайт-портфолио: структура, дизайн, CI/CD и заготовки.</div>
-
-            <div class="proj-actions">
-              <a class="btn-ghost" href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">
-                Репозиторий
-              </a>
-            </div>
-          </div>
-
-          <div class="proj-card">
-            <div class="proj-title">DevOps-learning</div>
-            <div class="proj-text">Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.</div>
-
-            <div class="proj-actions">
-              <a class="btn-ghost" href="https://github.com/nfomenko1/DevOps-learning" target="_blank" rel="noopener noreferrer">
-                Репозиторий
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
       <!-- MONITORING -->
       <section id="monitoring" class="section reveal">
         <div class="section-head">
@@ -497,9 +490,9 @@
           <div>
             <div class="footer-title">Навигация</div>
             <a class="footer-link" href="#experience">Опыт</a>
-            <a class="footer-link" href="#skills">Практика</a>
-            <a class="footer-link" href="#roadmap">Roadmap</a>
             <a class="footer-link" href="#projects">Проекты</a>
+            <a class="footer-link" href="#infrastructure">Infrastructure</a>
+            <a class="footer-link" href="#roadmap">Roadmap</a>
             <a class="footer-link" href="#monitoring">Мониторинг</a>
           </div>
 
@@ -541,21 +534,17 @@
   </div>
 
   <script>
-    // footer year
     const y = document.getElementById("y");
     if (y) y.innerText = new Date().getFullYear();
 
-    // navbar blur after scroll (держим всегда тёмным)
     const navbar = document.getElementById("navbar");
     function onScrollNav() {
       if (!navbar) return;
-      if (window.scrollY > 50) navbar.classList.add("navbar-scrolled");
-      else navbar.classList.add("navbar-scrolled");
+      navbar.classList.add("navbar-scrolled");
     }
     window.addEventListener("scroll", onScrollNav);
     onScrollNav();
 
-    // mobile drawer
     const burger = document.getElementById("burger");
     const drawer = document.getElementById("drawer");
     const drawerClose = document.getElementById("drawerClose");
@@ -566,6 +555,7 @@
       setTimeout(() => drawer.classList.add("is-open"), 0);
       document.body.classList.add("modal-open");
     }
+
     function closeDrawer() {
       if (!drawer) return;
       drawer.classList.remove("is-open");
@@ -576,12 +566,12 @@
         document.body.classList.remove("modal-open");
       }, 220);
     }
+
     burger && burger.addEventListener("click", openDrawer);
     drawerClose && drawerClose.addEventListener("click", closeDrawer);
     drawer && drawer.addEventListener("click", (e) => { if (e.target === drawer) closeDrawer(); });
     drawer && drawer.querySelectorAll("a").forEach(a => a.addEventListener("click", closeDrawer));
 
-    // modal + active card highlight
     const overlay = document.getElementById("appModal");
     const card = document.getElementById("modalCard");
     const titleEl = document.getElementById("modalTitle");
@@ -664,7 +654,6 @@
       }
     });
 
-    // reveal sections
     const revealEls = document.querySelectorAll(".reveal");
     const io = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
