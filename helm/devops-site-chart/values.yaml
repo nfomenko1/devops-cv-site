@@ -1,0 +1,44 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/nfomenko1/devops-cv-site
+  tag: "latest"
+
+imagePullSecret: ghcr-secret
+
+containerPort: 5000
+
+strategy:
+  maxUnavailable: 1
+  maxSurge: 1
+
+readinessProbe:
+  initialDelaySeconds: 5
+  periodSeconds: 5
+
+livenessProbe:
+  initialDelaySeconds: 15
+  periodSeconds: 10
+
+resources:
+  requests:
+    cpu: "100m"
+    memory: "128Mi"
+  limits:
+    cpu: "500m"
+    memory: "256Mi"
+
+service:
+  port: 80
+  targetPort: 5000
+  type: ClusterIP
+
+ingress:
+  className: traefik
+  clusterIssuer: letsencrypt-prod
+  entrypoints: web,websecure
+  middleware: default-redirect-https@kubernetescrd
+  host: devops-cv.ru
+  tlsSecret: devops-site-tls
+  path: /
+  pathType: Prefix
