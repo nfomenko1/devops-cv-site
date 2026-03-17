@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>FOMENKO N.A. | DevOps Portfolio</title>
+  <title>Nikita | DevOps Portfolio</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,23 +15,18 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-
-  <div class="aurora aurora-1"></div>
-  <div class="aurora aurora-2"></div>
-  <div class="aurora aurora-3"></div>
-  <div class="noise"></div>
+  <div class="page-glow glow-1"></div>
+  <div class="page-glow glow-2"></div>
+  <div class="page-glow glow-3"></div>
 
   <header class="header">
     <div class="container nav">
-      <a href="#hero" class="logo">
-        <span class="logo-dot"></span>
-        NIKITA
-      </a>
+      <a href="#home" class="logo">Portofolio</a>
 
       <nav class="nav-links" id="navLinks">
+        <a href="#home">Home</a>
         <a href="#about">About</a>
-        <a href="#tools">Tools</a>
-        <a href="#projects">Projects</a>
+        <a href="#projects">Project</a>
         <a href="#contact">Contact</a>
       </nav>
 
@@ -44,262 +39,197 @@
   </header>
 
   <main>
-    <section class="hero section" id="hero">
+    <section class="hero" id="home">
       <div class="container hero-grid">
         <div class="hero-left reveal">
-          <div class="tag">DevOps Engineer • Linux • Docker • Kubernetes</div>
+          <div class="quote-badge">
+            <span class="quote-icon">❝</span>
+            <span>“Build it. Automate it. Keep it stable.”</span>
+          </div>
 
           <h1 class="hero-title">
-            Building reliable
-            <span class="gradient-text">infrastructure</span>
-            and modern web delivery
+            Hi I'm Nikita<br>
+            DevOps Engineer
           </h1>
 
           <p class="hero-text">
             Я развиваюсь в DevOps и собираю практический опыт через реальные проекты:
-            Docker, CI/CD, Nginx, Kubernetes, мониторинг и деплой приложений.
+            Docker, CI/CD, Nginx, Kubernetes, Linux, мониторинг и деплой приложений.
           </p>
 
-          <div class="hero-actions">
-            <a href="#projects" class="btn btn-primary">View Projects</a>
-            <a href="#contact" class="btn btn-secondary">Contact Me</a>
-          </div>
-
-          <div class="hero-mini-cards">
-            <div class="mini-card">
-              <span class="mini-title">Focus</span>
-              <strong>CI/CD & Deploy</strong>
-            </div>
-            <div class="mini-card">
-              <span class="mini-title">Stack</span>
-              <strong>Linux • Docker • K8s</strong>
-            </div>
+          <div class="hero-buttons">
+            <a href="#about" class="btn btn-outline">About Me</a>
+            <a href="#projects" class="btn btn-outline">Explore My Projects</a>
           </div>
         </div>
 
         <div class="hero-right reveal delay-1">
-          <div class="profile-card glass">
-            <div class="profile-glow"></div>
+          <div class="profile-card">
+            <div class="profile-card-inner">
+              <div class="profile-top">
+                <h2>Nikita Fomenko</h2>
+                <p>DevOps Engineer</p>
+              </div>
 
-            <div class="avatar-ring">
-              <div class="avatar">N</div>
+              <div class="profile-image-wrap">
+                <img
+                  src="https://images.unsplash.com/photo-1522075469751-3a6694fb2f61?auto=format&fit=crop&w=700&q=80"
+                  alt="Profile"
+                  class="profile-image"
+                >
+              </div>
+
+              <div class="profile-bottom">
+                <div class="profile-status">
+                  <div class="status-avatar"></div>
+                  <div>
+                    <strong>@nfomenko1</strong>
+                    <span>Online</span>
+                  </div>
+                </div>
+
+                <a href="#contact" class="contact-btn">Contact Me</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section" id="about">
+      <div class="container">
+        <div class="about-box reveal">
+          <div class="about-left">
+            <h2>About Me</h2>
+
+            <p>
+              I'm focused on infrastructure, automation and reliable delivery.
+              Сейчас я развиваюсь в сторону Junior/Middle DevOps: учусь не просто
+              запускать сервисы, а понимать архитектуру, причины инцидентов и
+              практику production-подхода.
+            </p>
+
+            <p>
+              Работаю с Linux, Docker, Nginx, Jenkins, GitHub Actions,
+              Kubernetes, Helm и Python. Моя цель — уметь уверенно объяснять,
+              как приложение проходит путь от кода до продакшена.
+            </p>
+
+            <div class="about-stats">
+              <div class="stat-item">
+                <h3>20+</h3>
+                <span>Практик и сценариев</span>
+              </div>
+
+              <div class="stat-item">
+                <h3>3+</h3>
+                <span>Лет развития в IT</span>
+              </div>
+
+              <div class="stat-item">
+                <h3>24/7</h3>
+                <span>Фокус на стабильность</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="about-right">
+            <div class="floating-card floating-card-1">
+              <div class="floating-card-inner">
+                <span>DEVOPS</span>
+                <strong>Linux / Docker / K8s</strong>
+              </div>
             </div>
 
-            <h2>Никита</h2>
-            <p class="profile-role">Junior / Middle DevOps track</p>
+            <div class="floating-line"></div>
 
-            <div class="profile-lines">
-              <div class="profile-line">
-                <span>Status</span>
-                <strong>Open to work</strong>
-              </div>
-              <div class="profile-line">
-                <span>Location</span>
-                <strong>Remote / RU</strong>
-              </div>
-              <div class="profile-line">
-                <span>Main Goal</span>
-                <strong>Production-ready skills</strong>
-              </div>
+            <div class="about-circle">
+              <span>Infrastructure</span>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-            <div class="socials">
+    <section class="skills-section" id="projects">
+      <div class="container">
+        <div class="section-heading reveal">
+          <span>Projects & Stack</span>
+          <h2>What I Work With</h2>
+        </div>
+
+        <div class="skills-grid">
+          <div class="glass-card reveal">
+            <h3>Dockerized Portfolio</h3>
+            <p>Python-сайт в Docker, reverse proxy через Nginx, деплой на VPS.</p>
+            <div class="tags">
+              <span>Docker</span>
+              <span>Nginx</span>
+              <span>Python</span>
+            </div>
+          </div>
+
+          <div class="glass-card reveal delay-1">
+            <h3>CI/CD Pipeline</h3>
+            <p>Сборка, push образов в registry, выкаты через Jenkins pipeline.</p>
+            <div class="tags">
+              <span>Jenkins</span>
+              <span>GHCR</span>
+              <span>Deploy</span>
+            </div>
+          </div>
+
+          <div class="glass-card reveal delay-2">
+            <h3>Kubernetes Practice</h3>
+            <p>Deployment, Service, Ingress, Helm chart, test/prod values.</p>
+            <div class="tags">
+              <span>K8s</span>
+              <span>Helm</span>
+              <span>Ingress</span>
+            </div>
+          </div>
+
+          <div class="glass-card reveal">
+            <h3>Core Stack</h3>
+            <p>Linux, Git, Docker, Docker Compose, Bash, Python, PostgreSQL.</p>
+            <div class="tags">
+              <span>Linux</span>
+              <span>Git</span>
+              <span>Compose</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="container">
+        <div class="contact-box reveal">
+          <div class="contact-left">
+            <span class="mini-label">Contact</span>
+            <h2>Let’s build something stable</h2>
+            <p>
+              Если хочешь связаться со мной или посмотреть мои проекты —
+              используй ссылки ниже.
+            </p>
+
+            <div class="contact-links">
               <a href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
               <a href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
               <a href="mailto:nfomenko1@mail.ru">Email</a>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
 
-    <section class="section" id="about">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-label">About Me</span>
-          <h2>Практика, инфраструктура и понимание “почему так”</h2>
-          <p>
-            Я не просто учу команды — я строю окружение, деплою сервисы и разбираю,
-            как работают приложения в реальной инфраструктуре.
-          </p>
-        </div>
-
-        <div class="about-grid">
-          <div class="stats-grid reveal">
-            <div class="stat-card glass">
-              <h3>20+</h3>
-              <p>Сценариев и практик</p>
-            </div>
-            <div class="stat-card glass">
-              <h3>3+</h3>
-              <p>Ключевых направлений</p>
-            </div>
-            <div class="stat-card glass">
-              <h3>24/7</h3>
-              <p>Фокус на стабильность</p>
-            </div>
-          </div>
-
-          <div class="about-card glass reveal delay-1">
-            <p>
-              Сейчас мой путь — выйти на уровень уверенных собеседований по Junior/Middle DevOps:
-              уметь объяснять архитектуру, рассказывать про реальный деплой, понимать инциденты,
-              уметь аргументировать выбор решений.
-            </p>
-            <p>
-              Мне интересны контейнеризация, оркестрация, веб-серверы, CI/CD-пайплайны,
-              observability и production-подход к изменениям.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="tools">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-label">Tools & Technologies</span>
-          <h2>My Professional Skills</h2>
-          <p>
-            Основные технологии, с которыми я работаю в практике и учебных проектах.
-          </p>
-        </div>
-
-        <div class="tools-grid">
-          <div class="tool-card glass reveal">Linux</div>
-          <div class="tool-card glass reveal delay-1">Git</div>
-          <div class="tool-card glass reveal delay-2">Docker</div>
-          <div class="tool-card glass reveal">Docker Compose</div>
-          <div class="tool-card glass reveal delay-1">Nginx</div>
-          <div class="tool-card glass reveal delay-2">Jenkins</div>
-          <div class="tool-card glass reveal">GitHub Actions</div>
-          <div class="tool-card glass reveal delay-1">Kubernetes</div>
-          <div class="tool-card glass reveal delay-2">Helm</div>
-          <div class="tool-card glass reveal">Python</div>
-          <div class="tool-card glass reveal delay-1">PostgreSQL</div>
-          <div class="tool-card glass reveal delay-2">Monitoring</div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="projects">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-label">Projects</span>
-          <h2>Практические проекты и инфраструктурные кейсы</h2>
-          <p>
-            Здесь собраны основные проекты, которые показывают мой стек,
-            практический опыт и развитие в DevOps.
-          </p>
-        </div>
-
-        <div class="projects-grid">
-          <article class="project-card glass reveal">
-            <div class="project-top">
-              <span class="project-badge">DevOps CV Site</span>
-              <span class="project-status">Production</span>
-            </div>
-            <h3>Portfolio Website Infrastructure</h3>
-            <p>
-              Контейнеризация Python-сайта, reverse proxy через Nginx, сборка Docker-образов,
-              публикация и деплой на VPS.
-            </p>
-            <div class="project-tags">
-              <span>Docker</span>
-              <span>Nginx</span>
-              <span>Python</span>
-            </div>
-          </article>
-
-          <article class="project-card glass reveal delay-1">
-            <div class="project-top">
-              <span class="project-badge">CI/CD</span>
-              <span class="project-status">Automated</span>
-            </div>
-            <h3>Jenkins Delivery Pipeline</h3>
-            <p>
-              Пайплайн для сборки, тегирования, пуша образов и выката приложения
-              в test/prod окружения.
-            </p>
-            <div class="project-tags">
-              <span>Jenkins</span>
-              <span>GHCR</span>
-              <span>Deploy</span>
-            </div>
-          </article>
-
-          <article class="project-card glass reveal delay-2">
-            <div class="project-top">
-              <span class="project-badge">Kubernetes</span>
-              <span class="project-status">In Progress</span>
-            </div>
-            <h3>Kubernetes + Helm Deployment</h3>
-            <p>
-              Подготовка chart, values для окружений, rolling updates, probes,
-              ingress и практика выката в кластер.
-            </p>
-            <div class="project-tags">
-              <span>K8s</span>
-              <span>Helm</span>
-              <span>Ingress</span>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="contact">
-      <div class="container">
-        <div class="section-head reveal">
-          <span class="section-label">Contact & Chat</span>
-          <h2>Get in touch with me</h2>
-          <p>Напиши мне сообщение или используй форму как блок контактов на портфолио.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="chat-card glass reveal">
-            <div class="chat-head">
-              <span class="chat-dot"></span>
-              <strong>Live Chat Preview</strong>
-            </div>
-
-            <div class="chat-body">
-              <div class="msg msg-left">Привет! Чем ты сейчас занимаешься?</div>
-              <div class="msg msg-right">Собираю DevOps-портфолио и инфраструктуру проекта.</div>
-              <div class="msg msg-left">Какие технологии уже используешь?</div>
-              <div class="msg msg-right">Linux, Docker, Nginx, Jenkins, Kubernetes, Helm.</div>
-            </div>
-          </div>
-
-          <form class="contact-form glass" id="contactForm">
-            <label>
-              Full Name
-              <input type="text" placeholder="Введите имя" />
-            </label>
-
-            <label>
-              Email
-              <input type="email" placeholder="Введите email" />
-            </label>
-
-            <label>
-              Message
-              <textarea rows="6" placeholder="Напишите сообщение"></textarea>
-            </label>
-
-            <button type="submit" class="btn btn-primary btn-full">Send Message</button>
+          <form class="contact-form" id="contactForm">
+            <input type="text" placeholder="Your name">
+            <input type="email" placeholder="Your email">
+            <textarea rows="5" placeholder="Your message"></textarea>
+            <button type="submit" class="btn btn-solid">Send Message</button>
           </form>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="footer">
-    <div class="container footer-inner">
-      <p>© <span id="year"></span> Nikita DevOps Portfolio</p>
-      <a href="#hero">Back to top ↑</a>
-    </div>
-  </footer>
 
   <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
