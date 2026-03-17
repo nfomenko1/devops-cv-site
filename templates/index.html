@@ -3,16 +3,19 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DevOps Portfolio</title>
+  <title>FOMENKO N.A. | DevOps Portfolio</title>
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
     rel="stylesheet"
   >
-  <link rel="stylesheet" href="style.css" />
+
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
+
   <div class="aurora aurora-1"></div>
   <div class="aurora aurora-2"></div>
   <div class="aurora aurora-3"></div>
@@ -77,6 +80,7 @@
         <div class="hero-right reveal delay-1">
           <div class="profile-card glass">
             <div class="profile-glow"></div>
+
             <div class="avatar-ring">
               <div class="avatar">N</div>
             </div>
@@ -100,9 +104,9 @@
             </div>
 
             <div class="socials">
-              <a href="#">GitHub</a>
-              <a href="#">Telegram</a>
-              <a href="#">LinkedIn</a>
+              <a href="https://github.com/nfomenko1" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+              <a href="mailto:nfomenko1@mail.ru">Email</a>
             </div>
           </div>
         </div>
@@ -181,11 +185,11 @@
     <section class="section" id="projects">
       <div class="container">
         <div class="section-head reveal">
-          <span class="section-label">Project</span>
+          <span class="section-label">Projects</span>
           <h2>Практические проекты и инфраструктурные кейсы</h2>
           <p>
-            Showcasing a selection of projects that reflect my skills, creativity,
-            and passion for building meaningful digital experiences.
+            Здесь собраны основные проекты, которые показывают мой стек,
+            практический опыт и развитие в DevOps.
           </p>
         </div>
 
@@ -197,7 +201,7 @@
             </div>
             <h3>Portfolio Website Infrastructure</h3>
             <p>
-              Контейнеризация Python-сайта, reverse proxy через Nginx, сборка образов,
+              Контейнеризация Python-сайта, reverse proxy через Nginx, сборка Docker-образов,
               публикация и деплой на VPS.
             </p>
             <div class="project-tags">
@@ -267,7 +271,7 @@
             </div>
           </div>
 
-          <form class="contact-form glass reveal delay-1">
+          <form class="contact-form glass" id="contactForm">
             <label>
               Full Name
               <input type="text" placeholder="Введите имя" />
@@ -292,11 +296,11 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>© 2026 Nikita DevOps Portfolio</p>
+      <p>© <span id="year"></span> Nikita DevOps Portfolio</p>
       <a href="#hero">Back to top ↑</a>
     </div>
   </footer>
 
-  <script src="script.js"></script>
+  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>

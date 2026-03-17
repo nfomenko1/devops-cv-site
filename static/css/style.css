@@ -114,8 +114,7 @@ textarea {
   z-index: 1;
   opacity: 0.08;
   pointer-events: none;
-  background-image:
-    radial-gradient(rgba(255,255,255,0.8) 0.5px, transparent 0.5px);
+  background-image: radial-gradient(rgba(255,255,255,0.8) 0.5px, transparent 0.5px);
   background-size: 8px 8px;
 }
 
@@ -279,6 +278,7 @@ textarea {
   color: white;
   background: linear-gradient(135deg, var(--primary), var(--primary-2));
   box-shadow: 0 15px 40px rgba(76, 132, 255, 0.28);
+  border: none;
 }
 
 .btn-secondary {
@@ -289,7 +289,6 @@ textarea {
 
 .btn-full {
   width: 100%;
-  border: none;
   cursor: pointer;
 }
 
