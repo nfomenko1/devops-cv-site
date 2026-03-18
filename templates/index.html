@@ -3,329 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nikita Fomenko | DevOps Engineer</title>
+  <title>DevOps Portfolio</title>
 
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
-    rel="stylesheet"
-  />
-
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 </head>
 <body>
-  <div class="site-bg" aria-hidden="true">
-    <span class="bg-blob bg-blob-1"></span>
-    <span class="bg-blob bg-blob-2"></span>
-    <span class="bg-grid"></span>
-  </div>
 
-  <header class="header">
-    <div class="container">
-      <div class="nav-shell">
-        <a href="#hero" class="brand">Nikita Fomenko</a>
+<div class="bg">
+  <div class="glow glow1"></div>
+  <div class="glow glow2"></div>
+  <div class="glow glow3"></div>
+</div>
 
-        <button
-          class="nav-toggle"
-          type="button"
-          aria-label="Открыть меню"
-          aria-expanded="false"
-        >
-          <span></span>
-          <span></span>
-        </button>
+<header class="header">
+  <div class="container nav">
+    <div class="logo">Portofolio</div>
 
-        <nav class="nav-menu">
-          <a href="#hero">Кто я</a>
-          <a href="#experience">Опыт работы</a>
-          <a href="#roadmap">RoadMap</a>
-          <a href="#practice">Практика</a>
-          <a href="#monitoring">Monitoring</a>
-        </nav>
-      </div>
-    </div>
-  </header>
+    <nav class="menu" id="menu">
+      <a href="#">Home</a>
+      <a href="#about">About</a>
+    </nav>
 
-  <main>
-    <!-- Раздел 1 -->
-    <section class="hero section" id="hero">
-      <div class="container hero-layout">
-        <div class="hero-copy">
-          <p class="eyebrow">DevOps portfolio</p>
-
-          <h1>
-            DevOps Engineer
-            <span>в процессе роста</span>
-          </h1>
-
-          <p class="hero-text">
-            Личный сайт-портфолио: практика по DevOps roadmap, проекты и
-            инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle.
-          </p>
-
-          <div class="hero-actions">
-            <a class="btn btn-primary" href="#practice">Смотреть проекты</a>
-            <a class="btn btn-secondary" href="#roadmap">Открыть RoadMap</a>
-          </div>
-
-          <div class="stack-inline">
-            <span>Linux</span>
-            <span>Docker</span>
-            <span>Kubernetes</span>
-            <span>Git</span>
-            <span>CI/CD</span>
-            <span>PostgreSQL</span>
-            <span>Ansible</span>
-            <span>Nginx</span>
-            <span>Grafana</span>
-            <span>Prometheus</span>
-            <span>Bash</span>
-          </div>
-        </div>
-
-        <div class="hero-panel" id="heroPanel">
-          <div class="profile-card">
-            <div class="profile-photo">
-              <div class="photo-placeholder">
-                <span>Фото</span>
-                <small>добавишь позже</small>
-              </div>
-            </div>
-
-            <div class="profile-info">
-              <p class="profile-role">DevOps Engineer</p>
-              <h2>Никита Фоменко</h2>
-              <p class="profile-note">
-                Инфраструктура, CI/CD, Kubernetes, практические мини-проекты и
-                системный подход к обучению.
-              </p>
-
-              <div class="profile-links">
-                <a
-                  href="https://github.com/nfomenko1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >GitHub</a>
-
-                <a
-                  href="https://t.me/ooooppsssss"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >Telegram</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел 2 -->
-    <section class="section" id="experience">
-      <div class="container section-block">
-        <div class="section-head">
-          <p class="eyebrow">Раздел 2</p>
-          <h2>Опыт работы</h2>
-        </div>
-
-        <div class="cards two-col">
-          <article class="content-card">
-            <p class="card-topline">2026 — настоящее время</p>
-            <h3>Старший специалист технической поддержки 2L</h3>
-            <p class="company">Imredi, Воронеж</p>
-
-            <ul>
-              <li>Анализ API-интеграций и инцидентов L2</li>
-              <li>Мониторинг метрик через Grafana</li>
-              <li>Работа с REST/SOAP API</li>
-              <li>Документирование и эскалация задач</li>
-            </ul>
-          </article>
-
-          <article class="content-card">
-            <p class="card-topline">2023 — 2024</p>
-            <h3>Ведущий специалист технической поддержки 1L</h3>
-            <p class="company">Банк ДОМ.РФ</p>
-
-            <ul>
-              <li>Active Directory, VPN, Citrix</li>
-              <li>Диагностика сервисов</li>
-              <li>Анализ логов ISE</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел 3 -->
-    <section class="section" id="roadmap">
-      <div class="container section-block">
-        <div class="section-head">
-          <p class="eyebrow">Раздел 3</p>
-          <h2>RoadMap обучения</h2>
-          <p class="section-description">
-            10 блоков обучения. По клику открывается карточка блока.
-            Подробное наполнение добавишь позже.
-          </p>
-        </div>
-
-        <div class="roadmap-grid">
-          <button class="roadmap-card" type="button" data-title="Блок 1: Сети + Git">
-            <span class="roadmap-title">Блок 1: Сети + Git</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 2: Linux (Основа)">
-            <span class="roadmap-title">Блок 2: Linux (Основа)</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 3: Docker">
-            <span class="roadmap-title">Блок 3: Docker</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 4: PostgreSQL">
-            <span class="roadmap-title">Блок 4: PostgreSQL</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 5: CI/CD + Jenkins">
-            <span class="roadmap-title">Блок 5: CI/CD + Jenkins</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 6: Kubernetes">
-            <span class="roadmap-title">Блок 6: Kubernetes</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 7: Ansible">
-            <span class="roadmap-title">Блок 7: Ansible</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 8: Kafka">
-            <span class="roadmap-title">Блок 8: Kafka</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 9: ArgoCD">
-            <span class="roadmap-title">Блок 9: ArgoCD</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-
-          <button class="roadmap-card" type="button" data-title="Блок 10: Интеграция + мониторинг">
-            <span class="roadmap-title">Блок 10: Интеграция + мониторинг</span>
-            <span class="roadmap-action">Открыть</span>
-          </button>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел 4 -->
-    <section class="section" id="practice">
-      <div class="container section-block">
-        <div class="section-head">
-          <p class="eyebrow">Раздел 4</p>
-          <h2>Практика</h2>
-          <p class="section-description">Два основных проекта — без лишнего.</p>
-        </div>
-
-        <div class="cards two-col">
-          <article class="content-card project-card">
-            <h3>DevOps CV Site</h3>
-            <p>
-              Личный сайт-портфолио: структура, дизайн, CI/CD и инфраструктурные
-              заготовки.
-            </p>
-            <a
-              class="btn btn-secondary btn-small"
-              href="https://github.com/nfomenko1/devops-cv-site"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Репозиторий</a>
-          </article>
-
-          <article class="content-card project-card">
-            <h3>DevOps-learning</h3>
-            <p>
-              Репозиторий с практикой по roadmap: команды, заметки, мини-проекты.
-            </p>
-            <a
-              class="btn btn-secondary btn-small"
-              href="https://github.com/nfomenko1/DevOps-learning"
-              target="_blank"
-              rel="noopener noreferrer"
-            >Репозиторий</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- Раздел 5 -->
-    <section class="section" id="monitoring">
-      <div class="container section-block">
-        <div class="section-head">
-          <p class="eyebrow">Раздел 5</p>
-          <h2>Monitoring</h2>
-          <p class="section-description">
-            Пока — заглушки. Позже здесь будет мониторинг сервера,
-            на котором держится сайт.
-          </p>
-        </div>
-
-        <div class="monitoring-grid">
-          <article class="content-card metric-card">
-            <div class="metric-head">
-              <h3>CPU</h3>
-              <span>soon</span>
-            </div>
-            <p>Использование CPU</p>
-            <div class="metric-box"></div>
-          </article>
-
-          <article class="content-card metric-card">
-            <div class="metric-head">
-              <h3>RAM</h3>
-              <span>soon</span>
-            </div>
-            <p>Использование памяти</p>
-            <div class="metric-box"></div>
-          </article>
-
-          <article class="content-card metric-card metric-card-wide">
-            <div class="metric-head">
-              <h3>Disk</h3>
-              <span>soon</span>
-            </div>
-            <p>Использование диска</p>
-            <div class="metric-box"></div>
-          </article>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <div class="modal" id="roadmapModal" aria-hidden="true">
-    <div
-      class="modal-dialog"
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="modalTitle"
-    >
-      <button
-        class="modal-close"
-        type="button"
-        aria-label="Закрыть окно"
-      >×</button>
-
-      <p class="eyebrow">RoadMap</p>
-      <h3 id="modalTitle">Блок</h3>
-      <p id="modalText">Подробное описание блока добавишь позже.</p>
+    <div class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
     </div>
   </div>
+</header>
 
-  <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+<section class="hero">
+  <div class="container hero-wrap">
+
+    <div class="hero-left">
+      <div class="badge">DevOps roadmap in progress</div>
+
+      <h1>
+        DevOps Engineer
+        <span>в процессе роста</span>
+      </h1>
+
+      <p>
+        Личный сайт-портфолио: практика по DevOps roadmap,
+        проекты и инфраструктурные заготовки.
+        Цель — уверенный уровень Junior/Middle.
+      </p>
+
+      <div class="buttons">
+        <a href="#about" class="btn primary">Обо мне</a>
+        <a href="#" class="btn secondary">GitHub</a>
+      </div>
+    </div>
+
+    <div class="hero-right">
+      <div class="card">
+        <div class="photo">
+          <span>PHOTO</span>
+        </div>
+
+        <div class="card-info">
+          <h3>Твоё имя</h3>
+          <p>@devops</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="about" id="about">
+  <div class="container">
+    <h2>Обо мне</h2>
+
+    <div class="about-box">
+      <p>
+        Я развиваюсь в направлении DevOps и постепенно собираю практическую базу:
+        Linux, Docker, Git, CI/CD и инфраструктура.
+      </p>
+
+      <p>
+        Этот сайт — мой путь обучения и реальные проекты,
+        которые показывают рост навыков.
+      </p>
+    </div>
+  </div>
+</section>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
 </body>
 </html>
