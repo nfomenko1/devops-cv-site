@@ -1,11 +1,12 @@
 const App = (() => {
   const state = {
     modalOpen: false,
-    targetScroll: window.scrollY || 0,
     currentScroll: window.scrollY || 0,
+    targetScroll: window.scrollY || 0,
     rafId: null,
-    ease: 0.1,
-    ticking: false
+    wheelSmoothEnabled: false,
+    easing: 0.075,
+    anchorDuration: 1400
   };
 
   const selectors = {
@@ -19,7 +20,7 @@ const App = (() => {
   };
 
   function init() {
-    initRotator();
+    initTypewriter();
     initReveal();
     initAnchors();
     initWheelSmoothing();
@@ -28,29 +29,49 @@ const App = (() => {
     window.addEventListener('resize', onResize, { passive: true });
   }
 
-  function initRotator() {
+  function initTypewriter() {
     if (!selectors.rotatingText) return;
+
     let words = [];
     try {
       words = JSON.parse(selectors.rotatingText.dataset.words || '[]');
-    } catch (error) {
+    } catch {
       words = [];
     }
     if (!words.length) return;
 
-    let index = 0;
-    selectors.rotatingText.textContent = words[0];
-    setInterval(() => {
-      index = (index + 1) % words.length;
-      selectors.rotatingText.animate(
-        [
-          { opacity: 0, transform: 'translateY(10px)' },
-          { opacity: 1, transform: 'translateY(0)' }
-        ],
-        { duration: 420, easing: 'ease-out' }
-      );
-      selectors.rotatingText.textContent = words[index];
-    }, 2600);
+    let wordIndex = 0;
+    let charIndex = 0;
+    let deleting = false;
+
+    const type = () => {
+      const currentWord = words[wordIndex];
+
+      if (!deleting) {
+        charIndex += 1;
+        selectors.rotatingText.textContent = currentWord.slice(0, charIndex);
+        if (charIndex === currentWord.length) {
+          deleting = true;
+          window.setTimeout(type, 1200);
+          return;
+        }
+        window.setTimeout(type, 88);
+        return;
+      }
+
+      charIndex -= 1;
+      selectors.rotatingText.textContent = currentWord.slice(0, charIndex);
+      if (charIndex === 0) {
+        deleting = false;
+        wordIndex = (wordIndex + 1) % words.length;
+        window.setTimeout(type, 260);
+        return;
+      }
+      window.setTimeout(type, 46);
+    };
+
+    selectors.rotatingText.textContent = '';
+    type();
   }
 
   function initReveal() {
@@ -61,10 +82,9 @@ const App = (() => {
 
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
-        }
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add('revealed');
+        observer.unobserve(entry.target);
       });
     }, { threshold: 0.12 });
 
@@ -78,24 +98,24 @@ const App = (() => {
         if (!href || href === '#') return;
         const target = document.querySelector(href);
         if (!target) return;
-
         event.preventDefault();
         closeMobileMenu();
-        scrollToTarget(target);
+        smoothScrollTo(getTargetPosition(target), state.anchorDuration);
       });
     });
   }
 
-  function scrollToTarget(element) {
+  function getTargetPosition(element) {
     const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
-    const top = window.scrollY + element.getBoundingClientRect().top - headerOffset - 12;
-    animateTo(clamp(top, 0, getMaxScroll()));
+    const top = window.scrollY + element.getBoundingClientRect().top - headerOffset - 16;
+    return clamp(top, 0, getMaxScroll());
   }
 
   function initWheelSmoothing() {
     const supportsFinePointer = window.matchMedia('(pointer:fine)').matches;
     if (!supportsFinePointer) return;
 
+    state.wheelSmoothEnabled = true;
     state.currentScroll = window.scrollY || 0;
     state.targetScroll = window.scrollY || 0;
 
@@ -104,58 +124,66 @@ const App = (() => {
   }
 
   function onWheel(event) {
-    if (state.modalOpen) return;
+    if (!state.wheelSmoothEnabled || state.modalOpen) return;
     if (shouldIgnoreSmooth(event.target)) return;
 
     event.preventDefault();
-    state.targetScroll += event.deltaY;
+    state.targetScroll += event.deltaY * 0.92;
     state.targetScroll = clamp(state.targetScroll, 0, getMaxScroll());
 
-    if (!state.ticking) {
-      state.ticking = true;
-      tickScroll();
-    }
+    if (!state.rafId) tickScroll();
   }
 
   function tickScroll() {
     const diff = state.targetScroll - state.currentScroll;
-    state.currentScroll += diff * state.ease;
+    state.currentScroll += diff * state.easing;
+    window.scrollTo(0, state.currentScroll);
 
-    if (Math.abs(diff) < 0.4) {
+    if (Math.abs(diff) < 0.35) {
       state.currentScroll = state.targetScroll;
       window.scrollTo(0, state.currentScroll);
-      state.ticking = false;
+      cancelAnimationFrame(state.rafId);
+      state.rafId = null;
       return;
     }
 
-    window.scrollTo(0, state.currentScroll);
     state.rafId = requestAnimationFrame(tickScroll);
   }
 
-  function animateTo(top) {
+  function smoothScrollTo(targetY, duration) {
     cancelAnimationFrame(state.rafId);
-    state.targetScroll = top;
-    state.currentScroll = window.scrollY || state.currentScroll;
-    state.ticking = true;
-    tickScroll();
+    state.rafId = null;
+
+    const startY = window.scrollY || 0;
+    const diff = targetY - startY;
+    const startTime = performance.now();
+
+    const easeInOutCubic = (t) => (t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2);
+
+    const step = (now) => {
+      const progress = Math.min((now - startTime) / duration, 1);
+      const eased = easeInOutCubic(progress);
+      const nextY = startY + diff * eased;
+      window.scrollTo(0, nextY);
+      state.currentScroll = nextY;
+      state.targetScroll = nextY;
+
+      if (progress < 1) {
+        requestAnimationFrame(step);
+      }
+    };
+
+    requestAnimationFrame(step);
   }
 
   function syncNativeScroll() {
-    if (state.ticking) return;
+    if (state.rafId) return;
     state.currentScroll = window.scrollY || 0;
     state.targetScroll = state.currentScroll;
   }
 
   function shouldIgnoreSmooth(target) {
     return Boolean(target.closest('input, textarea, select, [data-native-scroll]'));
-  }
-
-  function getMaxScroll() {
-    return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
-  }
-
-  function clamp(value, min, max) {
-    return Math.min(Math.max(value, min), max);
   }
 
   function initRoadmapModal() {
@@ -207,6 +235,14 @@ const App = (() => {
     state.targetScroll = clamp(state.targetScroll, 0, getMaxScroll());
     state.currentScroll = clamp(window.scrollY || 0, 0, getMaxScroll());
     if (window.innerWidth > 860) closeMobileMenu();
+  }
+
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
+  }
+
+  function getMaxScroll() {
+    return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   }
 
   return { init };

@@ -6,16 +6,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Портфолио DevOps-инженера Фоменко Никиты">
   <title>Фоменко Никита — DevOps Portfolio</title>
-  <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
   <link rel="stylesheet" href="assets/css/style.css">
 </head>
 <body>
-  <div class="page-bg" aria-hidden="true">
-    <span class="bg-glow bg-glow-1"></span>
-    <span class="bg-glow bg-glow-2"></span>
-    <span class="bg-grid"></span>
-  </div>
-
   <header class="site-header" id="top">
     <div class="container header-inner">
       <a class="brand" href="#home">Портфолио</a>
@@ -43,9 +36,9 @@
 
   <main>
     <section class="hero-section" id="home">
+      <div class="hero-shape hero-shape-main" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy reveal">
-          <p class="eyebrow">DevOps Portfolio</p>
           <h1>Фоменко Никита</h1>
 
           <div class="hero-rotator" aria-live="polite">
@@ -54,8 +47,7 @@
           </div>
 
           <p class="hero-description">
-            Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
-            Цель — уверенный уровень Junior/Middle.
+            Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle.
           </p>
 
           <div class="hero-actions-wrap">
@@ -88,10 +80,21 @@
 
         <div class="hero-visual reveal reveal-delay">
           <div class="hero-image-wrap">
-            <div class="hero-backdrop"></div>
             <div class="hero-outline-text hero-outline-text-top">DevOps Engineer</div>
-            <img src="assets/images/hero-photo.png" alt="Фоменко Никита">
             <div class="hero-outline-text hero-outline-text-bottom">DevOps Engineer</div>
+
+            <div class="hero-red-bg" aria-hidden="true">
+              <img src="assets/images/banner/banner-user-image-two-red-bg.png" alt="">
+            </div>
+
+            <div class="hero-lines hero-lines-left" aria-hidden="true">
+              <img src="assets/images/banner/logo-under-image.png" alt="">
+            </div>
+            <div class="hero-lines hero-lines-right" aria-hidden="true">
+              <img src="assets/images/banner/logo-under-image-2.png" alt="">
+            </div>
+
+            <img class="hero-photo" src="assets/images/hero-photo.png" alt="Фоменко Никита">
           </div>
         </div>
       </div>
@@ -101,13 +104,12 @@
       <div class="container">
         <div class="about-grid">
           <div class="about-side reveal">
-            <article class="glass-card accent-card roadmap-card-large">
+            <article class="glass-card accent-card roadmap-card-large floating-card">
               <h3>Прошел DevOps Roadmap</h3>
             </article>
 
-            <article class="glass-card stack-card">
-              <div class="stack-icon"><i class="fa-regular fa-server"></i></div>
-              <div>
+            <article class="glass-card stack-card floating-card">
+              <div class="stack-text-wrap">
                 <h3>DevOps Stack</h3>
                 <p>Linux / Docker / CI/CD / Kubernetes</p>
               </div>
@@ -115,11 +117,10 @@
           </div>
 
           <div class="about-content reveal reveal-delay">
-            <p class="section-label">О себе</p>
+            <p class="section-label section-label-main">О себе</p>
             <h2>Мой путь и развитие</h2>
             <p class="section-text">
-              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
-              Цель — уверенный уровень Junior/Middle.
+              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle.
             </p>
             <p class="section-text">
               Сейчас активно развиваюсь в направлении DevOps и строю инфраструктурные проекты.
@@ -131,15 +132,23 @@
 
     <section class="experience-section section-space" id="experience">
       <div class="container">
-        <div class="section-heading reveal">
-          <p class="section-label">Опыт работы</p>
-          <h2>Практический опыт</h2>
+        <div class="section-heading centered reveal">
+          <h2 class="heading-with-icon heading-white">
+            <span class="heading-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 7V6a3 3 0 0 1 3-3h0a3 3 0 0 1 3 3v1"/>
+                <path d="M4 8h16a1 1 0 0 1 1 1v9a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V9a1 1 0 0 1 1-1Z"/>
+                <path d="M3 13h18"/>
+              </svg>
+            </span>
+            <span>Опыт работы</span>
+          </h2>
         </div>
 
         <div class="experience-grid">
-          <article class="glass-card experience-card reveal">
+          <article class="glass-card experience-card floating-card reveal">
             <h3>Ведущий специалист технической поддержки 1L</h3>
-            <div class="experience-meta">
+            <div class="experience-meta stacked-meta">
               <span>Банк ДОМ.РФ</span>
               <span>2024 — 2025</span>
             </div>
@@ -150,10 +159,10 @@
             </ul>
           </article>
 
-          <article class="glass-card experience-card reveal reveal-delay">
+          <article class="glass-card experience-card floating-card reveal reveal-delay">
             <h3>Старший специалист технической поддержки 2L</h3>
-            <div class="experience-meta">
-              <span>Imredi</span>
+            <div class="experience-meta stacked-meta">
+              <span>Imredi, Воронеж</span>
               <span>2026 — настоящее время</span>
             </div>
             <ul>
@@ -170,57 +179,66 @@
     <section class="roadmap-section section-space" id="roadmap">
       <div class="container">
         <div class="section-heading centered reveal">
-          <p class="section-label with-icon"><i class="fa-solid fa-graduation-cap"></i> Roadmap Обучение</p>
+          <h2 class="heading-with-icon heading-white roadmap-heading">
+            <span class="heading-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M12 4 2.8 8.2 12 12.4l9.2-4.2L12 4Z"/>
+                <path d="M6.5 10.2V14c0 1.8 2.4 3.5 5.5 3.5s5.5-1.7 5.5-3.5v-3.8"/>
+                <path d="M21.2 9v5.5"/>
+              </svg>
+            </span>
+            <span>Roadmap Обучение</span>
+          </h2>
         </div>
 
         <div class="roadmap-grid">
-          <button class="roadmap-card glass-card reveal" type="button" data-roadmap-title="Блок 1" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 1</span>
+          <button class="roadmap-card glass-card floating-card reveal" type="button" data-roadmap-title="Блок 1" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 1</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal reveal-delay" type="button" data-roadmap-title="Блок 2" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 2</span>
+          <button class="roadmap-card glass-card floating-card reveal reveal-delay" type="button" data-roadmap-title="Блок 2" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 2</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal" type="button" data-roadmap-title="Блок 3" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 3</span>
+          <button class="roadmap-card glass-card floating-card reveal" type="button" data-roadmap-title="Блок 3" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 3</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal reveal-delay" type="button" data-roadmap-title="Блок 4" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 4</span>
+          <button class="roadmap-card glass-card floating-card reveal reveal-delay" type="button" data-roadmap-title="Блок 4" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 4</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal" type="button" data-roadmap-title="Блок 5" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 5</span>
+          <button class="roadmap-card glass-card floating-card reveal" type="button" data-roadmap-title="Блок 5" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 5</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal reveal-delay" type="button" data-roadmap-title="Блок 6" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 6</span>
+          <button class="roadmap-card glass-card floating-card reveal reveal-delay" type="button" data-roadmap-title="Блок 6" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 6</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal" type="button" data-roadmap-title="Блок 7" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 7</span>
+          <button class="roadmap-card glass-card floating-card reveal" type="button" data-roadmap-title="Блок 7" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 7</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal reveal-delay" type="button" data-roadmap-title="Блок 8" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 8</span>
+          <button class="roadmap-card glass-card floating-card reveal reveal-delay" type="button" data-roadmap-title="Блок 8" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 8</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal" type="button" data-roadmap-title="Блок 9" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 9</span>
+          <button class="roadmap-card glass-card floating-card reveal" type="button" data-roadmap-title="Блок 9" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 9</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
-          <button class="roadmap-card glass-card reveal reveal-delay" type="button" data-roadmap-title="Блок 10" data-roadmap-description="Подробное описание блока появится позже.">
-            <span class="roadmap-number"><i class="fa-solid fa-circle-dot"></i> Блок 10</span>
+          <button class="roadmap-card glass-card floating-card reveal reveal-delay" type="button" data-roadmap-title="Блок 10" data-roadmap-description="Подробное описание блока появится позже.">
+            <span class="roadmap-number"><span class="dot"></span> Блок 10</span>
             <h3>Название блока обучения</h3>
             <p>Описание добавим позже</p>
           </button>
