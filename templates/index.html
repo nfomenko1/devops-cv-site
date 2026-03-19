@@ -1,344 +1,234 @@
 <!DOCTYPE html>
 <html lang="ru">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Личный сайт-портфолио Никиты Фоменко">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/images/favicon.svg">
-    <title>Портфолио — Никита Фоменко</title>
-    <link rel="stylesheet" href="assets/css/vendor/fontawesome.css">
-    <link rel="stylesheet" href="assets/css/plugins/swiper.css">
-    <link rel="stylesheet" href="assets/css/plugins/odometer.css">
-    <link rel="stylesheet" href="assets/css/vendor/animate.min.css">
-    <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Портфолио — Фоменко Никита</title>
+  <meta name="description" content="Портфолио Фоменко Никиты — DevOps Engineer" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Rubik:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
+  <div class="site-shell">
+    <header class="site-header" id="top">
+      <div class="header-inner">
+        <a class="brand" href="#home">Портфолио</a>
 
-    <header class="tmp-header-area-start header-one header--sticky header--transparent">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="header-content portfolio-header-content">
-                        <div class="logo portfolio-text-logo">
-                            <a href="#home" class="smoth-animation">Портфолио</a>
-                        </div>
-                        <nav class="tmp-mainmenu-nav d-none d-xl-block">
-                            <ul class="tmp-mainmenu onepagenav portfolio-onepage-nav">
-                                <li><a href="#home">Главная</a></li>
-                                <li><a href="#about">О себе</a></li>
-                                <li><a href="#experience">Опыт работы</a></li>
-                                <li><a href="#roadmap">Roadmap</a></li>
-                            </ul>
-                        </nav>
-                        <div class="tmp-header-right">
-                            <div class="actions-area">
-                                <div class="tmp-side-collups-area d-block d-xl-none">
-                                    <button class="tmp-menu-bars humberger_menu_active"><i class="fa-regular fa-bars-staggered"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+        <nav class="nav" aria-label="Основная навигация">
+          <a href="#home">Главная</a>
+          <a href="#about">О себе</a>
+          <a href="#roadmap">Roadmap</a>
+        </nav>
+
+        <button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+
+      <div class="mobile-menu" hidden>
+        <a href="#home">Главная</a>
+        <a href="#about">О себе</a>
+        <a href="#roadmap">Roadmap</a>
+      </div>
     </header>
 
-    <div class="d-block d-xl-none">
-        <div class="tmp-popup-mobile-menu">
-            <div class="inner">
-                <div class="header-top">
-                    <div class="logo portfolio-text-logo">
-                        <a href="#home" class="logo-area smoth-animation">Портфолио</a>
-                    </div>
-                    <div class="close-menu">
-                        <button class="close-button tmp-round-action-btn">
-                            <i class="fa-sharp fa-light fa-xmark"></i>
-                        </button>
-                    </div>
-                </div>
-                <ul class="tmp-mainmenu onepagenav-click">
-                    <li><a href="#home">Главная</a></li>
-                    <li><a href="#about">О себе</a></li>
-                    <li><a href="#experience">Опыт работы</a></li>
-                    <li><a href="#roadmap">Roadmap</a></li>
-                </ul>
+    <main>
+      <section class="hero section" id="home">
+        <div class="container hero-grid">
+          <div class="hero-copy reveal">
+            <div class="eyebrow">DevOps Portfolio</div>
+            <h1 class="hero-title">Фоменко Никита</h1>
+
+            <div class="hero-roles" aria-live="polite">
+              <span class="role-current">DevOps Engineer</span>
             </div>
+
+            <p class="hero-text">
+              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
+              Цель — уверенный уровень Junior/Middle.
+            </p>
+
+            <div class="hero-actions">
+              <div class="hero-buttons">
+                <a class="btn btn-primary" href="#about">О себе</a>
+                <a class="btn btn-secondary" href="#" download>Скачать CV</a>
+              </div>
+
+              <div class="hero-contacts">
+                <a href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a>
+                <a href="tel:+79913242744">+7 991-324-27-44</a>
+                <a href="https://t.me/ooooppsssss" target="_blank" rel="noopener noreferrer">Telegram</a>
+              </div>
+            </div>
+
+            <div class="skills">
+              <span class="skill-pill">Linux</span>
+              <span class="skill-pill">Docker</span>
+              <span class="skill-pill">Kubernetes</span>
+              <span class="skill-pill">Git</span>
+              <span class="skill-pill">CI/CD</span>
+              <span class="skill-pill">PostgreSQL</span>
+              <span class="skill-pill">Ansible</span>
+              <span class="skill-pill">Nginx</span>
+              <span class="skill-pill">Grafana</span>
+              <span class="skill-pill">Prometheus</span>
+              <span class="skill-pill">Bash</span>
+            </div>
+          </div>
+
+          <div class="hero-visual reveal">
+            <div class="hero-visual-stage">
+              <div class="hero-back-text">DevOps Engineer</div>
+              <div class="hero-orb"></div>
+              <div class="hero-portrait" aria-hidden="true"></div>
+            </div>
+          </div>
         </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container about-grid">
+          <div class="about-side reveal">
+            <article class="glass-card about-highlight">
+              <div class="highlight-title">Прошел DevOps Roadmap</div>
+            </article>
+
+            <article class="glass-card stack-card">
+              <div class="stack-icon"><i class="fa-solid fa-server"></i></div>
+              <div>
+                <h3>DevOps Stack</h3>
+                <p>Linux / Docker / CI/CD / Kubernetes</p>
+              </div>
+            </article>
+          </div>
+
+          <div class="about-copy reveal">
+            <div class="section-kicker">О себе</div>
+            <h2 class="section-title">Мой путь и развитие</h2>
+            <p class="section-text">
+              Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки.
+              Цель — уверенный уровень Junior/Middle.
+            </p>
+            <p class="section-text">
+              Сейчас активно развиваюсь в направлении DevOps и строю инфраструктурные проекты.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="experience section" id="experience">
+        <div class="container">
+          <div class="section-head reveal">
+            <div class="section-kicker">Опыт работы</div>
+            <h2 class="section-title">Практический опыт</h2>
+          </div>
+
+          <div class="experience-grid">
+            <article class="glass-card job-card reveal">
+              <h3>Ведущий специалист технической поддержки 1L</h3>
+              <div class="job-company">Банк ДОМ.РФ</div>
+              <div class="job-period">2024 — 2025</div>
+              <ul class="job-list">
+                <li>Active Directory, VPN, Citrix</li>
+                <li>Диагностика сервисов</li>
+                <li>Анализ логов ISE</li>
+              </ul>
+            </article>
+
+            <article class="glass-card job-card reveal">
+              <h3>Старший специалист технической поддержки 2L</h3>
+              <div class="job-company">Imredi</div>
+              <div class="job-period">2026 — настоящее время</div>
+              <ul class="job-list">
+                <li>Анализ API-интеграций и инцидентов L2</li>
+                <li>Мониторинг метрик через Grafana</li>
+                <li>Работа с REST/SOAP API</li>
+                <li>Документирование и эскалация задач</li>
+              </ul>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="roadmap section" id="roadmap">
+        <div class="container">
+          <div class="section-head reveal">
+            <div class="roadmap-title-wrap">
+              <span class="roadmap-icon"><i class="fa-solid fa-graduation-cap"></i></span>
+              <h2 class="section-title">Roadmap Обучение</h2>
+            </div>
+          </div>
+
+          <div class="roadmap-grid">
+            <button class="glass-card roadmap-card reveal" type="button" data-block="1">
+              <span class="roadmap-card-label">Блок 1</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="2">
+              <span class="roadmap-card-label">Блок 2</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="3">
+              <span class="roadmap-card-label">Блок 3</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="4">
+              <span class="roadmap-card-label">Блок 4</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="5">
+              <span class="roadmap-card-label">Блок 5</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="6">
+              <span class="roadmap-card-label">Блок 6</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="7">
+              <span class="roadmap-card-label">Блок 7</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="8">
+              <span class="roadmap-card-label">Блок 8</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="9">
+              <span class="roadmap-card-label">Блок 9</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+            <button class="glass-card roadmap-card reveal" type="button" data-block="10">
+              <span class="roadmap-card-label">Блок 10</span>
+              <h3>Название блока обучения</h3>
+              <p>Описание добавим позже</p>
+            </button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div class="modal-overlay" id="roadmapModal" aria-hidden="true">
+    <div class="modal-card glass-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-meta" id="modalMeta">Блок</div>
+      <h3 id="modalTitle">Название блока обучения</h3>
+      <p id="modalDescription">
+        Тестовое описание. Подробное содержание этого блока добавим позже.
+      </p>
     </div>
+  </div>
 
-    <div class="rpp-banner-two-area" id="home">
-        <div class="container">
-            <div class="banner-two-main-wrapper">
-                <div class="row align-items-center">
-                    <div class="col-lg-6 order-lg-2">
-                        <div class="banner-right-content">
-                            <div class="main-img">
-                                <img class="tmp-scroll-trigger tmp-zoom-in animation-order-1" src="assets/images/banner/banner-user-image-two.png" alt="banner-img">
-                                <h2 class="banner-big-text-1 up-down-2">DevOps Engineer</h2>
-                                <h2 class="banner-big-text-2 up-down">DevOps Engineer</h2>
-                                <div class="benner-two-bg-red-img">
-                                    <img src="assets/images/banner/banner-user-image-two-red-bg.png" alt="red-img">
-                                </div>
-                                <div class="logo-under-img-wrap">
-                                    <div class="logo-under-img">
-                                        <img src="assets/images/banner/logo-under-image.png" alt="logo-under-image">
-                                    </div>
-                                    <div class="logo-under-img-2">
-                                        <img src="assets/images/banner/logo-under-image-2.png" alt="logo-under-image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-6 order-lg-1 mt--100">
-                        <div class="inner">
-                            <h1 class="title tmp-scroll-trigger tmp-fade-in animation-order-2 portfolio-hero-title">
-                                Фоменко Никита<br>
-                                <span class="header-caption">
-                                    <span class="cd-headline clip is-full-width">
-                                        <span class="cd-words-wrapper">
-                                            <b class="is-visible theme-gradient">DevOps Engineer</b>
-                                            <b class="is-hidden theme-gradient">Инженер сопровождения</b>
-                                        </span>
-                                    </span>
-                                </span>
-                            </h1>
-                            <p class="disc tmp-scroll-trigger tmp-title-split tmp-fade-in animation-order-3">
-                                Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle.
-                            </p>
-                            <div class="button-area-banner-two tmp-scroll-trigger tmp-fade-in animation-order-4 portfolio-hero-actions">
-                                <a class="tmp-btn hover-icon-reverse radius-round smoth-animation" href="#about">
-                                    <span class="icon-reverse-wrapper">
-                                        <span class="btn-text">О себе</span>
-                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                    </span>
-                                </a>
-                                <a class="tmp-btn hover-icon-reverse radius-round btn-border btn-md portfolio-outline-btn" href="#">
-                                    <span class="icon-reverse-wrapper">
-                                        <span class="btn-text">Скачать CV</span>
-                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                        <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                    </span>
-                                </a>
-                                <div class="portfolio-contact-inline">
-                                    <span><i></i> почта — <a href="mailto:nfomenko1@mail.ru">nfomenko1@mail.ru</a></span>
-                                    <span><i></i> телефон — <a href="tel:+79913242744">+7 991-324-27-44</a></span>
-                                    <span><i></i> Telegram — <a href="https://t.me/ooooppsssss" target="_blank">t.me/ooooppsssss</a></span>
-                                </div>
-                            </div>
-                            <div class="portfolio-skills tmp-scroll-trigger tmp-fade-in animation-order-5">
-                                <span class="portfolio-skill-pill">Linux</span>
-                                <span class="portfolio-skill-pill">Docker</span>
-                                <span class="portfolio-skill-pill">Kubernetes</span>
-                                <span class="portfolio-skill-pill">Git</span>
-                                <span class="portfolio-skill-pill">CI/CD</span>
-                                <span class="portfolio-skill-pill">PostgreSQL</span>
-                                <span class="portfolio-skill-pill">Ansible</span>
-                                <span class="portfolio-skill-pill">Nginx</span>
-                                <span class="portfolio-skill-pill">Grafana</span>
-                                <span class="portfolio-skill-pill">Prometheus</span>
-                                <span class="portfolio-skill-pill">Bash</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="banner-shape-two">
-            <img src="assets/images/banner/banner-shape-two.png" alt="">
-        </div>
-    </div>
-
-    <section class="about-us-area" id="about">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="about-us-left-content-wrap bg-vactor-one">
-                        <div class="years-of-experience-card tmp-scroll-trigger tmp-fade-in animation-order-1 portfolio-roadmap-card">
-                            <h2 class="card-title">Прошел DevOps Roadmap</h2>
-                        </div>
-                        <div class="design-card tmp-scroll-trigger tmp-fade-in animation-order-2">
-                            <div class="design-card-img">
-                                <div class="icon"><i class="fa-sharp fa-thin fa-lock"></i></div>
-                            </div>
-                            <div class="card-info">
-                                <h3 class="card-title">DevOps Stack</h3>
-                                <p class="card-para">Linux / Docker / CI/CD / Kubernetes</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="about-us-right-content-wrap">
-                        <div class="section-head text-align-left mb--50">
-                            <div class="section-sub-title tmp-scroll-trigger tmp-fade-in animation-order-1">
-                                <span class="subtitle">О себе</span>
-                            </div>
-                            <h2 class="title split-collab tmp-scroll-trigger tmp-fade-in animation-order-2">Мой путь и развитие</h2>
-                            <p class="description tmp-scroll-trigger tmp-fade-in animation-order-3 portfolio-about-description">Личный сайт-портфолио: практика по DevOps roadmap, проекты и инфраструктурные заготовки. Цель — уверенный уровень Junior/Middle. Сейчас активно развиваюсь в направлении DevOps и строю инфраструктурные проекты.</p>
-                        </div>
-                        <div class="about-btn mt--40 tmp-scroll-trigger tmp-fade-in animation-order-6">
-                            <a class="tmp-btn hover-icon-reverse radius-round smoth-animation" href="#roadmap">
-                                <span class="icon-reverse-wrapper">
-                                    <span class="btn-text">Смотреть Roadmap</span>
-                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                    <span class="btn-icon"><i class="fa-sharp fa-regular fa-arrow-right"></i></span>
-                                </span>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="resume-section tmp-section-gapTop" id="experience">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-header mb--50 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <h2 class="section-title"><i class="fa-regular fa-briefcase"></i> Опыт работы</h2>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="resume-widget">
-                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-1 portfolio-job-card">
-                            <h3 class="resume-title">Ведущий специалист технической поддержки 1L</h3>
-                            <div class="institute">Банк ДОМ.РФ</div>
-                            <div class="time">2024 — 2025</div>
-                            <ul class="portfolio-job-list">
-                                <li>Active Directory, VPN, Citrix</li>
-                                <li>Диагностика сервисов</li>
-                                <li>Анализ логов ISE</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="resume-widget">
-                        <div class="resume-single tmp-scroll-trigger tmp-fade-in animation-order-2 portfolio-job-card">
-                            <h3 class="resume-title">Старший специалист технической поддержки 2L</h3>
-                            <div class="institute">Imredi</div>
-                            <div class="time">2026 — настоящее время</div>
-                            <ul class="portfolio-job-list">
-                                <li>Анализ API-интеграций и инцидентов L2</li>
-                                <li>Мониторинг метрик через Grafana</li>
-                                <li>Работа с REST/SOAP API</li>
-                                <li>Документирование и эскалация задач</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="resume-section tmp-section-gapTop tmp-section-gapBottom" id="roadmap">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <div class="section-header mb--50 tmp-scroll-trigger tmp-fade-in animation-order-1">
-                        <h2 class="section-title"><i class="fa-regular fa-graduation-cap"></i> Roadmap Обучение</h2>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="resume-widget">
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-1" data-title="Блок 1">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 1</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-2" data-title="Блок 3">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 3</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-3" data-title="Блок 5">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 5</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-4" data-title="Блок 7">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 7</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card mb--0 tmp-scroll-trigger tmp-fade-in animation-order-5" data-title="Блок 9">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 9</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="resume-widget">
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-1" data-title="Блок 2">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 2</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-2" data-title="Блок 4">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 4</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-3" data-title="Блок 6">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 6</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card tmp-scroll-trigger tmp-fade-in animation-order-4" data-title="Блок 8">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 8</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                        <div class="resume-single roadmap-card mb--0 tmp-scroll-trigger tmp-fade-in animation-order-5" data-title="Блок 10">
-                            <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i> Блок 10</div>
-                            <h3 class="resume-title">Название блока обучения</h3>
-                            <div class="institute">Описание добавим позже</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="portfolio-roadmap-modal" id="roadmapModal" aria-hidden="true">
-        <div class="portfolio-roadmap-modal__overlay"></div>
-        <div class="portfolio-roadmap-modal__dialog">
-            <div class="portfolio-roadmap-modal__inner">
-                <div class="time" id="roadmapModalLabel">Блок</div>
-                <h3 class="resume-title">Подробное описание</h3>
-                <p class="portfolio-roadmap-modal__text">Описание добавим позже.</p>
-            </div>
-        </div>
-    </div>
-
-    <script src="assets/js/vendor/jquery.js"></script>
-    <script src="assets/js/vendor/jquery-ui.min.js"></script>
-    <script src="assets/js/vendor/waypoints.min.js"></script>
-    <script src="assets/js/plugins/odometer.js"></script>
-    <script src="assets/js/vendor/appear.js"></script>
-    <script src="assets/js/vendor/jquery-one-page-nav.js"></script>
-    <script src="assets/js/plugins/swiper.js"></script>
-    <script src="assets/js/plugins/gsap.js"></script>
-    <script src="assets/js/plugins/splittext.js"></script>
-    <script src="assets/js/plugins/scrolltigger.js"></script>
-    <script src="assets/js/plugins/scrolltoplugins.js"></script>
-    <script src="assets/js/plugins/smoothscroll.js"></script>
-    <script src="assets/js/vendor/bootstrap.min.js"></script>
-    <script src="assets/js/vendor/waw.js"></script>
-    <script src="assets/js/plugins/isotop.js"></script>
-    <script src="assets/js/plugins/animation.js"></script>
-    <script src="assets/js/plugins/contact.form.js"></script>
-    <script src="assets/js/vendor/backtop.js"></script>
-    <script src="assets/js/plugins/text-type.js"></script>
-    <script src="assets/js/main.js"></script>
+  <script src="main.js"></script>
 </body>
-
 </html>
