@@ -798,33 +798,3 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 
-
-
-// ===== Portfolio custom behavior =====
-(function() {
-  function initRoadmapModal() {
-    var overlay = document.getElementById('roadmapModal');
-    if (!overlay) return;
-    var title = document.getElementById('roadmapModalTitle');
-    var desc = document.getElementById('roadmapModalDescription');
-    document.querySelectorAll('.portfolio-roadmap-item').forEach(function(btn) {
-      btn.addEventListener('click', function() {
-        title.textContent = btn.getAttribute('data-roadmap-title') || 'Блок';
-        desc.textContent = btn.getAttribute('data-roadmap-description') || 'Подробное описание появится позже.';
-        overlay.classList.add('active');
-        overlay.setAttribute('aria-hidden', 'false');
-      });
-    });
-    overlay.addEventListener('click', function(e) {
-      if (e.target === overlay) {
-        overlay.classList.remove('active');
-        overlay.setAttribute('aria-hidden', 'true');
-      }
-    });
-  }
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initRoadmapModal);
-  } else {
-    initRoadmapModal();
-  }
-})();
