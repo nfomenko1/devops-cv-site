@@ -1,215 +1,215 @@
+const App = (() => {
+  const state = {
+    modalOpen: false,
+    targetScroll: window.scrollY || 0,
+    currentScroll: window.scrollY || 0,
+    rafId: null,
+    ease: 0.1,
+    ticking: false
+  };
 
-const roles = ["DevOps Engineer", "Инженер сопровождения"];
-const roleNode = document.querySelector(".role-current");
-let roleIndex = 0;
-let charIndex = 0;
-let deleting = false;
+  const selectors = {
+    menuToggle: document.querySelector('.mobile-menu-toggle'),
+    mobileMenu: document.querySelector('.mobile-menu'),
+    modal: document.getElementById('roadmap-modal'),
+    modalTitle: document.getElementById('roadmap-modal-title'),
+    modalDescription: document.getElementById('roadmap-modal-description'),
+    rotatingText: document.querySelector('.rotating-text'),
+    revealItems: document.querySelectorAll('.reveal')
+  };
 
-function typeRole() {
-  if (!roleNode) return;
+  function init() {
+    initRotator();
+    initReveal();
+    initAnchors();
+    initWheelSmoothing();
+    initRoadmapModal();
+    initMobileMenu();
+    window.addEventListener('resize', onResize, { passive: true });
+  }
 
-  const fullText = roles[roleIndex];
-  roleNode.classList.add("typing");
+  function initRotator() {
+    if (!selectors.rotatingText) return;
+    let words = [];
+    try {
+      words = JSON.parse(selectors.rotatingText.dataset.words || '[]');
+    } catch (error) {
+      words = [];
+    }
+    if (!words.length) return;
 
-  if (!deleting) {
-    charIndex += 1;
-    roleNode.textContent = fullText.slice(0, charIndex);
+    let index = 0;
+    selectors.rotatingText.textContent = words[0];
+    setInterval(() => {
+      index = (index + 1) % words.length;
+      selectors.rotatingText.animate(
+        [
+          { opacity: 0, transform: 'translateY(10px)' },
+          { opacity: 1, transform: 'translateY(0)' }
+        ],
+        { duration: 420, easing: 'ease-out' }
+      );
+      selectors.rotatingText.textContent = words[index];
+    }, 2600);
+  }
 
-    if (charIndex === fullText.length) {
-      deleting = true;
-      setTimeout(typeRole, 1500);
+  function initReveal() {
+    if (!('IntersectionObserver' in window)) {
+      selectors.revealItems.forEach((item) => item.classList.add('revealed'));
       return;
     }
-  } else {
-    charIndex -= 1;
-    roleNode.textContent = fullText.slice(0, charIndex);
 
-    if (charIndex === 0) {
-      deleting = false;
-      roleIndex = (roleIndex + 1) % roles.length;
-    }
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+
+    selectors.revealItems.forEach((item) => observer.observe(item));
   }
 
-  const speed = deleting ? 45 : 80;
-  setTimeout(typeRole, speed);
-}
+  function initAnchors() {
+    document.querySelectorAll('a[href^="#"]').forEach((link) => {
+      link.addEventListener('click', (event) => {
+        const href = link.getAttribute('href');
+        if (!href || href === '#') return;
+        const target = document.querySelector(href);
+        if (!target) return;
 
-typeRole();
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("is-visible");
-    }
-  });
-}, { threshold: 0.18 });
-
-document.querySelectorAll(".reveal").forEach((item) => observer.observe(item));
-
-const mobileButton = document.querySelector(".menu-toggle");
-const mobileMenu = document.querySelector(".mobile-menu");
-
-if (mobileButton && mobileMenu) {
-  mobileButton.addEventListener("click", () => {
-    const isOpen = mobileButton.getAttribute("aria-expanded") === "true";
-    mobileButton.setAttribute("aria-expanded", String(!isOpen));
-    mobileMenu.hidden = isOpen;
-  });
-
-  mobileMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      mobileMenu.hidden = true;
-      mobileButton.setAttribute("aria-expanded", "false");
+        event.preventDefault();
+        closeMobileMenu();
+        scrollToTarget(target);
+      });
     });
-  });
-}
-
-const header = document.querySelector(".site-header");
-const navLinks = Array.from(document.querySelectorAll(".nav a, .mobile-menu a, .brand, .btn[href^='#']"));
-
-function getHeaderOffset() {
-  const inner = document.querySelector(".header-inner");
-  return inner ? inner.offsetHeight + 16 : 90;
-}
-
-function animateScrollTo(targetY, duration = 1100) {
-  const startY = window.scrollY || window.pageYOffset;
-  const diff = Math.max(0, targetY) - startY;
-  const startTime = performance.now();
-
-  function easeInOutExpo(t) {
-    if (t === 0 || t === 1) return t;
-    return t < 0.5
-      ? Math.pow(2, 20 * t - 10) / 2
-      : (2 - Math.pow(2, -20 * t + 10)) / 2;
   }
 
-  function step(now) {
-    const elapsed = now - startTime;
-    const progress = Math.min(elapsed / duration, 1);
-    const eased = easeInOutExpo(progress);
-    window.scrollTo(0, startY + diff * eased);
-
-    if (progress < 1) {
-      requestAnimationFrame(step);
-    }
+  function scrollToTarget(element) {
+    const headerOffset = document.querySelector('.site-header')?.offsetHeight || 0;
+    const top = window.scrollY + element.getBoundingClientRect().top - headerOffset - 12;
+    animateTo(clamp(top, 0, getMaxScroll()));
   }
 
-  requestAnimationFrame(step);
-}
+  function initWheelSmoothing() {
+    const supportsFinePointer = window.matchMedia('(pointer:fine)').matches;
+    if (!supportsFinePointer) return;
 
-navLinks.forEach((link) => {
-  link.addEventListener("click", (event) => {
-    const href = link.getAttribute("href");
-    if (!href || !href.startsWith("#")) return;
+    state.currentScroll = window.scrollY || 0;
+    state.targetScroll = window.scrollY || 0;
 
-    const target = document.querySelector(href);
-    if (!target) return;
+    window.addEventListener('wheel', onWheel, { passive: false });
+    window.addEventListener('scroll', syncNativeScroll, { passive: true });
+  }
+
+  function onWheel(event) {
+    if (state.modalOpen) return;
+    if (shouldIgnoreSmooth(event.target)) return;
 
     event.preventDefault();
-    const targetY = target.getBoundingClientRect().top + window.scrollY - getHeaderOffset();
-    animateScrollTo(targetY);
-  });
-});
+    state.targetScroll += event.deltaY;
+    state.targetScroll = clamp(state.targetScroll, 0, getMaxScroll());
 
-const sections = ["#home", "#about", "#roadmap"]
-  .map((selector) => document.querySelector(selector))
-  .filter(Boolean);
-
-function updateActiveNav() {
-  const marker = window.scrollY + getHeaderOffset() + 40;
-  let currentId = "home";
-
-  sections.forEach((section) => {
-    if (section.offsetTop <= marker) {
-      currentId = section.id;
+    if (!state.ticking) {
+      state.ticking = true;
+      tickScroll();
     }
-  });
-
-  document.querySelectorAll(".nav a, .mobile-menu a").forEach((link) => {
-    link.classList.toggle("is-active", link.getAttribute("href") === `#${currentId}`);
-  });
-}
-
-window.addEventListener("scroll", updateActiveNav, { passive: true });
-updateActiveNav();
-
-const modal = document.getElementById("roadmapModal");
-const modalMeta = document.getElementById("modalMeta");
-const modalTitle = document.getElementById("modalTitle");
-const modalDescription = document.getElementById("modalDescription");
-
-document.querySelectorAll(".roadmap-card").forEach((card) => {
-  card.addEventListener("click", () => {
-    const blockNumber = card.dataset.block || "";
-    const title = card.querySelector("h3")?.textContent || "Название блока обучения";
-    const text = card.querySelector("p")?.textContent || "Тестовое описание. Подробности добавим позже.";
-
-    modalMeta.textContent = `Блок ${blockNumber}`;
-    modalTitle.textContent = title;
-    modalDescription.textContent = `${text} Тестовое описание. Подробное содержание этого блока добавим позже.`;
-    modal.classList.add("is-open");
-    modal.setAttribute("aria-hidden", "false");
-    document.body.style.overflow = "hidden";
-  });
-});
-
-modal?.addEventListener("click", (event) => {
-  const card = modal.querySelector(".modal-card");
-  if (!card.contains(event.target)) {
-    modal.classList.remove("is-open");
-    modal.setAttribute("aria-hidden", "true");
-    document.body.style.overflow = "";
   }
-});
 
-// softer wheel scroll on desktop
-if (window.matchMedia("(pointer: fine)").matches) {
-  let targetScroll = window.scrollY;
-  let currentScroll = window.scrollY;
-  let isAnimating = false;
+  function tickScroll() {
+    const diff = state.targetScroll - state.currentScroll;
+    state.currentScroll += diff * state.ease;
 
-  function maxScroll() {
+    if (Math.abs(diff) < 0.4) {
+      state.currentScroll = state.targetScroll;
+      window.scrollTo(0, state.currentScroll);
+      state.ticking = false;
+      return;
+    }
+
+    window.scrollTo(0, state.currentScroll);
+    state.rafId = requestAnimationFrame(tickScroll);
+  }
+
+  function animateTo(top) {
+    cancelAnimationFrame(state.rafId);
+    state.targetScroll = top;
+    state.currentScroll = window.scrollY || state.currentScroll;
+    state.ticking = true;
+    tickScroll();
+  }
+
+  function syncNativeScroll() {
+    if (state.ticking) return;
+    state.currentScroll = window.scrollY || 0;
+    state.targetScroll = state.currentScroll;
+  }
+
+  function shouldIgnoreSmooth(target) {
+    return Boolean(target.closest('input, textarea, select, [data-native-scroll]'));
+  }
+
+  function getMaxScroll() {
     return Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
   }
 
-  function syncScroll() {
-    if (!isAnimating) {
-      currentScroll = window.scrollY;
-      targetScroll = window.scrollY;
-    }
+  function clamp(value, min, max) {
+    return Math.min(Math.max(value, min), max);
   }
 
-  function tick() {
-    currentScroll += (targetScroll - currentScroll) * 0.12;
-    if (Math.abs(targetScroll - currentScroll) < 0.4) {
-      currentScroll = targetScroll;
-      window.scrollTo(0, currentScroll);
-      isAnimating = false;
-      return;
-    }
+  function initRoadmapModal() {
+    const cards = document.querySelectorAll('.roadmap-card');
+    if (!cards.length || !selectors.modal) return;
 
-    window.scrollTo(0, currentScroll);
-    requestAnimationFrame(tick);
+    cards.forEach((card) => {
+      card.addEventListener('click', () => {
+        selectors.modalTitle.textContent = card.dataset.roadmapTitle || 'Блок';
+        selectors.modalDescription.textContent = card.dataset.roadmapDescription || 'Подробное описание появится позже.';
+        selectors.modal.classList.add('is-open');
+        selectors.modal.setAttribute('aria-hidden', 'false');
+        document.body.classList.add('no-scroll');
+        state.modalOpen = true;
+      });
+    });
+
+    selectors.modal.addEventListener('click', (event) => {
+      if (event.target !== selectors.modal) return;
+      selectors.modal.classList.remove('is-open');
+      selectors.modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('no-scroll');
+      state.modalOpen = false;
+    });
   }
 
-  window.addEventListener("wheel", (event) => {
-    if (modal?.classList.contains("is-open")) return;
-    const target = event.target;
-    if (target.closest(".mobile-menu")) return;
+  function initMobileMenu() {
+    if (!selectors.menuToggle || !selectors.mobileMenu) return;
 
-    event.preventDefault();
-    targetScroll = Math.max(0, Math.min(maxScroll(), targetScroll + event.deltaY * 0.95));
+    selectors.menuToggle.addEventListener('click', () => {
+      const opened = selectors.mobileMenu.classList.toggle('is-open');
+      selectors.menuToggle.classList.toggle('is-active', opened);
+      selectors.menuToggle.setAttribute('aria-expanded', String(opened));
+    });
 
-    if (!isAnimating) {
-      isAnimating = true;
-      requestAnimationFrame(tick);
-    }
-  }, { passive: false });
+    selectors.mobileMenu.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMobileMenu);
+    });
+  }
 
-  window.addEventListener("scroll", syncScroll, { passive: true });
-  window.addEventListener("resize", () => {
-    targetScroll = Math.max(0, Math.min(maxScroll(), targetScroll));
-    currentScroll = Math.max(0, Math.min(maxScroll(), currentScroll));
-  });
-}
+  function closeMobileMenu() {
+    if (!selectors.menuToggle || !selectors.mobileMenu) return;
+    selectors.mobileMenu.classList.remove('is-open');
+    selectors.menuToggle.classList.remove('is-active');
+    selectors.menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  function onResize() {
+    state.targetScroll = clamp(state.targetScroll, 0, getMaxScroll());
+    state.currentScroll = clamp(window.scrollY || 0, 0, getMaxScroll());
+    if (window.innerWidth > 860) closeMobileMenu();
+  }
+
+  return { init };
+})();
+
+document.addEventListener('DOMContentLoaded', App.init);
