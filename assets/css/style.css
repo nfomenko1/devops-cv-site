@@ -5776,7 +5776,7 @@
 .button-area-banner-two .hero-secondary-btn {
   background: rgba(22, 22, 22, 0.3);
   border: 0.5px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  box-shadow: 0 10px 24px rgba(253, 196, 72, 0.015);
   backdrop-filter: blur(35px);
   color: var(--color-white);
 }
@@ -5788,7 +5788,9 @@
   align-items: center;
   gap: 28px;
   flex-wrap: wrap;
-  margin-top: 24px;
+  margin-top: 32px;
+  position: relative;
+  top: 4px;
 }
 .hero-contact-item {
   display: inline-flex;
@@ -5798,18 +5800,27 @@
   font-family: var(--font-secondary);
   font-size: 18px;
   line-height: 1.6;
+  position: relative;
+  top: 2px;
 }
 .hero-contact-item a,
 .hero-contact-item span {
   color: inherit;
 }
+.hero-contact-item a {
+  display: inline-block;
+  color: #cfcfcf;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
 .hero-contact-item a:hover {
-  color: var(--color-primary);
+  color: #f4f4f4;
+  transform: scale(1.035);
 }
 .hero-contact-dot {
   color: var(--color-primary);
-  font-size: 18px;
+  font-size: 20px;
   line-height: 1;
+  font-weight: 700;
 }
 
 #work-experience .about-us-card,
@@ -5817,18 +5828,38 @@
   border-radius: 20px;
   border: 0.5px solid rgba(255, 255, 255, 0.05);
   background: rgba(22, 22, 22, 0.3);
-  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  box-shadow: 0 10px 24px rgba(253, 196, 72, 0.015);
   backdrop-filter: blur(35px);
+}
+#work-experience .about-us-card::after,
+#education .resume-single::after {
+  display: none;
+}
+#education {
+  position: relative;
+  overflow: hidden;
+}
+#education::before {
+  content: "";
+  position: absolute;
+  width: 380px;
+  height: 380px;
+  left: 50%;
+  top: 120px;
+  transform: translateX(-12%);
+  background: linear-gradient(0deg, rgba(255, 1, 79, 0) 15.49%, var(--color-primary) 100%);
+  filter: blur(6px);
+  border-radius: 100%;
+  opacity: 0.45;
+  z-index: 0;
+  pointer-events: none;
+}
+#education .container {
+  position: relative;
+  z-index: 1;
 }
 #education .resume-single {
   padding: 30px;
-}
-#education .resume-single::after {
-  transition: all 0.8s ease;
-}
-#education .resume-single:hover::after {
-  background: var(--color-primary);
-  opacity: 1;
 }
 
 .skill-chip-list {
@@ -5841,15 +5872,23 @@
   align-items: center;
   justify-content: center;
   padding: 10px 18px;
-  border-radius: 14px;
+  border-radius: 16px;
   border: 0.5px solid rgba(255, 255, 255, 0.08);
-  background: linear-gradient(135deg, rgba(255, 1, 79, 0.16) 0%, rgba(22, 22, 22, 0.42) 100%);
-  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.03);
+  background: linear-gradient(135deg, rgba(255, 1, 79, 0.12) 0%, rgba(22, 22, 22, 0.3) 100%);
+  box-shadow: 0 10px 24px rgba(253, 196, 72, 0.012);
   backdrop-filter: blur(35px);
   color: var(--color-heading);
   font-family: var(--font-secondary);
   font-size: 18px;
   line-height: 1.6;
+  transition: transform 0.3s ease, color 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.skill-chip:hover {
+  transform: scale(1.035);
+  color: #f5f5f5;
+  background: linear-gradient(135deg, rgba(255, 1, 79, 0.16) 0%, rgba(22, 22, 22, 0.34) 100%);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 10px 24px rgba(253, 196, 72, 0.02);
 }
 
 @media only screen and (max-width: 1199px) {
