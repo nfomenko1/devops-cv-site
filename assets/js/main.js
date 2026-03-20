@@ -137,3 +137,25 @@
 
   app.init();
 })(jQuery);
+
+(function ($) {
+  "use strict";
+
+  $(document).on('click', 'a[href^="#"]', function (e) {
+    const targetId = $(this).attr('href');
+    if (!targetId || targetId === '#' || targetId.length < 2) return;
+
+    const $target = $(targetId);
+    if (!$target.length) return;
+
+    e.preventDefault();
+    const headerHeight = $('.portfolio-glass-header').outerHeight() || 0;
+
+    $('html, body').animate(
+      {
+        scrollTop: $target.offset().top - headerHeight - 12,
+      },
+      400
+    );
+  });
+})(jQuery);

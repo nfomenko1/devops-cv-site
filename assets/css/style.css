@@ -5724,3 +5724,154 @@
     transform: rotate(360deg);
   }
 }
+/* ===== Portfolio custom updates ===== */
+.portfolio-glass-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(10, 10, 10, 0.22);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.portfolio-glass-header.header--transparent {
+  position: fixed;
+}
+.portfolio-glass-header .header-content {
+  min-height: 74px;
+}
+.portfolio-glass-header .tmp-mainmenu-nav {
+  margin-left: auto;
+  margin-right: 40px;
+}
+.portfolio-glass-header.sticky {
+  background: rgba(10, 10, 10, 0.28);
+  box-shadow: 0px 7px 18px rgba(24, 16, 16, 0.08);
+  left: 0;
+  transform: none;
+}
+
+.rpp-banner-two-area {
+  padding-top: 82px;
+}
+.banner-two-main-wrapper {
+  padding-top: 10px;
+}
+.hero-left-col {
+  margin-top: 35px !important;
+}
+.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
+.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
+  white-space: nowrap;
+}
+
+.button-area-banner-two {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.button-area-banner-two .hero-secondary-btn {
+  background: rgba(22, 22, 22, 0.3);
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  backdrop-filter: blur(35px);
+  color: var(--color-white);
+}
+.button-area-banner-two .hero-secondary-btn:hover {
+  color: var(--color-white);
+}
+.hero-contact-line {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+.hero-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-gray);
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+}
+.hero-contact-item a,
+.hero-contact-item span {
+  color: inherit;
+}
+.hero-contact-item a:hover {
+  color: var(--color-primary);
+}
+.hero-contact-dot {
+  color: var(--color-primary);
+  font-size: 18px;
+  line-height: 1;
+}
+
+#work-experience .about-us-card,
+#education .resume-single {
+  border-radius: 20px;
+  border: 0.5px solid rgba(255, 255, 255, 0.05);
+  background: rgba(22, 22, 22, 0.3);
+  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  backdrop-filter: blur(35px);
+}
+#education .resume-single {
+  padding: 30px;
+}
+#education .resume-single::after {
+  transition: all 0.8s ease;
+}
+#education .resume-single:hover::after {
+  background: var(--color-primary);
+  opacity: 1;
+}
+
+.skill-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+.skill-chip {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 18px;
+  border-radius: 14px;
+  border: 0.5px solid rgba(255, 255, 255, 0.08);
+  background: linear-gradient(135deg, rgba(255, 1, 79, 0.16) 0%, rgba(22, 22, 22, 0.42) 100%);
+  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.03);
+  backdrop-filter: blur(35px);
+  color: var(--color-heading);
+  font-family: var(--font-secondary);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+@media only screen and (max-width: 1199px) {
+  .portfolio-glass-header .tmp-mainmenu-nav {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 767px) {
+  .rpp-banner-two-area {
+    padding-top: 92px;
+  }
+  .hero-left-col {
+    margin-top: 0 !important;
+  }
+  .hero-contact-line {
+    gap: 14px;
+  }
+  .hero-contact-item {
+    font-size: 16px;
+  }
+  .skill-chip {
+    font-size: 16px;
+    padding: 8px 14px;
+  }
+}
