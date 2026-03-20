@@ -159,3 +159,65 @@
     );
   });
 })(jQuery);
+
+
+(function ($) {
+  "use strict";
+
+  function bindInteractiveBorder(selector) {
+    document.querySelectorAll(selector).forEach(function (card) {
+      card.addEventListener('mousemove', function (e) {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+        card.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+      });
+    });
+  }
+
+  $(document).ready(function () {
+    bindInteractiveBorder('.interactive-border');
+    bindInteractiveBorder('.skill-chip');
+
+    const $mobileMenu = $('.tmp-popup-mobile-menu');
+    $('.portfolio-mobile-menu-toggle').on('click', function () {
+      $mobileMenu.addClass('active');
+      $('body').addClass('mobile-menu-open');
+    });
+    $('.tmp-popup-mobile-menu .close-button, .tmp-popup-mobile-menu a[href^="#"]').on('click', function () {
+      $mobileMenu.removeClass('active');
+      $('body').removeClass('mobile-menu-open');
+    });
+
+    const modal = document.getElementById('education-modal');
+    const modalTitle = document.getElementById('education-modal-title');
+    const modalText = document.getElementById('education-modal-text');
+    const modalDialog = modal ? modal.querySelector('.education-modal__dialog') : null;
+
+    document.querySelectorAll('#education .resume-single').forEach(function (item) {
+      item.addEventListener('click', function () {
+        if (!modal) return;
+        modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
+        modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
+        modal.classList.add('is-open');
+        document.body.classList.add('education-modal-open');
+      });
+    });
+
+    if (modal) {
+      modal.addEventListener('click', function (e) {
+        if (e.target && e.target.closest('[data-modal-close="true"]')) {
+          modal.classList.remove('is-open');
+          document.body.classList.remove('education-modal-open');
+        }
+      });
+      if (modalDialog) {
+        modalDialog.addEventListener('mousemove', function (e) {
+          const rect = modalDialog.getBoundingClientRect();
+          modalDialog.style.setProperty('--x', (e.clientX - rect.left) + 'px');
+          modalDialog.style.setProperty('--y', (e.clientY - rect.top) + 'px');
+          modalDialog.classList.add('is-active');
+        });
+      }
+    }
+  });
+})(jQuery);
