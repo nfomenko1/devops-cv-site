@@ -245,3 +245,16 @@
     }
   });
 })(jQuery);
+
+
+(function () {
+  const hoverTargets = document.querySelectorAll('.interactive-border, .skill-chip');
+  hoverTargets.forEach(function (el) {
+    el.addEventListener('mouseenter', function () {
+      el.classList.add('is-active');
+    });
+    el.addEventListener('mouseleave', function () {
+      el.classList.remove('is-active');
+    });
+  });
+})();
