@@ -52,10 +52,12 @@
 
           heroTitles.forEach(function (title, index) {
             const subtitle = heroSubtitles[index] || null;
-            const splitTitle = new SplitText(title, { type: 'chars' });
+            const splitTitle = new SplitText(title, { type: 'lines,words' });
             const splitSubtitle = subtitle
-              ? new SplitText(subtitle, { type: 'chars words' })
+              ? new SplitText(subtitle, { type: 'lines,words' })
               : null;
+
+            gsap.set(splitTitle.lines, { overflow: 'visible' });
 
             gsap.timeline({
               scrollTrigger: typeof ScrollTrigger !== 'undefined' ? {
@@ -65,11 +67,12 @@
                 toggleActions: 'play none none none'
               } : undefined
             })
-              .from(splitTitle.chars, {
-                duration: 0.2,
-                x: -10,
+              .from(splitTitle.words, {
+                duration: group.selector === '.tmp-title-split' ? 0.42 : 0.3,
+                yPercent: 18,
                 autoAlpha: group.titleAlpha,
-                stagger: group.selector === '.tmp-title-split' ? 0.02 : 0.01
+                stagger: group.selector === '.tmp-title-split' ? 0.03 : 0.018,
+                clearProps: 'all'
               })
               .from(
                 splitSubtitle ? splitSubtitle.words : [],
@@ -79,7 +82,7 @@
                   autoAlpha: group.subtitleAlpha,
                   stagger: 0.01
                 },
-                '-=1'
+                '-=0.45'
               );
           });
         });
@@ -203,9 +206,7 @@
       if (e.key === 'Escape') {
         closeMobileMenu();
         if (modal && modal.classList.contains('is-open')) {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('education-modal-open');
+          closeEducationModal();
         }
       }
     });
@@ -215,23 +216,34 @@
     const modalText = document.getElementById('education-modal-text');
     const modalDialog = modal ? modal.querySelector('.education-modal__dialog') : null;
 
+    function openEducationModal(item) {
+      if (!modal) return;
+      modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
+      modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('education-modal-open');
+      requestAnimationFrame(function () {
+        modal.classList.add('is-open');
+      });
+    }
+
+    function closeEducationModal() {
+      if (!modal) return;
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('education-modal-open');
+    }
+
     document.querySelectorAll('#education .resume-single').forEach(function (item) {
       item.addEventListener('click', function () {
-        if (!modal) return;
-        modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
-        modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
-        modal.classList.add('is-open');
-        modal.setAttribute('aria-hidden', 'false');
-        document.body.classList.add('education-modal-open');
+        openEducationModal(item);
       });
     });
 
     if (modal) {
       modal.addEventListener('click', function (e) {
         if (e.target && e.target.closest('[data-modal-close="true"]')) {
-          modal.classList.remove('is-open');
-          modal.setAttribute('aria-hidden', 'true');
-          document.body.classList.remove('education-modal-open');
+          closeEducationModal();
         }
       });
       if (modalDialog) {

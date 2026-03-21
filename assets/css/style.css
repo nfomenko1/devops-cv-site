@@ -6876,3 +6876,165 @@ h1, h2, h3, h4, h5, h6, p, .disc, .description, .card-para, .resume-title, .inst
     transform-origin: center;
   }
 }
+
+
+/* ===== Final polish patch: text flow, accents, stronger borders, synced modal ===== */
+:root{
+  --edge-core-final: rgba(255, 1, 79, 1);
+  --edge-mid-final: rgba(255, 1, 79, 0.52);
+  --edge-soft-final: rgba(255,255,255,0.16);
+}
+
+/* Stop browser from breaking words awkwardly */
+html, body {
+  overflow-x: clip;
+}
+h1, h2, h3, h4, h5, h6,
+p, .disc, .description, .card-para, .resume-title, .institute,
+.experience-list li, .monitor-meta, .summary-brand p,
+.text-para-documents, .hero-contact-item, .company-name, .experience-date {
+  word-break: normal !important;
+  overflow-wrap: normal !important;
+  word-wrap: normal !important;
+  hyphens: none !important;
+}
+.banner-two-main-wrapper .inner .disc,
+.text-para-doc-wrap .text-para-documents,
+.about-us-right-content-wrap .section-head .description,
+.experience-list li,
+.hero-contact-line {
+  text-wrap: pretty;
+}
+.banner-two-main-wrapper .inner .disc span,
+.text-para-doc-wrap .text-para-documents span {
+  white-space: normal;
+}
+.banner-two-main-wrapper .inner .disc{
+  max-width: 552px !important;
+  line-height: 1.72;
+}
+.text-para-doc-wrap .text-para-documents{
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.28;
+}
+@media (max-width: 991px){
+  .banner-two-main-wrapper .inner .disc,
+  .text-para-doc-wrap .text-para-documents{
+    max-width: 100% !important;
+  }
+}
+
+/* Restore about label accent and reduce education icon */
+.about-us-right-content-wrap .section-sub-title span.subtitle{
+  color: var(--color-primary) !important;
+}
+.about-us-left-content-wrap .design-card .design-card-img i,
+.design-card .icon i{
+  font-size: 26px !important;
+}
+@media only screen and (max-width: 767px){
+  .about-us-left-content-wrap .design-card .design-card-img i,
+  .design-card .icon i{
+    font-size: 18px !important;
+  }
+}
+
+/* Stronger, more visible edge-light across the project */
+.interactive-border{
+  border-color: rgba(255,255,255,0.08);
+}
+.interactive-border::before{
+  padding: 1.2px;
+  background:
+    radial-gradient(
+      360px circle at var(--x, 50%) var(--y, 50%),
+      var(--edge-core-final) 0%,
+      var(--edge-mid-final) 16%,
+      rgba(255, 1, 79, 0.28) 28%,
+      var(--edge-soft-final) 42%,
+      rgba(255,255,255,0) 60%
+    );
+  opacity: 0;
+  transition: opacity .16s ease;
+}
+.interactive-border:hover::before,
+.interactive-border.is-active::before{
+  opacity: 1 !important;
+}
+#work-experience .about-us-card::before{
+  background:
+    radial-gradient(
+      380px circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 1, 79, 1) 0%,
+      rgba(255, 1, 79, 0.58) 15%,
+      rgba(255, 1, 79, 0.24) 27%,
+      rgba(255,255,255,0.18) 42%,
+      rgba(255,255,255,0) 60%
+    ) !important;
+}
+#education .resume-single::before{
+  background:
+    radial-gradient(
+      370px circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 1, 79, 0.98) 0%,
+      rgba(255, 1, 79, 0.52) 16%,
+      rgba(255, 1, 79, 0.22) 29%,
+      rgba(255,255,255,0.16) 43%,
+      rgba(255,255,255,0) 60%
+    ) !important;
+}
+.monitor-card::before,
+.portfolio-bottom-summary__inner::before,
+.education-modal__dialog::before{
+  background:
+    radial-gradient(
+      330px circle at var(--x, 50%) var(--y, 50%),
+      rgba(255, 1, 79, 0.92) 0%,
+      rgba(255, 1, 79, 0.40) 18%,
+      rgba(255, 1, 79, 0.16) 32%,
+      rgba(255,255,255,0.12) 44%,
+      rgba(255,255,255,0) 60%
+    ) !important;
+}
+
+/* Modal backdrop and dialog open together without delayed blur feeling */
+.education-modal{
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: opacity .18s ease, visibility 0s linear .18s;
+}
+.education-modal.is-open{
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity .18s ease, visibility 0s linear 0s;
+}
+.education-modal__backdrop{
+  background: rgba(6, 6, 8, 0.58) !important;
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  opacity: 1;
+  transition: none;
+}
+.education-modal__dialog{
+  transform: translateY(10px) scale(.985);
+  opacity: 0;
+  transition: transform .18s ease, opacity .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.education-modal.is-open .education-modal__dialog{
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+/* Keep floating text behavior, just a bit livelier without changing speed */
+@keyframes heroFloatOne {
+  0% { transform: translateY(-1px); }
+  100% { transform: translateY(-16px); }
+}
+@keyframes heroFloatTwo {
+  0% { transform: translateY(-16px); }
+  100% { transform: translateY(1px); }
+}
