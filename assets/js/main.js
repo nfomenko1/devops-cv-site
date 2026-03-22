@@ -90,7 +90,7 @@
     },
 
     animationOnHover() {
-      const cards = document.querySelectorAll('.tmponhover');
+      const cards = document.querySelectorAll('.tmponhover:not(.interactive-border)');
       if (!cards.length) return;
 
       cards.forEach(function (card) {
@@ -217,15 +217,13 @@
     const modalDialog = modal ? modal.querySelector('.education-modal__dialog') : null;
 
     function openEducationModal(item) {
-      if (!modal) return;
-      modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
-      modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
-      modal.setAttribute('aria-hidden', 'false');
-      document.body.classList.add('education-modal-open');
-      requestAnimationFrame(function () {
-        modal.classList.add('is-open');
-      });
-    }
+  if (!modal) return;
+  modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
+  modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
+  modal.setAttribute('aria-hidden', 'false');
+  modal.classList.add('is-open');
+  document.body.classList.add('education-modal-open');
+}
 
     function closeEducationModal() {
       if (!modal) return;
