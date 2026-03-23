@@ -7160,6 +7160,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 @media only screen and (min-width: 992px) {
   .banner-two-main-wrapper .banner-right-content {
-    transform: translateY(-38px);
+    transform: translateY(-50px);
   }
 }
