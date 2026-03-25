@@ -3682,6 +3682,7 @@
   width: 100%;
   height: 580.327px;
   z-index: 0;
+  left: 50%;
 }.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
   color: var(--color-heading);
   font-family: var(--font-primary);
@@ -3710,7 +3711,7 @@
   line-height: 70px;
   font-weight: 700;
   position: absolute;
-  bottom: 110px;
+  bottom: 130px;
   z-index: 1;
   margin-bottom: 0;
 }@media (min-width: 400px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
@@ -3746,10 +3747,16 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
+.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
   z-index: -1;
+}
+.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img img{
+  display: block;
+  margin: 0 auto;
 }@keyframes banner-cycle-animation {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -4298,6 +4305,7 @@
   position: absolute;
   top: 265px;
   z-index: -1;
+  left: 50%;
 }@media only screen and (max-width: 575px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
     display: none;
   }}@media (min-width: 576px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
@@ -4320,6 +4328,7 @@
   bottom: 110px;
   z-index: 1;
   margin-bottom: 0;
+  left: 50%;
 }@media (min-width: 400px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
     font-size: 75px;
     line-height: 85px;
@@ -4353,10 +4362,16 @@
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-}.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
+.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
+  left: 50%;
   bottom: 0;
+  transform: translateX(-50%);
   z-index: -1;
+}
+.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img img{
+  display: block;
+  margin: 0 auto;
 }@keyframes banner-cycle-animation {
   from {
     transform: translate(-50%, -50%) rotate(0deg);
@@ -6906,8 +6921,8 @@ h1, h2, h3, h4, h5, h6, p, .disc, .description, .card-para, .resume-title, .inst
     font-size: 94px;
   }
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    left: 34px;
-    bottom: 104px;
+    left: 50%;
+    bottom: 125px;
   }
 }
 @media (min-width: 1200px) {
@@ -6916,15 +6931,15 @@ h1, h2, h3, h4, h5, h6, p, .disc, .description, .card-para, .resume-title, .inst
     font-size: 103px;
   }
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    left: 42px;
-    bottom: 102px;
+    left: 50%;
+    bottom: 122px;
   }
 }
 .up-down {
-  animation: heroFloatOne 1s infinite alternate ease-in-out;
+  animation: heroFloatOne 0.8s infinite alternate ease-in-out;
 }
 .up-down-2 {
-  animation: heroFloatTwo 0.9s infinite alternate ease-in-out;
+  animation: heroFloatTwo 0.8s infinite alternate ease-in-out;
 }
 @keyframes heroFloatOne {
   0% { transform: translateY(0); }
@@ -7160,6 +7175,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 @media only screen and (min-width: 992px) {
   .banner-two-main-wrapper .banner-right-content {
-    transform: translateY(-70px);
+    transform: translateY(-80px);
   }
 }
