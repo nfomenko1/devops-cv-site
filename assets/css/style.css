@@ -3742,7 +3742,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -4356,7 +4356,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: -1px;
+  bottom: 0px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -7188,6 +7188,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 }
 .about-content-area .container.tmp-section-gap{
-  padding-top: 40px;
+  padding-top: 10px;
   padding-bottom: 70px;
 }
