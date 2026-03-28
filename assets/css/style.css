@@ -3742,7 +3742,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: -10px;
+  bottom: -1px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -4347,7 +4347,7 @@
   left: 0;
   bottom: 0;
   transition: 0.3s;
-  animation: banner-cycle-animation 20s linear infinite;
+  animation: rotateIn-2 20s linear infinite;
   transform-origin: center center;
 }.banner-two-main-wrapper .banner-right-content .main-img .logo-under-img-wrap .logo-under-img-2{
   position: absolute;
@@ -4356,7 +4356,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: -10px;
+  bottom: -1px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -7098,7 +7098,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .14s ease, visibility 0s linear .14s;
+  transition: opacity .12s ease;
   z-index: 1200;
 }
 
@@ -7117,7 +7117,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   -webkit-backdrop-filter: blur(12px);
   will-change: opacity, backdrop-filter;
   transform: translateZ(0);
-  transition: opacity .14s ease;
+  transition: none;
   opacity: 1;
 }
 
