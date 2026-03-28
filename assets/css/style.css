@@ -2146,16 +2146,10 @@
   }
 }@keyframes rotateIn-2 {
   from {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: rotate3d(0, 0, 1, -200deg);
-    transform: rotate3d(0, 0, 1, -200deg);
+    transform: rotate(0deg);
   }
   to {
-    -webkit-transform-origin: center;
-    transform-origin: center;
-    -webkit-transform: none;
-    transform: none;
+    transform: rotate(360deg);
   }
 }@-webkit-keyframes rotateInDownLeft {
   from {
@@ -3748,7 +3742,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -4297,6 +4291,9 @@
   line-height: 70px;
   position: absolute;
   top: 285px;
+  left: 0;
+  width: 100%;
+  text-align: center;
   z-index: -1;
 }@media only screen and (max-width: 575px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
     display: none;
@@ -4318,6 +4315,9 @@
   font-weight: 700;
   position: absolute;
   bottom: 130px;
+  left: 0;
+  width: 100%;
+  text-align: center;
   z-index: 1;
   margin-bottom: 0;
 }@media (min-width: 400px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
@@ -4347,7 +4347,8 @@
   left: 0;
   bottom: 0;
   transition: 0.3s;
-  animation: rotateIn-2 20s linear infinite;
+  animation: banner-cycle-animation 20s linear infinite;
+  transform-origin: center center;
 }.banner-two-main-wrapper .banner-right-content .main-img .logo-under-img-wrap .logo-under-img-2{
   position: absolute;
   left: 50%;
@@ -4355,7 +4356,7 @@
   transform: translate(-50%, -50%);
 }.banner-two-main-wrapper .banner-right-content .main-img .benner-two-bg-red-img{
   position: absolute;
-  bottom: 0;
+  bottom: -10px;
   z-index: -1;
 }@keyframes banner-cycle-animation {
   from {
@@ -6901,8 +6902,10 @@ h1, h2, h3, h4, h5, h6, p, .disc, .description, .card-para, .resume-title, .inst
     font-size: 94px;
   }
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    left: 34px;
+    left: 0;
     bottom: 125px;
+    width: 100%;
+    text-align: center;
   }
 }
 @media (min-width: 1200px) {
@@ -6911,8 +6914,10 @@ h1, h2, h3, h4, h5, h6, p, .disc, .description, .card-para, .resume-title, .inst
     font-size: 103px;
   }
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    left: 42px;
+    left: 0;
     bottom: 122px;
+    width: 100%;
+    text-align: center;
   }
 }
 .up-down {
@@ -7183,6 +7188,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 }
 .about-content-area .container.tmp-section-gap{
-  padding-top: 70px;
+  padding-top: 40px;
   padding-bottom: 70px;
 }
