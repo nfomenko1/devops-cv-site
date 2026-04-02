@@ -3661,9 +3661,7 @@
   position: absolute;
   top: 285px;
   z-index: -1;
-}@media only screen and (max-width: 575px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
-    display: none;
-  }}@media (min-width: 576px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
+}@media (min-width: 576px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
     font-size: 100px;
     line-height: 110px;
   }}@media (min-width: 992px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
@@ -3712,7 +3710,6 @@
   transition: 0.3s;
   animation: rotateIn-2 20s linear infinite;
   transform-origin: center center;
-  filter: brightness(0.7) contrast(0.85) opacity(0.72);
 }.banner-two-main-wrapper .banner-right-content .main-img .logo-under-img-wrap .logo-under-img-2{
   position: absolute;
   left: 50%;
@@ -4171,7 +4168,6 @@
   transition: 0.3s;
   animation: rotateIn-2 20s linear infinite;
   transform-origin: center center;
-  filter: brightness(0.7) contrast(0.85) opacity(0.72);
 }@keyframes wave-front {
   100% {
     transform: translateX(-50%);
@@ -6187,7 +6183,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 .banner-two-main-wrapper .inner .disc {
-  max-width: 590px !important;
+  max-width: 570px !important;
   color: rgba(235, 235, 239, 0.66);
   line-height: 1.72;
   text-wrap: pretty;
@@ -6205,7 +6201,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   margin-left: auto;
   margin-right: auto;
   line-height: 1.28;
-  margin-top: -40px;
+  margin-top: -80px;
 }
 
 .banner-two-main-wrapper .inner .disc span,
@@ -6432,10 +6428,8 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   padding: 34px;
   border-radius: 24px;
   border: 0.5px solid rgba(255,255,255,0.08);
-  background: linear-gradient(135deg, rgba(255,1,79,0.10), rgba(18,18,18,0.38));
+  background: linear-gradient(135deg, rgba(255,1,79,0.14), rgba(18,18,18,0.62));
   box-shadow: 0 20px 50px rgba(0,0,0,.28);
-  backdrop-filter: blur(35px);
-  -webkit-backdrop-filter: blur(35px);
   transform: none;
   opacity: 1;
   will-change: auto;
@@ -6480,7 +6474,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 590px;
+    max-width: 570px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
@@ -6507,7 +6501,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 580px;
+    max-width: 550px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
@@ -6591,12 +6585,31 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 }
 
-.about-content-area .container.tmp-section-gap {
-  padding-top: 10px;
-  padding-bottom: 70px;
-}
 .banner-shape-two img {
   filter: brightness(0.65) contrast(0.85) opacity(0.75)
           drop-shadow(0 0 8px rgba(255, 1, 79, 0.2));
   mix-blend-mode: screen;
+}
+
+@media only screen and (max-width: 767px) {
+  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
+  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
+    font-size: 54px;
+    line-height: 1.05;
+    width: calc(100% - 24px);
+    left: 12px;
+    text-align: center;
+    white-space: normal;
+    word-break: keep-all;
+    overflow-wrap: anywhere;
+  }
+
+  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1 {
+    top: 250px;
+    z-index: 0;
+  }
+
+  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
+    bottom: 92px;
+  }
 }
