@@ -6212,14 +6212,10 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   margin-right: auto;
   line-height: 1.28;
   margin-top: -85px;
-
-  opacity: 1;
-  transform: none;
-}
-
-.text-para-documents.is-visible {
-  opacity: 1;
-  transform: translateY(0);
+  opacity: 0;
+  transform: translateY(22px);
+  animation: textParaFadeUp 0.9s ease forwards;
+  animation-delay: 0.25s;
 }
 
 @media only screen and (max-width: 767px) {
@@ -6682,5 +6678,16 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
     bottom: 92px;
+  }
+}
+
+@keyframes textParaFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
