@@ -3942,7 +3942,7 @@
   }}.section-head.text-align-left{
   text-align: left;
 }.section-head .section-sub-title{
-  font-size: 16px;
+  font-size: 17px;
   font-weight: var(--s-bold);
   color: var(--color-primary);
   text-transform: uppercase;
@@ -3977,11 +3977,11 @@
     font-size: 22px;
   }}.section-head .description{
   margin-top: 10px;
-  color: var(--color-gray);
+  color: rgba(255, 255, 255, 0.82);
   font-family: var(--font-secondary);
-  font-size: 16px;
+  font-size: 17px;
   font-weight: 400;
-  line-height: 26px;
+  line-height: 28px;
 }@media only screen and (max-width: 767px) {.section-head .description br{
     display: none;
   }}.section-head .subtitle{
@@ -4373,7 +4373,7 @@
   border-radius: 20px;
   border: 0.5px solid rgba(255, 255, 255, 0.05);
   background: rgba(22, 22, 22, 0.3);
-  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.025);
   backdrop-filter: blur(35px);
   padding: 64px 80px;
   display: flex;
@@ -4411,7 +4411,7 @@
   border-radius: 20px;
   border: 0.5px solid rgba(255, 255, 255, 0.05);
   background: rgba(22, 22, 22, 0.3);
-  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.04);
+  box-shadow: 15px 26.023px 50px 0px rgba(253, 196, 72, 0.025);
   backdrop-filter: blur(35px);
   padding: 30px;
   margin-top: 30px;
@@ -5837,61 +5837,6 @@
   transform: translateX(3px);
 }
 
-.education-modal {
-  position: fixed;
-  inset: 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition: opacity .3s ease, visibility .3s ease;
-  z-index: 1200;
-}
-.education-modal.is-open {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: auto;
-}
-.education-modal__backdrop {
-  position: absolute;
-  inset: 0;
-  background: rgba(6, 6, 8, 0.54);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-}
-.education-modal__dialog {
-  position: relative;
-  width: min(640px, 100%);
-  padding: 34px;
-  border-radius: 24px;
-  border: 0.5px solid rgba(255,255,255,0.08);
-  background: linear-gradient(135deg, rgba(255,1,79,0.10), rgba(18,18,18,0.38));
-  box-shadow: 0 20px 50px rgba(0,0,0,.28);
-  backdrop-filter: blur(35px);
-}
-.education-modal__eyebrow {
-  color: var(--color-primary);
-  font-family: var(--font-secondary);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: .08em;
-  text-transform: uppercase;
-  margin-bottom: 12px;
-}
-.education-modal__title {
-  margin-bottom: 12px;
-}
-.education-modal__text {
-  color: #d1d1d5;
-  margin-bottom: 0;
-}
-body.education-modal-open {
-  overflow: hidden;
-}
-
 @media only screen and (max-width: 1199px) {
   .portfolio-mobile-menu-toggle { display: inline-flex; align-items:center; justify-content:center; }
   .portfolio-glass-header .tmp-header-right { display:flex; align-items:center; margin-left:auto; }
@@ -6257,6 +6202,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   margin-left: auto;
   margin-right: auto;
   line-height: 1.28;
+  margin-top: -40px;
 }
 
 .banner-two-main-wrapper .inner .disc span,
@@ -6457,7 +6403,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: opacity .12s ease;
   z-index: 1200;
 }
 
@@ -6465,7 +6410,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
-  transition: opacity .14s ease, visibility 0s linear 0s;
 }
 
 .education-modal__backdrop {
@@ -6474,10 +6418,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   background: rgba(6, 6, 8, 0.58);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  will-change: opacity, backdrop-filter;
-  transform: translateZ(0);
-  transition: none;
   opacity: 1;
+  transform: translateZ(0);
+  will-change: auto;
 }
 
 .education-modal__dialog {
@@ -6490,9 +6433,8 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   box-shadow: 0 20px 50px rgba(0,0,0,.28);
   backdrop-filter: blur(35px);
   -webkit-backdrop-filter: blur(35px);
-  transform: none;
   opacity: 1;
-  transition: none;
+  transform: none;
   will-change: auto;
 }
 
@@ -6649,4 +6591,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .about-content-area .container.tmp-section-gap {
   padding-top: 10px;
   padding-bottom: 70px;
+}
+.banner-shape-two img {
+  filter: brightness(0.65) contrast(0.85) opacity(0.75)
+          drop-shadow(0 0 8px rgba(255, 1, 79, 0.2));
+  mix-blend-mode: screen;
 }
