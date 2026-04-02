@@ -1,0 +1,21 @@
+- name: Install docker
+  apt:
+    name: docker.io
+    state: present
+    update_cache: yes
+
+- name: Start docker
+  service:
+    name: docker
+    state: started
+
+- name: Enable docker
+  service:
+    name: docker
+    enabled: true
+
+- name: Login to GHCR
+  docker_login:
+    registry_url: ghcr.io
+    username: "{{ ghcr_username }}"
+    password: "{{ ghcr_token }}"
