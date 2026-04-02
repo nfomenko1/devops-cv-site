@@ -3711,6 +3711,8 @@
   bottom: 0;
   transition: 0.3s;
   animation: rotateIn-2 20s linear infinite;
+  transform-origin: center center;
+  filter: brightness(0.7) contrast(0.85) opacity(0.72);
 }.banner-two-main-wrapper .banner-right-content .main-img .logo-under-img-wrap .logo-under-img-2{
   position: absolute;
   left: 50%;
@@ -3942,7 +3944,7 @@
   }}.section-head.text-align-left{
   text-align: left;
 }.section-head .section-sub-title{
-  font-size: 17px;
+  font-size: 20px;
   font-weight: var(--s-bold);
   color: var(--color-primary);
   text-transform: uppercase;
@@ -4169,6 +4171,7 @@
   transition: 0.3s;
   animation: rotateIn-2 20s linear infinite;
   transform-origin: center center;
+  filter: brightness(0.7) contrast(0.85) opacity(0.72);
 }@keyframes wave-front {
   100% {
     transform: translateX(-50%);
@@ -6184,7 +6187,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 .banner-two-main-wrapper .inner .disc {
-  max-width: 552px !important;
+  max-width: 590px !important;
   color: rgba(235, 235, 239, 0.66);
   line-height: 1.72;
   text-wrap: pretty;
@@ -6415,12 +6418,12 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .education-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6, 6, 8, 0.58);
+  background: rgba(6, 6, 8, 0.64);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  opacity: 1;
   transform: translateZ(0);
   will-change: auto;
+  opacity: 1;
 }
 
 .education-modal__dialog {
@@ -6433,8 +6436,8 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   box-shadow: 0 20px 50px rgba(0,0,0,.28);
   backdrop-filter: blur(35px);
   -webkit-backdrop-filter: blur(35px);
-  opacity: 1;
   transform: none;
+  opacity: 1;
   will-change: auto;
 }
 
@@ -6477,7 +6480,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 560px;
+    max-width: 590px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
@@ -6504,7 +6507,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 540px;
+    max-width: 580px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
