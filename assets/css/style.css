@@ -3661,7 +3661,7 @@
   position: absolute;
   top: 285px;
   z-index: -1;
-}@media (min-width: 576px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
+}@media (min-width: 768px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
     font-size: 100px;
     line-height: 110px;
   }}@media (min-width: 992px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1{
@@ -3681,10 +3681,10 @@
   bottom: 130px;
   z-index: 1;
   margin-bottom: 0;
-}@media (min-width: 400px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
+}@media (min-width: 768px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
     font-size: 75px;
     line-height: 85px;
-  }}@media (min-width: 576px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
+  }}@media (min-width: 768px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
     font-size: 100px;
     line-height: 110px;
   }}@media (min-width: 992px) {.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2{
@@ -6183,7 +6183,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 .banner-two-main-wrapper .inner .disc {
-  max-width: 570px !important;
+  max-width: 560px !important;
   color: rgba(235, 235, 239, 0.66);
   line-height: 1.72;
   text-wrap: pretty;
@@ -6201,7 +6201,21 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   margin-left: auto;
   margin-right: auto;
   line-height: 1.28;
-  margin-top: -80px;
+  margin-top: -85px;
+  opacity: 0.6;
+  transform: translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.text-para-doc-wrap:hover .text-para-documents {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media only screen and (max-width: 767px) {
+  .text-para-documents {
+    margin-top: 0;
+  }
 }
 
 .banner-two-main-wrapper .inner .disc span,
@@ -6353,14 +6367,17 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .skill-chip {
   overflow: visible;
   border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.09);
-  background: linear-gradient(135deg, rgba(255,255,255,0.045) 0%, rgba(255, 97, 155, 0.11) 8%, rgba(31, 20, 26, 0.72) 42%, rgba(15, 15, 18, 0.82) 100%);
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 10px 24px rgba(0,0,0,.16);
-  color: rgba(244,244,247,.92);
-  backdrop-filter: blur(22px);
-  transition: transform .26s ease, box-shadow .26s ease, background .26s ease, color .26s ease, border-color .26s ease, filter .26s ease;
+  border: 1px solid rgba(255, 92, 151, 0.16);
+  background:
+    linear-gradient(135deg, rgba(80, 10, 30, 0.65) 0%, rgba(38, 8, 20, 0.88) 38%, rgba(14, 14, 18, 0.94) 100%);
+  box-shadow:
+    inset 0 1px 0 rgba(255,255,255,0.08),
+    inset 0 0 28px rgba(255, 24, 104, 0.08),
+    0 14px 32px rgba(0,0,0,.28);
+  color: rgba(255,255,255,0.96);
+  backdrop-filter: blur(24px);
+  transition: transform .26s ease, box-shadow .26s ease, background .26s ease, color .26s ease, border-color .26s ease;
   transform-origin: center;
-  filter: contrast(1);
 }
 
 .skill-chip::before {
@@ -6414,9 +6431,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .education-modal__backdrop {
   position: absolute;
   inset: 0;
-  background: rgba(6, 6, 8, 0.64);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+  background: rgba(6, 6, 8, 0.78);
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
   transform: translateZ(0);
   will-change: auto;
   opacity: 1;
@@ -6474,7 +6491,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 570px;
+    max-width: 560px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
@@ -6501,7 +6518,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   }
 
   .banner-two-main-wrapper .inner .disc {
-    max-width: 550px;
+    max-width: 540px;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
@@ -6592,17 +6609,27 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 @media only screen and (max-width: 767px) {
-  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
-  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    font-size: 54px;
-    line-height: 1.05;
-    width: calc(100% - 24px);
-    left: 12px;
-    text-align: center;
-    white-space: normal;
-    word-break: keep-all;
-    overflow-wrap: anywhere;
-  }
+  .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1 {
+  font-size: 48px;
+  line-height: 1;
+  width: 100%;
+  left: 0;
+  top: 245px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: -1;
+}
+
+.banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
+  font-size: 48px;
+  line-height: 1;
+  width: 100%;
+  left: 0;
+  bottom: 92px;
+  text-align: center;
+  white-space: nowrap;
+  z-index: 1;
+}
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1 {
     top: 250px;
