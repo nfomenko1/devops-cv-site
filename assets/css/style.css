@@ -5926,6 +5926,24 @@
 .summary-contacts li {
   margin: 0 0 10px;
 }
+
+.summary-contacts li {
+  position: relative;
+  padding-left: 14px;
+}
+
+.summary-contacts li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(255, 92, 151, 0.55);
+}
+
 .summary-nav a,
 .summary-contacts a {
   color: rgba(214, 214, 218, 0.88);
@@ -6116,14 +6134,18 @@ body {
 
 .portfolio-bottom-summary__inner::before {
   background: radial-gradient(
-    220px circle at var(--x, 50%) var(--y, 50%),
-    rgba(255, 92, 151, 0.16),
-    rgba(255, 92, 151, 0.05) 28%,
+    210px circle at var(--x, 50%) var(--y, 50%),
+    rgba(112, 34, 63, 0.15),
+    rgba(112, 34, 63, 0.06) 26%,
     rgba(255, 255, 255, 0.02) 44%,
     rgba(255, 255, 255, 0) 60%
   );
   opacity: 0;
-  transition: opacity .28s ease;
+  transition: opacity .38s ease;
+}
+
+.portfolio-bottom-summary__inner:hover::before {
+  opacity: 0.42;
 }
 
 /* mobile overlay menu */
@@ -6324,11 +6346,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .hero-copy-block .disc:first-child {
   max-width: 520px;
   color: rgba(255, 255, 255, 0.92);
-}
-
-.hero-copy-lead {
-  color: rgba(255, 255, 255, 0.94);
-  font-weight: 600;
 }
 
 .hero-copy-block .disc:last-child {
@@ -6885,7 +6902,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 #about .col-lg-6:last-child {
-  padding-top: 26px;
+  padding-top: 32px;
 }
 
 @media only screen and (max-width: 767px) {
