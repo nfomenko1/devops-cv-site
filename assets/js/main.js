@@ -46,7 +46,7 @@
           { selector: '.tmp-title-split-2', titleAlpha: 0.06, subtitleAlpha: 0.06 }
         ];
 
-                titleGroups.forEach(function (group) {
+                        titleGroups.forEach(function (group) {
           const heroTitles = document.querySelectorAll(group.selector);
           const heroSubtitles = document.querySelectorAll('.hero__sub-title');
 
@@ -89,25 +89,33 @@
 
         const introText = document.querySelector('.text-para-documents');
         if (introText && typeof ScrollTrigger !== 'undefined') {
+          introText.classList.remove('tmp-scroll-trigger', 'tmp-fade-in', 'animation-order-1');
+
           const splitIntro = new SplitText(introText, { type: 'lines,words' });
 
           gsap.set(splitIntro.lines, { overflow: 'visible' });
+          gsap.set(splitIntro.words, {
+            autoAlpha: 0,
+            yPercent: 22
+          });
 
           gsap.timeline({
             scrollTrigger: {
               trigger: introText,
               start: 'top 82%',
-              toggleActions: 'play none none none'
+              toggleActions: 'play none none none',
+              once: true
             }
-          }).from(splitIntro.words, {
-            duration: 0.38,
-            yPercent: 24,
-            autoAlpha: 0,
-            stagger: 0.035,
+          }).to(splitIntro.words, {
+            autoAlpha: 1,
+            yPercent: 0,
+            duration: 0.36,
+            stagger: 0.03,
             ease: 'power2.out',
-            clearProps: 'all'
+            clearProps: 'opacity,transform'
           });
         }
+      });
 
     animationOnHover() {
       const cards = document.querySelectorAll('.tmponhover:not(.interactive-border)');
