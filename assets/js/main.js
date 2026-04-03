@@ -46,7 +46,7 @@
           { selector: '.tmp-title-split-2', titleAlpha: 0.06, subtitleAlpha: 0.06 }
         ];
 
-        titleGroups.forEach(function (group) {
+                titleGroups.forEach(function (group) {
           const heroTitles = document.querySelectorAll(group.selector);
           const heroSubtitles = document.querySelectorAll('.hero__sub-title');
 
@@ -86,8 +86,28 @@
               );
           });
         });
-      });
-    },
+
+        const introText = document.querySelector('.text-para-documents');
+        if (introText && typeof ScrollTrigger !== 'undefined') {
+          const splitIntro = new SplitText(introText, { type: 'lines,words' });
+
+          gsap.set(splitIntro.lines, { overflow: 'visible' });
+
+          gsap.timeline({
+            scrollTrigger: {
+              trigger: introText,
+              start: 'top 82%',
+              toggleActions: 'play none none none'
+            }
+          }).from(splitIntro.words, {
+            duration: 0.38,
+            yPercent: 24,
+            autoAlpha: 0,
+            stagger: 0.035,
+            ease: 'power2.out',
+            clearProps: 'all'
+          });
+        }
 
     animationOnHover() {
       const cards = document.querySelectorAll('.tmponhover:not(.interactive-border)');

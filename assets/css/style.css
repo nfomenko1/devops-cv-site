@@ -6210,8 +6210,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.28;
-  margin-top: -85px;
+  line-height: 1.22;
+  margin-top: -60px;
+  margin-bottom: -40px;
   opacity: 0;
   transform: translateY(22px);
   animation: textParaFadeUp 0.9s ease forwards;
@@ -6219,7 +6220,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 @media only screen and (max-width: 767px) {
-  .text-para-documents {
+  .text-para-doc-wrap .text-para-documents {
     margin-top: 0;
   }
 }
