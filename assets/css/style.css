@@ -412,7 +412,21 @@
     padding: 80px 0;
   }}@media only screen and (max-width: 767px) {.tmp-section-gap{
     padding: 60px 0;
-  }}.tmp-section-gapTop{
+  }}.about-us-area {
+  padding-top: 40px;
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .about-us-area {
+    padding-top: 32px;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .about-us-area {
+    padding-top: 24px;
+  }
+}
+  .tmp-section-gapTop{
   padding-top: 120px;
 }@media only screen and (min-width: 768px) and (max-width: 991px) {.tmp-section-gapTop{
     padding-top: 80px;
@@ -6190,13 +6204,38 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 .banner-two-main-wrapper .inner {
   max-width: 620px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .banner-two-main-wrapper .inner .disc {
-  max-width: 560px !important;
+  max-width: 100% !important;
   color: rgba(235, 235, 239, 0.66);
-  line-height: 1.72;
+  line-height: 1.78;
   text-wrap: pretty;
+  margin-bottom: 0;
+}
+
+.hero-copy-block {
+  max-width: 430px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.hero-copy-block .disc:first-child {
+  max-width: 360px;
+  color: rgba(235, 235, 239, 0.82);
+}
+
+.hero-copy-block .disc:last-child {
+  max-width: 430px;
+}
+
+.button-area-banner-two {
+  margin-top: 28px;
 }
 
 .text-para-doc-wrap .text-para-documents,
@@ -6526,9 +6565,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 @media (min-width: 992px) {
   .hero-left-col .inner {
-    margin-left: -20px;
+    margin-left: 0;
     max-width: 610px;
-  }
+}
 
   .banner-two-main-wrapper .inner .disc {
     max-width: 560px;
@@ -6553,9 +6592,9 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 @media (min-width: 1200px) {
   .hero-left-col .inner {
-    margin-left: -28px;
+    margin-left: 0;
     max-width: 600px;
-  }
+}
 
   .banner-two-main-wrapper .inner .disc {
     max-width: 540px;

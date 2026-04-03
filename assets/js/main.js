@@ -203,3 +203,43 @@
     });
   });
 })(jQuery);
+
+(function ($) {
+  "use strict";
+
+  $(document).ready(function () {
+    const $modal = $('#education-modal');
+    const $modalTitle = $('#education-modal-title');
+    const $modalText = $('#education-modal-text');
+
+    if (!$modal.length) return;
+
+    function openEducationModal(title, text) {
+      $modalTitle.text(title || 'Подробности');
+      $modalText.text(text || 'Описание будет добавлено позже.');
+      $modal.attr('aria-hidden', 'false').addClass('is-open');
+      $('body').addClass('education-modal-open');
+    }
+
+    function closeEducationModal() {
+      $modal.attr('aria-hidden', 'true').removeClass('is-open');
+      $('body').removeClass('education-modal-open');
+    }
+
+    $('.resume-single').on('click', function () {
+      const title = $(this).attr('data-detail-title');
+      const text = $(this).attr('data-detail-text');
+      openEducationModal(title, text);
+    });
+
+    $modal.on('click', '[data-modal-close="true"]', function () {
+      closeEducationModal();
+    });
+
+    $(document).on('keydown', function (e) {
+      if (e.key === 'Escape') {
+        closeEducationModal();
+      }
+    });
+  });
+})(jQuery);
