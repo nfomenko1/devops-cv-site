@@ -46,7 +46,7 @@
           { selector: '.tmp-title-split-2', titleAlpha: 0.06, subtitleAlpha: 0.06 }
         ];
 
-                        titleGroups.forEach(function (group) {
+        titleGroups.forEach(function (group) {
           const heroTitles = document.querySelectorAll(group.selector);
           const heroSubtitles = document.querySelectorAll('.hero__sub-title');
 
@@ -86,36 +86,8 @@
               );
           });
         });
-
-        const introText = document.querySelector('.text-para-documents');
-        if (introText && typeof ScrollTrigger !== 'undefined') {
-          introText.classList.remove('tmp-scroll-trigger', 'tmp-fade-in', 'animation-order-1');
-
-          const splitIntro = new SplitText(introText, { type: 'lines,words' });
-
-          gsap.set(splitIntro.lines, { overflow: 'visible' });
-          gsap.set(splitIntro.words, {
-            autoAlpha: 0,
-            yPercent: 22
-          });
-
-          gsap.timeline({
-            scrollTrigger: {
-              trigger: introText,
-              start: 'top 82%',
-              toggleActions: 'play none none none',
-              once: true
-            }
-          }).to(splitIntro.words, {
-            autoAlpha: 1,
-            yPercent: 0,
-            duration: 0.36,
-            stagger: 0.03,
-            ease: 'power2.out',
-            clearProps: 'opacity,transform'
-          });
-        }
       });
+    },
 
     animationOnHover() {
       const cards = document.querySelectorAll('.tmponhover:not(.interactive-border)');
@@ -229,70 +201,5 @@
         closeMobileMenu();
       }
     });
-
-    $(document).on('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeMobileMenu();
-        if (modal && modal.classList.contains('is-open')) {
-          closeEducationModal();
-        }
-      }
-    });
-
-    const modal = document.getElementById('education-modal');
-    const modalTitle = document.getElementById('education-modal-title');
-    const modalText = document.getElementById('education-modal-text');
-    const modalDialog = modal ? modal.querySelector('.education-modal__dialog') : null;
-
-    function openEducationModal(item) {
-  if (!modal) return;
-  modalTitle.textContent = item.getAttribute('data-detail-title') || 'Подробности';
-  modalText.textContent = item.getAttribute('data-detail-text') || 'Описание будет добавлено позже.';
-  modal.setAttribute('aria-hidden', 'false');
-  modal.classList.add('is-open');
-  document.body.classList.add('education-modal-open');
-}
-
-    function closeEducationModal() {
-      if (!modal) return;
-      modal.classList.remove('is-open');
-      modal.setAttribute('aria-hidden', 'true');
-      document.body.classList.remove('education-modal-open');
-    }
-
-    document.querySelectorAll('#education .resume-single').forEach(function (item) {
-      item.addEventListener('click', function () {
-        openEducationModal(item);
-      });
-    });
-
-    if (modal) {
-      modal.addEventListener('click', function (e) {
-        if (e.target && e.target.closest('[data-modal-close="true"]')) {
-          closeEducationModal();
-        }
-      });
-      if (modalDialog) {
-        modalDialog.addEventListener('mousemove', function (e) {
-          const rect = modalDialog.getBoundingClientRect();
-          modalDialog.style.setProperty('--x', (e.clientX - rect.left) + 'px');
-          modalDialog.style.setProperty('--y', (e.clientY - rect.top) + 'px');
-          modalDialog.classList.add('is-active');
-        });
-      }
-    }
   });
 })(jQuery);
-
-
-(function () {
-  const hoverTargets = document.querySelectorAll('.interactive-border, .skill-chip');
-  hoverTargets.forEach(function (el) {
-    el.addEventListener('mouseenter', function () {
-      el.classList.add('is-active');
-    });
-    el.addEventListener('mouseleave', function () {
-      el.classList.remove('is-active');
-    });
-  });
-})();

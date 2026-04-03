@@ -3729,27 +3729,18 @@
 }.text-para-doc-wrap{
   position: relative;
 }.text-para-doc-wrap .text-para-documents{
-  max-width: 1280px;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: -34px;
-  margin-bottom: -18px;
   color: var(--color-heading);
   text-align: center;
   font-family: var(--font-primary);
   font-weight: 700;
 }@media (min-width: 576px) {.text-para-doc-wrap .text-para-documents{
     font-size: 48px;
-    line-height: 1.22;
+    line-height: 1.25;
   }}@media only screen and (min-width: 768px) and (max-width: 991px) {.text-para-doc-wrap .text-para-documents{
     font-size: 40px;
-    margin-top: -18px;
-    margin-bottom: -10px;
   }}@media only screen and (max-width: 767px) {.text-para-doc-wrap .text-para-documents{
     font-size: 25px;
-    line-height: 1.42;
-    margin-top: 0;
-    margin-bottom: 0;
+    line-height: 1.5;
   }}.text-para-doc-wrap .text-para-documents span{
   color: var(--color-primary);
 }.text-para-doc-wrap .right-bg-text-para{
@@ -6219,15 +6210,17 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   max-width: 1280px;
   margin-left: auto;
   margin-right: auto;
-  line-height: 1.22;
-  margin-top: -34px;
-  margin-bottom: -18px;
+  line-height: 1.28;
+  margin-top: -85px;
+  opacity: 0;
+  transform: translateY(22px);
+  animation: textParaFadeUp 0.9s ease forwards;
+  animation-delay: 0.25s;
 }
 
 @media only screen and (max-width: 767px) {
   .text-para-doc-wrap .text-para-documents {
     margin-top: 0;
-    margin-bottom: 0;
   }
 }
 
