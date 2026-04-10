@@ -6726,7 +6726,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   margin-bottom: 16px;
   color: rgba(245, 235, 240, 0.72);
   font-family: var(--font-secondary);
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.4;
 }
@@ -6734,6 +6734,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .education-modal__text .roadmap-modal-label--result {
   color: rgba(255, 240, 245, 0.92);
   font-weight: 700;
+  font-size: 18px;
 }
 
 .education-modal__text .roadmap-modal-list {
@@ -7040,12 +7041,12 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1 {
-    top: 250px;
+    top: 220px;
     z-index: -1;
   }
 
   .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
-    bottom: 92px;
+    bottom: 90px;
   }
 }
 
@@ -7068,4 +7069,33 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   #about .col-lg-6:last-child {
     padding-top: 0;
   }
+}
+
+.education-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 18px;
+  background: transparent;
+  border: none;
+  color: rgba(200, 200, 210, 0.4);
+  font-size: 18px;
+  cursor: pointer;
+  line-height: 1;
+  transition: color 0.2s ease;
+}
+
+.education-modal__close:hover {
+  color: rgba(230, 230, 240, 0.7);
+}
+
+@media only screen and (max-width: 767px) {
+
+  .banner-two-main-wrapper .inner {
+    max-width: 100%;
+  }
+
+  .hero-copy-block {
+    max-width: 100%;
+  }
+
 }
