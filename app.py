@@ -15,6 +15,12 @@ REQUEST_LATENCY = Histogram(
     'Request latency'
 )
 
+ERROR_COUNT = Counter(
+    'app_errors_total',
+    'Total number of error responses',
+    ['status_code']
+)
+
 # Hooks
 @app.before_request
 def before_request():
@@ -27,6 +33,9 @@ def after_request(response):
 
     REQUEST_COUNT.inc()
     REQUEST_LATENCY.observe(latency)
+
+    if response.status_code >= 400:
+        ERROR_COUNT.labels(status_code=str(response.status_code)).inc()
 
     return response
 
