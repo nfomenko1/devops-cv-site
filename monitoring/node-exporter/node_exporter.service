@@ -1,0 +1,13 @@
+[Unit]
+Description=Node Exporter
+After=network.target
+
+[Service]
+User=root
+ExecStart=/usr/local/bin/node_exporter \
+  --web.listen-address=":9101"
+
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
