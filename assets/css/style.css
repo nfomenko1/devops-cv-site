@@ -6647,6 +6647,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .education-modal__dialog {
   position: relative;
   width: min(640px, 100%);
+  max-height: min(760px, calc(100vh - 48px));
   padding: 34px;
   border-radius: 24px;
   border: 1px solid rgba(255, 255, 255, 0.08);
@@ -6661,6 +6662,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
     0 0 34px rgba(255, 1, 79, 0.10);
   transform: translateY(10px) scale(0.99);
   opacity: 0;
+  overflow: hidden;
   will-change: transform, opacity;
   transition: transform .18s ease, opacity .18s ease, box-shadow .22s ease, border-color .22s ease;
 }
@@ -6702,12 +6704,15 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   position: relative;
   z-index: 1;
   color: rgba(235, 235, 239, 0.78);
+  max-height: calc(100vh - 220px);
+  overflow-y: auto;
+  padding-right: 10px;
 }
 
 .education-modal__text .roadmap-modal-copy {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 34px;
 }
 
 .education-modal__text .roadmap-modal-section {
@@ -6716,8 +6721,8 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 .education-modal__text .roadmap-modal-label {
-  margin-bottom: 14px;
-  color: rgba(255, 255, 255, 0.92);
+  margin-bottom: 16px;
+  color: rgba(255, 214, 226, 0.88);
   font-family: var(--font-secondary);
   font-size: 15px;
   font-weight: 600;
@@ -6725,7 +6730,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 .education-modal__text .roadmap-modal-label--result {
-  color: rgba(255, 255, 255, 0.96);
+  color: rgba(255, 232, 239, 0.96);
   font-weight: 700;
 }
 
@@ -6737,11 +6742,11 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 .education-modal__text .roadmap-modal-list li {
   position: relative;
-  margin: 0 0 12px;
-  padding-left: 16px;
-  color: rgba(235, 235, 239, 0.76);
+  margin: 0 0 16px;
+  padding-left: 18px;
+  color: rgba(245, 235, 240, 0.84);
   font-size: 16px;
-  line-height: 1.7;
+  line-height: 1.8;
 }
 
 .education-modal__text .roadmap-modal-list li:last-child {
@@ -6753,46 +6758,75 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   position: absolute;
   left: 0;
   top: 10px;
-  width: 6px;
-  height: 6px;
+  width: 7px;
+  height: 7px;
   border-radius: 2px;
-  background: rgba(214, 208, 214, 0.42);
+  background: rgba(255, 96, 152, 0.78);
+  box-shadow: 0 0 10px rgba(255, 1, 79, 0.18);
 }
 
 .education-modal__text .roadmap-modal-result {
   position: relative;
-  padding-left: 16px;
+  padding-left: 18px;
 }
 
 .education-modal__text .roadmap-modal-result::before {
   content: "";
   position: absolute;
   left: 0;
-  top: 4px;
-  bottom: 4px;
+  top: 3px;
+  bottom: 3px;
   width: 1px;
   border-radius: 999px;
   background: linear-gradient(
     180deg,
-    rgba(255, 255, 255, 0.18) 0%,
-    rgba(204, 188, 198, 0.22) 100%
+    rgba(255, 120, 170, 0.78) 0%,
+    rgba(255, 1, 79, 0.18) 100%
   );
 }
 
 .education-modal__text .roadmap-modal-result p {
-  margin: 0 0 16px;
-  color: rgba(235, 235, 239, 0.8);
+  margin: 0 0 20px;
+  color: rgba(250, 241, 245, 0.9);
   font-size: 16px;
-  line-height: 1.75;
+  line-height: 1.82;
 }
 
 .education-modal__text .roadmap-modal-result p:last-child {
   margin-bottom: 0;
 }
 
+.education-modal__text::-webkit-scrollbar {
+  width: 6px;
+}
+
+.education-modal__text::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 999px;
+}
+
+.education-modal__text::-webkit-scrollbar-thumb {
+  background: rgba(255, 96, 152, 0.48);
+  border-radius: 999px;
+}
+
+.education-modal__text::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 96, 152, 0.66);
+}
+
 @media only screen and (max-width: 767px) {
+  .education-modal__dialog {
+    max-height: calc(100vh - 24px);
+    padding: 24px 20px;
+  }
+
+  .education-modal__text {
+    max-height: calc(100vh - 180px);
+    padding-right: 6px;
+  }
+
   .education-modal__text .roadmap-modal-copy {
-    gap: 22px;
+    gap: 26px;
   }
 
   .education-modal__text .roadmap-modal-label {
@@ -6803,16 +6837,16 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   .education-modal__text .roadmap-modal-list li,
   .education-modal__text .roadmap-modal-result p {
     font-size: 15px;
-    line-height: 1.7;
+    line-height: 1.75;
   }
 
   .education-modal__text .roadmap-modal-list li {
-    margin-bottom: 10px;
-    padding-left: 14px;
+    margin-bottom: 13px;
+    padding-left: 16px;
   }
 
   .education-modal__text .roadmap-modal-result {
-    padding-left: 14px;
+    padding-left: 16px;
   }
 }
 
