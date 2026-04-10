@@ -216,7 +216,7 @@
 
     function openEducationModal(title, text) {
       $modalTitle.text(title || 'Подробности');
-      $modalText.text(text || 'Описание будет добавлено позже.');
+      $modalText.html(text || 'Описание будет добавлено позже.');
       $modal.attr('aria-hidden', 'false').addClass('is-open');
       $('body').addClass('education-modal-open');
     }

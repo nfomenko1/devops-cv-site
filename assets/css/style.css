@@ -6704,6 +6704,118 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   color: rgba(235, 235, 239, 0.78);
 }
 
+.education-modal__text .roadmap-modal-copy {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.education-modal__text .roadmap-modal-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.education-modal__text .roadmap-modal-label {
+  margin-bottom: 14px;
+  color: rgba(255, 255, 255, 0.92);
+  font-family: var(--font-secondary);
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.education-modal__text .roadmap-modal-label--result {
+  color: rgba(255, 255, 255, 0.96);
+  font-weight: 700;
+}
+
+.education-modal__text .roadmap-modal-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.education-modal__text .roadmap-modal-list li {
+  position: relative;
+  margin: 0 0 12px;
+  padding-left: 16px;
+  color: rgba(235, 235, 239, 0.76);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+.education-modal__text .roadmap-modal-list li:last-child {
+  margin-bottom: 0;
+}
+
+.education-modal__text .roadmap-modal-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 2px;
+  background: rgba(214, 208, 214, 0.42);
+}
+
+.education-modal__text .roadmap-modal-result {
+  position: relative;
+  padding-left: 16px;
+}
+
+.education-modal__text .roadmap-modal-result::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 4px;
+  bottom: 4px;
+  width: 1px;
+  border-radius: 999px;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.18) 0%,
+    rgba(204, 188, 198, 0.22) 100%
+  );
+}
+
+.education-modal__text .roadmap-modal-result p {
+  margin: 0 0 16px;
+  color: rgba(235, 235, 239, 0.8);
+  font-size: 16px;
+  line-height: 1.75;
+}
+
+.education-modal__text .roadmap-modal-result p:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (max-width: 767px) {
+  .education-modal__text .roadmap-modal-copy {
+    gap: 22px;
+  }
+
+  .education-modal__text .roadmap-modal-label {
+    margin-bottom: 12px;
+    font-size: 14px;
+  }
+
+  .education-modal__text .roadmap-modal-list li,
+  .education-modal__text .roadmap-modal-result p {
+    font-size: 15px;
+    line-height: 1.7;
+  }
+
+  .education-modal__text .roadmap-modal-list li {
+    margin-bottom: 10px;
+    padding-left: 14px;
+  }
+
+  .education-modal__text .roadmap-modal-result {
+    padding-left: 14px;
+  }
+}
+
 .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-1,
 .banner-two-main-wrapper .banner-right-content .main-img .banner-big-text-2 {
   letter-spacing: -0.035em;
