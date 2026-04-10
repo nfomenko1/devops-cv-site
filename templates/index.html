@@ -691,9 +691,9 @@
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Контейнеризировал Flask-приложение, собрал Docker-образ и развернул сервис в контейнере.</p>
-    <p>Настроил запуск нескольких сервисов через Docker Compose и их взаимодействие.</p>
-    <p>Освоил управление контейнерами и процесс обновления приложения.</p>
+    <p>Контейнеризировал Flask-приложение, собрал Docker-образ и развернул сервис в контейнере с доступом через проброс портов.</p>
+    <p>Настроил запуск нескольких сервисов (web + PostgreSQL) через Docker Compose и реализовал их взаимодействие внутри одной сети (локально).</p>
+    <p>Освоил базовое управление контейнерами, процесс обновления приложения через пересборку образа и проверку работоспособности сервисов.</p>
   </div>
 </div>' data-detail-title="Docker">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 3</div>
@@ -707,18 +707,19 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Jenkins (pipeline-as-code)</li>
-      <li>Docker (сборка образов)</li>
-      <li>GitHub Container Registry</li>
-      <li>GitHub (триггер пайплайна)</li>
-      <li>VPS (деплой по SSH)</li>
+      <li>Jenkins (pipeline-as-code, stages: checkout / build / push / deploy)</li>
+      <li>Docker (сборка образов, тегирование, работа со слоями)</li>
+      <li>GitHub Container Registry (GHCR) для хранения Docker-образов</li>
+      <li>GitHub (триггер пайплайна на push в `main`)</li>
+      <li>VPS (удалённый деплой по SSH)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Реализован CI/CD pipeline с автоматической сборкой и публикацией образов.</p>
-    <p>Настроен автоматический деплой на сервер.</p>
-    <p>Обеспечена воспроизводимость релизов.</p>
+    <p>Реализован CI/CD pipeline, обеспечивающий автоматическую сборку Docker-образа при каждом коммите и его публикацию в registry с использованием версионирования через build number.</p>
+    <p>Настроен процесс автоматизированного деплоя на сервер через Jenkins с удалённым выполнением команд по SSH, что позволило сократить ручные операции при обновлении приложения.</p>
+    <p>Обеспечена воспроизводимость релизов за счёт использования versioned тегов Docker-образов, что даёт возможность контролировать версии и выполнять откат к предыдущему состоянию при необходимости.</p>
+    <p>В результате сформировано понимание базового CI/CD процесса — от получения кода из репозитория до сборки, доставки и развертывания приложения на сервере.</p>
   </div>
 </div>' data-detail-title="CI/CD + Jenkins">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 5</div>
@@ -732,18 +733,24 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Ansible (Infrastructure as Code)</li>
-      <li>Playbooks, roles, inventory</li>
-      <li>Модули Ansible</li>
-      <li>Idempotency</li>
-      <li>Подготовка Kubernetes-окружения</li>
+      <li>Ansible для автоматизации настройки серверов (Infrastructure as Code)</li>
+      <li>Структурой Ansible-проекта: `inventory`, `playbooks`, `roles`, `group_vars`</li>
+      <li>Ролями (`common`, `docker`, `k8s`, `helm`) для разделения логики настройки</li>
+      <li>Модулями Ansible: `apt`, `service`, `docker_login`, `get_url`, `command`, `stat`</li>
+      <li>Управлением переменными и секретами через `group_vars` и Ansible Vault</li>
+      <li>Подходом idempotency (приведение системы к нужному состоянию без лишних действий)</li>
+      <li>Проверкой состояния системы через `register`, `when`, `changed_when`</li>
+      <li>Подготовкой Kubernetes-окружения (k3s + kubectl + Helm CLI)</li>
+      <li>Интеграцией инфраструктуры с CI/CD (разделение ответственности между Ansible и Jenkins)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Автоматизировал настройку сервера через Ansible.</p>
-    <p>Освоил подход Infrastructure as Code.</p>
-    <p>Выстроил архитектуру разделения ответственности.</p>
+    <p>Настроена полностью автоматизированная подготовка сервера через код: установка базовых пакетов, Docker, k3s и Helm выполняется через Ansible playbook без ручных действий.</p>
+    <p>Сформировано понимание принципа Infrastructure as Code: сервер описывается декларативно и может быть воспроизведён с нуля в предсказуемом состоянии.</p>
+    <p>Реализована идемпотентная логика — повторный запуск playbook не приводит к лишним изменениям и безопасен для существующей инфраструктуры.</p>
+    <p>Выстроена архитектура разделения ответственности: Ansible отвечает за подготовку инфраструктуры, а CI/CD (Jenkins + Helm) — за сборку и деплой приложения.</p>
+    <p>Получен практический опыт работы с проверкой состояния системы, условной логикой выполнения задач и управлением конфигурацией серверов.</p>
   </div>
 </div>' data-detail-title="ArgoCD">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 7</div>
@@ -757,16 +764,17 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Argo CD</li>
-      <li>GitOps подход</li>
-      <li>Sync / auto-sync</li>
+      <li>Argo CD (установка и запуск в k3s)</li>
+      <li>Основные компоненты ArgoCD (application-controller, repo-server, server)</li>
+      <li>GitOps подход (desired state / actual state, reconciliation loop)</li>
+      <li>Механизмы ArgoCD (Sync, OutOfSync, auto-sync, self-heal)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Разобрался с принципами GitOps и ArgoCD.</p>
-    <p>Протестировал работу в k3s-кластере.</p>
-    <p>Оценил ограничения текущей инфраструктуры.</p>
+    <p>Разобрался с принципами GitOps и логикой работы ArgoCD. Установил ArgoCD в k3s-кластере, проверил запуск компонентов и доступ к UI.</p>
+    <p>В процессе эксплуатации определил, что текущее окружение (1 CPU, ~1GB RAM) недостаточно для стабильной работы инструмента. На основе этого принял решение не продолжать внедрение ArgoCD на данном сервере.</p>
+    <p>При этом сформировано понимание архитектуры и принципов работы ArgoCD, а также его роли в процессе доставки приложений, что позволяет в дальнейшем применять его в более подходящей инфраструктуре.</p>
   </div>
 </div>' data-detail-title="Ansible">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 9</div>
@@ -786,18 +794,20 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Linux (работа в терминале)</li>
-      <li>Файловая система</li>
-      <li>CLI-команды</li>
-      <li>Работа с конфигурациями</li>
-      <li>Python окружение</li>
+      <li>Linux (работа в терминале, базовое администрирование)</li>
+      <li>Файловая система (навигация, структура каталогов, работа с файлами)</li>
+      <li>CLI-команды (cd, ls, pwd, mkdir, cat, nano)</li>
+      <li>Работа с проектной структурой (организация файлов приложения)</li>
+      <li>Работа с конфигурационными файлами (редактирование через nano)</li>
+      <li>Подготовка окружения под приложение (Python + зависимости)</li>
+      <li>Создание requirements.txt и управление зависимостями</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Освоил базовую работу с Linux.</p>
-    <p>Подготовил окружение под backend-приложение.</p>
-    <p>Понял принципы работы файловой системы.</p>
+    <p>Освоил базовую работу с Linux через терминал: навигацию по файловой системе, создание и редактирование файлов, организацию структуры проекта.</p>
+    <p>Подготовил окружение для backend-приложения, сформировал зависимости через requirements.txt и настроил структуру проекта для последующей контейнеризации.</p>
+    <p>Понял принципы работы с файловым контекстом и взаимодействие компонентов приложения в рамках Linux-среды.</p>
   </div>
 </div>' data-detail-title="Linux (Основа)">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 2</div>
@@ -811,17 +821,22 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>PostgreSQL</li>
-      <li>SQL</li>
-      <li>Роли и доступы</li>
-      <li>Резервное копирование</li>
+      <li>PostgreSQL (установка и настройка на Linux)</li>
+      <li>SQL (SELECT, INSERT, UPDATE, DELETE, JOIN, агрегатные функции)</li>
+      <li>Создание и управление базами данных, таблицами и схемами</li>
+      <li>Пользователи, роли и права доступа</li>
+      <li>Индексы и базовая оптимизация запросов</li>
+      <li>Резервное копирование и восстановление (pg_dump, pg_restore)</li>
+      <li>Подключение к БД через psql</li>
+      <li>Интеграция PostgreSQL с приложением (Flask, psycopg2 / SQLAlchemy)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Развернул PostgreSQL.</p>
-    <p>Интегрировал с приложением.</p>
-    <p>Освоил базовые операции с БД.</p>
+    <p>Развернул PostgreSQL на виртуальной машине и настроил базовую работу с БД.</p>
+    <p>Реализовал подключение backend-приложения к базе данных и хранение пользовательских событий (таблица visits).</p>
+    <p>Освоил базовые SQL-операции, работу с индексами, пользователями и правами доступа.</p>
+    <p>Отработал сценарии резервного копирования и восстановления, а также базовые задачи администрирования PostgreSQL в Linux-среде.</p>
   </div>
 </div>' data-detail-title="PostgreSQL">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 4</div>
@@ -835,17 +850,23 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Kubernetes</li>
-      <li>Helm</li>
-      <li>Ingress</li>
-      <li>Namespaces</li>
+      <li>Разворачиванием и базовой настройкой Kubernetes-кластера</li>
+      <li>Управлением ресурсами через kubectl (Pods, Deployments, Services, Namespaces)</li>
+      <li>Деплоем приложения через Helm (Helm chart, values.yaml, шаблоны)</li>
+      <li>Разделением окружений (test / prod) через namespace</li>
+      <li>Настройкой Ingress и доступа к приложению по доменному имени</li>
+      <li>Работой с приватным registry GitHub Container Registry</li>
+      <li>Настройкой `imagePullSecrets` для доступа к образам</li>
+      <li>Диагностикой состояния кластера (events, describe, логи Pod)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Развернул Kubernetes-кластер.</p>
-    <p>Настроил деплой через Helm.</p>
-    <p>Обеспечил доступ к приложению.</p>
+    <p>Развернул Kubernetes-инфраструктуру и настроил деплой приложения с разделением на test и prod окружения.</p>
+    <p>Реализовал процесс доставки приложения через Helm с управлением конфигурацией и версиями Docker-образов.</p>
+    <p>Настроил интеграцию Kubernetes с приватным registry и обеспечил корректную загрузку образов через imagePullSecrets.</p>
+    <p>Обеспечил доступ к приложению извне через Ingress и доменное имя.</p>
+    <p>Получил практический опыт работы с жизненным циклом Pod/Deployment, а также диагностики и устранения проблем на уровне кластера.</p>
   </div>
 </div>' data-detail-title="Kubernetes">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 6</div>
@@ -859,16 +880,18 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Kafka</li>
-      <li>ZooKeeper</li>
-      <li>Producer / Consumer</li>
+      <li>Apache Kafka (базовая архитектура: broker, cluster, topic, partition)</li>
+      <li>Apache ZooKeeper (координация кластера и хранение метаданных)</li>
+      <li>Docker Compose (развёртывание Kafka и ZooKeeper на VPS)</li>
+      <li>CLI-инструменты Kafka (создание topic, отправка и чтение сообщений через терминал)</li>
+      <li>Модель взаимодействия producer / consumer</li>
+      <li>Механизм offset и чтение сообщений с начала</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Развернул Kafka.</p>
-    <p>Протестировал обмен сообщениями.</p>
-    <p>Понял архитектуру системы.</p>
+    <p>Развернул Kafka в изолированной среде на VPS, создал topic и протестировал полный цикл обработки сообщений: отправка сообщений producer’ом, их хранение в Kafka и последующее чтение consumer’ом.</p>
+    <p>Сформировано понимание архитектуры Kafka (cluster, broker, partition, replication), принципов хранения сообщений и независимого чтения через offset, а также сценариев использования Kafka для передачи событий между сервисами.</p>
   </div>
 </div>' data-detail-title="Kafka">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 8</div>
@@ -882,16 +905,15 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>Prometheus</li>
-      <li>Node Exporter</li>
-      <li>Метрики</li>
+      <li>Prometheus (сбор и хранение метрик)</li>
+      <li>Node Exporter (метрики хоста: CPU, RAM, load)</li>
+      <li>Конфигурация targets и scrape jobs</li>
+      <li>Интеграция мониторинга с k3s-инфраструктурой</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
-    <p>Развернул базовый мониторинг.</p>
-    <p>Настроил сбор метрик.</p>
-    <p>Подготовил основу для алертинга.</p>
+    <p>Развернул базовый мониторинг инфраструктуры: настроил сбор системных метрик VPS через Node Exporter и их агрегацию в Prometheus, обеспечил наблюдаемость загрузки CPU, памяти и состояния узла, подготовил основу для дальнейшей визуализации и алертинга.</p>
   </div>
 </div>' data-detail-title="Интеграция + мониторинг">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 10</div>
