@@ -6705,7 +6705,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   position: relative;
   z-index: 1;
   color: rgba(235, 235, 239, 0.78);
-  max-height: calc(100vh - 220px);
+  max-height: calc(100vh - 245px);
   overflow-y: auto;
   padding-right: 10px;
   padding-bottom: 28px;
