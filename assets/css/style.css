@@ -6723,17 +6723,11 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 .education-modal__text .roadmap-modal-label,
 .education-modal__text .roadmap-modal-label--result {
   margin-bottom: 16px;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.9);
   font-family: var(--font-secondary);
   font-size: 16px;
   font-weight: 500;
   line-height: 1.4;
-}
-
-.education-modal__text .roadmap-modal-label--result {
-  color: inherit;
-  font-weight: inherit;
-  font-size: inherit;
 }
 
 .education-modal__text .roadmap-modal-list {
