@@ -6727,17 +6727,17 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 
 .education-modal__text .roadmap-modal-label {
   margin-bottom: 16px;
-  color: rgba(245, 235, 240, 0.72);
+  color: rgba(255, 245, 248, 0.86);
   font-family: var(--font-secondary);
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 600;
   line-height: 1.4;
 }
 
 .education-modal__text .roadmap-modal-label--result {
-  color: rgba(255, 240, 245, 0.92);
-  font-weight: 700;
-  font-size: 18px;
+  color: inherit;
+  font-weight: inherit;
+  font-size: inherit;
 }
 
 .education-modal__text .roadmap-modal-list {
@@ -7130,65 +7130,125 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-/* ===== ПЛАВАЮЩИЕ ЛИНИИ (SUBTLE BACKGROUND) ===== */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
+/* ===== DECORATIVE ROUTE LINES / TEST V1 ===== */
 
-  pointer-events: none;
-  z-index: 0;
-
-  background:
-    /* правая линия */
-    linear-gradient(
-      120deg,
-      transparent 48%,
-      rgba(255, 1, 79, 0.06) 50%,
-      transparent 52%
-    ),
-
-    /* левая линия */
-    linear-gradient(
-      60deg,
-      transparent 48%,
-      rgba(255, 1, 79, 0.04) 50%,
-      transparent 52%
-    ),
-
-    /* нижняя линия */
-    linear-gradient(
-      180deg,
-      transparent 96%,
-      rgba(255, 1, 79, 0.05) 100%
-    );
-
-  background-size:
-    140% 140%,
-    120% 120%,
-    100% 100%;
-
-  background-position:
-    120% 0%,
-    -20% 0%,
-    0% 100%;
-
-  animation: subtleLinesMove 40s linear infinite;
+#about,
+#work-experience,
+#education,
+#monitoring {
+  position: relative;
+  overflow: hidden;
 }
 
-/* анимация движения */
-@keyframes subtleLinesMove {
-  0% {
-    background-position:
-      120% 0%,
-      -20% 0%,
-      0% 100%;
-  }
+#about::before,
+#about::after,
+#work-experience::before,
+#education::before,
+#education::after,
+#monitoring::before {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.42;
+}
 
-  100% {
-    background-position:
-      0% 100%,
-      100% 100%,
-      0% 0%;
+/* ABOUT — мягкая линия слева сверху */
+#about::before {
+  left: -140px;
+  top: 110px;
+  width: 420px;
+  height: 420px;
+  border: 1px solid rgba(255, 1, 79, 0.16);
+  border-right: none;
+  border-bottom: none;
+  border-radius: 420px 0 0 0;
+  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.08));
+}
+
+/* ABOUT — маленькая дуга справа */
+#about::after {
+  right: -120px;
+  top: 260px;
+  width: 260px;
+  height: 260px;
+  border: 1px solid rgba(255, 1, 79, 0.12);
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 260px 0 0;
+  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
+}
+
+/* EXPERIENCE — длинная мягкая дуга справа */
+#work-experience::before {
+  right: -180px;
+  top: 120px;
+  width: 520px;
+  height: 520px;
+  border: 1px solid rgba(255, 1, 79, 0.14);
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 520px 0 0;
+  filter: drop-shadow(0 0 12px rgba(255, 1, 79, 0.08));
+}
+
+/* EDUCATION — большая дуга слева снизу */
+#education::before {
+  left: -220px;
+  top: 180px;
+  width: 640px;
+  height: 640px;
+  border: 1px solid rgba(255, 1, 79, 0.16);
+  border-right: none;
+  border-top: none;
+  border-radius: 0 0 0 640px;
+  filter: drop-shadow(0 0 12px rgba(255, 1, 79, 0.08));
+}
+
+/* EDUCATION — правая плавная линия */
+#education::after {
+  right: -180px;
+  top: 40px;
+  width: 560px;
+  height: 560px;
+  border: 1px solid rgba(255, 1, 79, 0.12);
+  border-left: none;
+  border-bottom: none;
+  border-radius: 0 560px 0 0;
+  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
+}
+
+/* MONITORING — нижняя спокойная дуга */
+#monitoring::before {
+  left: 10%;
+  bottom: -220px;
+  width: 520px;
+  height: 320px;
+  border: 1px solid rgba(255, 1, 79, 0.12);
+  border-top: none;
+  border-left: none;
+  border-radius: 0 0 320px 0;
+  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
+}
+
+/* чтобы контент был выше линий */
+#about > .container,
+#work-experience > .container,
+#education > .container,
+#monitoring > .container {
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+  #about::before,
+  #about::after,
+  #work-experience::before,
+  #education::before,
+  #education::after,
+  #monitoring::before {
+    opacity: 0.22;
+    transform: scale(0.78);
+    transform-origin: center;
   }
 }
