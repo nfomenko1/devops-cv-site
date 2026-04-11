@@ -6720,17 +6720,13 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   gap: 34px;
 }
 
-.education-modal__text .roadmap-modal-section {
-  display: flex;
-  flex-direction: column;
-}
-
-.education-modal__text .roadmap-modal-label {
+.education-modal__text .roadmap-modal-label,
+.education-modal__text .roadmap-modal-label--result {
   margin-bottom: 16px;
-  color: rgba(255, 245, 248, 0.86);
+  color: rgba(255, 255, 255, 0.75);
   font-family: var(--font-secondary);
-  font-size: 18px;
-  font-weight: 600;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.4;
 }
 
