@@ -6842,10 +6842,11 @@ p, .disc, .description, .card-para, .resume-title, .institute,
     gap: 26px;
   }
 
-  .education-modal__text .roadmap-modal-label {
-    margin-bottom: 12px;
-    font-size: 14px;
-  }
+.education-modal__text .roadmap-modal-label,
+.education-modal__text .roadmap-modal-label--result {
+  margin-bottom: 12px;
+  font-size: 14px;
+}
 
   .education-modal__text .roadmap-modal-list li,
   .education-modal__text .roadmap-modal-result p {
