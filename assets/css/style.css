@@ -7130,125 +7130,156 @@ body::-webkit-scrollbar {
   height: 0;
 }
 
-/* ===== DECORATIVE ROUTE LINES / TEST V1 ===== */
+/* ===== SIDE TECH LINES / DOTS BACKGROUND ===== */
 
-#about,
-#work-experience,
-#education,
-#monitoring {
+body {
   position: relative;
-  overflow: hidden;
 }
 
-#about::before,
-#about::after,
-#work-experience::before,
-#education::before,
-#education::after,
-#monitoring::before {
+body::before,
+body::after {
   content: "";
   position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 240px;
   pointer-events: none;
   z-index: 0;
-  opacity: 0.42;
+  opacity: 0.78;
 }
 
-/* ABOUT — мягкая линия слева сверху */
-#about::before {
-  left: -140px;
-  top: 110px;
-  width: 420px;
-  height: 420px;
-  border: 1px solid rgba(255, 1, 79, 0.16);
-  border-right: none;
-  border-bottom: none;
-  border-radius: 420px 0 0 0;
-  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.08));
+/* левая боковая зона */
+body::before {
+  left: 0;
+  background:
+    radial-gradient(circle at 22% 12%, rgba(255, 1, 79, 0.55) 0 1.2px, transparent 2.6px),
+    radial-gradient(circle at 72% 18%, rgba(255, 1, 79, 0.38) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 38% 28%, rgba(255, 1, 79, 0.34) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 80% 36%, rgba(255, 1, 79, 0.30) 0 1.1px, transparent 2.6px),
+    radial-gradient(circle at 18% 48%, rgba(255, 1, 79, 0.34) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 68% 58%, rgba(255, 1, 79, 0.28) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 30% 72%, rgba(255, 1, 79, 0.32) 0 1.1px, transparent 2.6px),
+    radial-gradient(circle at 76% 84%, rgba(255, 1, 79, 0.26) 0 1px, transparent 2.4px),
+
+    linear-gradient(62deg,
+      transparent 0%,
+      transparent 27%,
+      rgba(255, 1, 79, 0.10) 27.8%,
+      rgba(255, 1, 79, 0.18) 28.1%,
+      rgba(255, 1, 79, 0.10) 28.4%,
+      transparent 29.2%,
+      transparent 100%
+    ),
+    linear-gradient(118deg,
+      transparent 0%,
+      transparent 43%,
+      rgba(255, 1, 79, 0.08) 43.7%,
+      rgba(255, 1, 79, 0.16) 44%,
+      rgba(255, 1, 79, 0.08) 44.3%,
+      transparent 45.1%,
+      transparent 100%
+    ),
+    linear-gradient(82deg,
+      transparent 0%,
+      transparent 66%,
+      rgba(255, 1, 79, 0.08) 66.7%,
+      rgba(255, 1, 79, 0.15) 67%,
+      rgba(255, 1, 79, 0.08) 67.3%,
+      transparent 68.2%,
+      transparent 100%
+    );
+
+  filter: blur(0.15px);
+  animation: sideTechFloatLeft 18s ease-in-out infinite alternate;
 }
 
-/* ABOUT — маленькая дуга справа */
-#about::after {
-  right: -120px;
-  top: 260px;
-  width: 260px;
-  height: 260px;
-  border: 1px solid rgba(255, 1, 79, 0.12);
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 260px 0 0;
-  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
+/* правая боковая зона */
+body::after {
+  right: 0;
+  background:
+    radial-gradient(circle at 76% 10%, rgba(255, 1, 79, 0.52) 0 1.2px, transparent 2.6px),
+    radial-gradient(circle at 28% 16%, rgba(255, 1, 79, 0.34) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 66% 26%, rgba(255, 1, 79, 0.30) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 20% 40%, rgba(255, 1, 79, 0.32) 0 1.1px, transparent 2.6px),
+    radial-gradient(circle at 74% 52%, rgba(255, 1, 79, 0.28) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 34% 64%, rgba(255, 1, 79, 0.30) 0 1px, transparent 2.4px),
+    radial-gradient(circle at 70% 76%, rgba(255, 1, 79, 0.34) 0 1.1px, transparent 2.6px),
+    radial-gradient(circle at 26% 88%, rgba(255, 1, 79, 0.24) 0 1px, transparent 2.4px),
+
+    linear-gradient(122deg,
+      transparent 0%,
+      transparent 21%,
+      rgba(255, 1, 79, 0.10) 21.7%,
+      rgba(255, 1, 79, 0.18) 22%,
+      rgba(255, 1, 79, 0.10) 22.3%,
+      transparent 23.2%,
+      transparent 100%
+    ),
+    linear-gradient(64deg,
+      transparent 0%,
+      transparent 49%,
+      rgba(255, 1, 79, 0.08) 49.7%,
+      rgba(255, 1, 79, 0.16) 50%,
+      rgba(255, 1, 79, 0.08) 50.3%,
+      transparent 51.1%,
+      transparent 100%
+    ),
+    linear-gradient(98deg,
+      transparent 0%,
+      transparent 73%,
+      rgba(255, 1, 79, 0.08) 73.7%,
+      rgba(255, 1, 79, 0.15) 74%,
+      rgba(255, 1, 79, 0.08) 74.3%,
+      transparent 75.1%,
+      transparent 100%
+    );
+
+  filter: blur(0.15px);
+  animation: sideTechFloatRight 22s ease-in-out infinite alternate;
 }
 
-/* EXPERIENCE — длинная мягкая дуга справа */
-#work-experience::before {
-  right: -180px;
-  top: 120px;
-  width: 520px;
-  height: 520px;
-  border: 1px solid rgba(255, 1, 79, 0.14);
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 520px 0 0;
-  filter: drop-shadow(0 0 12px rgba(255, 1, 79, 0.08));
+@keyframes sideTechFloatLeft {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.62;
+  }
+  50% {
+    transform: translate3d(6px, -18px, 0);
+    opacity: 0.82;
+  }
+  100% {
+    transform: translate3d(-4px, 22px, 0);
+    opacity: 0.68;
+  }
 }
 
-/* EDUCATION — большая дуга слева снизу */
-#education::before {
-  left: -220px;
-  top: 180px;
-  width: 640px;
-  height: 640px;
-  border: 1px solid rgba(255, 1, 79, 0.16);
-  border-right: none;
-  border-top: none;
-  border-radius: 0 0 0 640px;
-  filter: drop-shadow(0 0 12px rgba(255, 1, 79, 0.08));
+@keyframes sideTechFloatRight {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0.58;
+  }
+  50% {
+    transform: translate3d(-8px, 20px, 0);
+    opacity: 0.80;
+  }
+  100% {
+    transform: translate3d(5px, -16px, 0);
+    opacity: 0.66;
+  }
 }
 
-/* EDUCATION — правая плавная линия */
-#education::after {
-  right: -180px;
-  top: 40px;
-  width: 560px;
-  height: 560px;
-  border: 1px solid rgba(255, 1, 79, 0.12);
-  border-left: none;
-  border-bottom: none;
-  border-radius: 0 560px 0 0;
-  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
-}
-
-/* MONITORING — нижняя спокойная дуга */
-#monitoring::before {
-  left: 10%;
-  bottom: -220px;
-  width: 520px;
-  height: 320px;
-  border: 1px solid rgba(255, 1, 79, 0.12);
-  border-top: none;
-  border-left: none;
-  border-radius: 0 0 320px 0;
-  filter: drop-shadow(0 0 10px rgba(255, 1, 79, 0.06));
-}
-
-/* чтобы контент был выше линий */
-#about > .container,
-#work-experience > .container,
-#education > .container,
-#monitoring > .container {
-  position: relative;
-  z-index: 1;
+/* чтобы фон не лез в контентный центр на мобилке */
+@media only screen and (max-width: 991px) {
+  body::before,
+  body::after {
+    width: 120px;
+    opacity: 0.42;
+  }
 }
 
 @media only screen and (max-width: 767px) {
-  #about::before,
-  #about::after,
-  #work-experience::before,
-  #education::before,
-  #education::after,
-  #monitoring::before {
-    opacity: 0.22;
-    transform: scale(0.78);
-    transform-origin: center;
+  body::before,
+  body::after {
+    display: none;
   }
 }
