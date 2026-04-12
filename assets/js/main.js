@@ -215,11 +215,12 @@
     if (!$modal.length) return;
 
     function openEducationModal(title, text) {
-      $modalTitle.text(title || 'Подробности');
-      $modalText.html(text || 'Описание будет добавлено позже.');
-      $modal.attr('aria-hidden', 'false').addClass('is-open');
-      $('body').addClass('education-modal-open');
-    }
+		$modalTitle.text(title || 'Подробности');
+		$modalText.html(text || 'Описание будет добавлено позже.');
+		$modalText.scrollTop(0);
+		$modal.attr('aria-hidden', 'false').addClass('is-open');
+		$('body').addClass('education-modal-open');
+}
 
     function closeEducationModal() {
       $modal.attr('aria-hidden', 'true').removeClass('is-open');
