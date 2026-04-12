@@ -6715,9 +6715,7 @@ p, .disc, .description, .card-para, .resume-title, .institute,
 }
 
 body.education-modal-open {
-  position: fixed;
   overflow: hidden;
-  width: 100%;
   height: 100vh;
 }
 
