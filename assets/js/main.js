@@ -221,7 +221,7 @@ $(document).ready(function () {
     if (!modalTextEl) return;
 
     e.preventDefault();
-    modalTextEl.scrollTop += e.deltaY;
+    modalTextEl.scrollTop += e.originalEvent.deltaY;
   }
 
   function openEducationModal(title, text) {
@@ -230,13 +230,13 @@ $(document).ready(function () {
     $modalText.scrollTop(0);
     $modal.attr('aria-hidden', 'false').addClass('is-open');
     $('body').addClass('education-modal-open');
-    window.addEventListener('wheel', handleModalWheel, { passive: false });
+    $(window).on('wheel.educationModal', handleModalWheel);
   }
 
   function closeEducationModal() {
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('education-modal-open');
-    window.removeEventListener('wheel', handleModalWheel);
+    $(window).off('wheel.educationModal', handleModalWheel);
     $modalText.scrollTop(0);
   }
 
