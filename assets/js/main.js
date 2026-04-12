@@ -230,21 +230,21 @@ $(document).ready(function () {
     $modalText.scrollTop(0);
     $modal.attr('aria-hidden', 'false').addClass('is-open');
     $('body').addClass('education-modal-open');
-    $(window).on('wheel.educationModal', handleModalWheel);
   }
 
   function closeEducationModal() {
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('education-modal-open');
-    $(window).off('wheel.educationModal', handleModalWheel);
     $modalText.scrollTop(0);
   }
 
-  $('.resume-single').on('click', function () {
-    const title = $(this).attr('data-detail-title');
-    const text = $(this).attr('data-detail-text');
-    openEducationModal(title, text);
-  });
+  $('.resume-single').on('click', function (e) {
+  e.preventDefault();
+
+  const title = $(this).attr('data-detail-title');
+  const text = $(this).attr('data-detail-text');
+  openEducationModal(title, text);
+});
 
   $modal.on('click', '[data-modal-close="true"]', function () {
     closeEducationModal();
