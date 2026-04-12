@@ -214,15 +214,15 @@
 
   if (!$modal.length) return;
 
-  function handleModalWheel(e) {
-    if (!$modal.hasClass('is-open')) return;
+	function handleModalWheel(e) {
+	if (!$modal.hasClass('is-open')) return;
 
-    const modalTextEl = $modalText.get(0);
-    if (!modalTextEl) return;
+	const modalTextEl = $modalText.get(0);
+	if (!modalTextEl) return;
 
-    e.preventDefault();
-    modalTextEl.scrollTop += e.originalEvent.deltaY;
-  }
+	e.preventDefault();
+	modalTextEl.scrollTop += e.deltaY;
+	}
 
   function openEducationModal(title, text) {
     $modalTitle.text(title || 'Подробности');
