@@ -236,7 +236,7 @@ $(document).ready(function () {
   function closeEducationModal() {
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('education-modal-open');
-    window.removeEventListener('wheel', handleModalWheel, { passive: false });
+    window.removeEventListener('wheel', handleModalWheel);
     $modalText.scrollTop(0);
   }
 
