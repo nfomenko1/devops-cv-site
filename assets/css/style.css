@@ -6714,11 +6714,6 @@ p, .disc, .description, .card-para, .resume-title, .institute,
   padding-bottom: 28px;
 }
 
-body.education-modal-open {
-  overflow: hidden;
-  height: 100vh;
-}
-
 .education-modal__text .roadmap-modal-copy {
   display: flex;
   flex-direction: column;
