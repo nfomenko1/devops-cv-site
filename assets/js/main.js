@@ -214,17 +214,30 @@ $(document).ready(function () {
 
   if (!$modal.length) return;
 
+  function handleModalWheel(e) {
+    if (!$modal.hasClass('is-open')) return;
+
+    const modalTextEl = $modalText.get(0);
+    if (!modalTextEl) return;
+
+    e.preventDefault();
+    modalTextEl.scrollTop += e.deltaY;
+  }
+
   function openEducationModal(title, text) {
-		$modalTitle.text(title || 'Подробности');
-		$modalText.html(text || 'Описание будет добавлено позже.');
-		$modalText.scrollTop(0);
-		$modal.attr('aria-hidden', 'false').addClass('is-open');
-		$('body').addClass('education-modal-open');
-}
+    $modalTitle.text(title || 'Подробности');
+    $modalText.html(text || 'Описание будет добавлено позже.');
+    $modalText.scrollTop(0);
+    $modal.attr('aria-hidden', 'false').addClass('is-open');
+    $('body').addClass('education-modal-open');
+    window.addEventListener('wheel', handleModalWheel, { passive: false });
+  }
 
   function closeEducationModal() {
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('education-modal-open');
+    window.removeEventListener('wheel', handleModalWheel);
+    $modalText.scrollTop(0);
   }
 
   $('.resume-single').on('click', function () {
@@ -243,11 +256,4 @@ $(document).ready(function () {
     }
   });
 });
-
-    $(document).on('keydown', function (e) {
-      if (e.key === 'Escape') {
-        closeEducationModal();
-      }
-    });
-  });
 })(jQuery);
