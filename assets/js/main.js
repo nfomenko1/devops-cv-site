@@ -207,22 +207,22 @@
 (function ($) {
   "use strict";
 
-  $(document).ready(function () {
+$(document).ready(function () {
   const $modal = $('#education-modal');
   const $modalTitle = $('#education-modal-title');
   const $modalText = $('#education-modal-text');
 
   if (!$modal.length) return;
 
-	function handleModalWheel(e) {
-	if (!$modal.hasClass('is-open')) return;
+  function handleModalWheel(e) {
+    if (!$modal.hasClass('is-open')) return;
 
-	const modalTextEl = $modalText.get(0);
-	if (!modalTextEl) return;
+    const modalTextEl = $modalText.get(0);
+    if (!modalTextEl) return;
 
-	e.preventDefault();
-	modalTextEl.scrollTop += e.deltaY;
-	}
+    e.preventDefault();
+    modalTextEl.scrollTop += e.deltaY;
+  }
 
   function openEducationModal(title, text) {
     $modalTitle.text(title || 'Подробности');
@@ -230,13 +230,13 @@
     $modalText.scrollTop(0);
     $modal.attr('aria-hidden', 'false').addClass('is-open');
     $('body').addClass('education-modal-open');
-    $(window).on('wheel.educationModal', handleModalWheel);
+    window.addEventListener('wheel', handleModalWheel, { passive: false });
   }
 
   function closeEducationModal() {
     $modal.attr('aria-hidden', 'true').removeClass('is-open');
     $('body').removeClass('education-modal-open');
-    $(window).off('wheel.educationModal', handleModalWheel);
+    window.removeEventListener('wheel', handleModalWheel, { passive: false });
     $modalText.scrollTop(0);
   }
 
