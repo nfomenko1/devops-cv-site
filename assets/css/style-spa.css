@@ -109,15 +109,15 @@ a {
 }
 
 .floating-hearts {
-    z-index: 1;
+    z-index: 3;
 }
 
 .heart {
     position: absolute;
-    color: rgba(255, 214, 224, 0.08);
-    font-size: 28px;
+    color: rgba(255, 190, 200, 0.18);
+    font-size: 22px;
     line-height: 1;
-    text-shadow: 0 0 18px rgba(255, 204, 220, 0.08);
+    text-shadow: 0 0 14px rgba(255, 160, 180, 0.12);
     animation: softHeartbeat 4.8s ease-in-out infinite;
     user-select: none;
 }
@@ -125,21 +125,21 @@ a {
 .heart-1 {
     top: 16%;
     left: 18%;
-    font-size: 18px;
+    font-size: 26px;
     animation-delay: 0s;
 }
 
 .heart-2 {
     top: 30%;
     right: 20%;
-    font-size: 24px;
+    font-size: 30px;
     animation-delay: 1.2s;
 }
 
 .heart-3 {
     bottom: 18%;
     left: 28%;
-    font-size: 16px;
+    font-size: 22px;
     animation-delay: 2.2s;
 }
 
@@ -548,19 +548,19 @@ a {
 @keyframes softHeartbeat {
     0%, 100% {
         transform: scale(1);
-        opacity: 0.06;
+        opacity: 0.12;
     }
     25% {
-        transform: scale(1.08);
-        opacity: 0.11;
+        transform: scale(1.12);
+        opacity: 0.22;
     }
     50% {
-        transform: scale(0.98);
-        opacity: 0.07;
+        transform: scale(0.96);
+        opacity: 0.14;
     }
     75% {
-        transform: scale(1.04);
-        opacity: 0.10;
+        transform: scale(1.08);
+        opacity: 0.20;
     }
 }
 
