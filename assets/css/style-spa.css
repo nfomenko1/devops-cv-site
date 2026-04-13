@@ -37,12 +37,12 @@ body {
     font-family: "Segoe UI", "Inter", Arial, sans-serif;
     color: #fff;
     overflow-x: hidden;
-
     background:
-        radial-gradient(circle at 70% 30%, rgba(255, 190, 120, 0.25), transparent 40%),
-        radial-gradient(circle at 30% 70%, rgba(120, 90, 70, 0.15), transparent 50%),
-        radial-gradient(circle at 50% 50%, rgba(255, 220, 180, 0.08), transparent 60%),
-        linear-gradient(135deg, #0e0f11 0%, #1a1c20 50%, #0b0c0e 100%);
+        radial-gradient(circle at 68% 24%, rgba(255, 209, 156, 0.30), transparent 22%),
+        radial-gradient(circle at 74% 42%, rgba(214, 145, 84, 0.24), transparent 26%),
+        radial-gradient(circle at 52% 50%, rgba(255, 238, 214, 0.10), transparent 30%),
+        radial-gradient(circle at 24% 72%, rgba(120, 86, 63, 0.14), transparent 34%),
+        linear-gradient(120deg, #07080a 0%, #15181e 34%, #2a241f 66%, #0a0b0d 100%);
 }
 
 button,
@@ -58,6 +58,7 @@ a {
     justify-content: center;
     padding: 48px 20px;
     overflow: hidden;
+    isolation: isolate;
 }
 
 .gift-page::before {
@@ -70,12 +71,99 @@ a {
     pointer-events: none;
 }
 
-.background-glow {
+.romantic-blur,
+.floating-hearts,
+.light-particles {
     position: absolute;
-    border-radius: 999px;
-    filter: blur(80px);
+    inset: 0;
     pointer-events: none;
 }
+
+.romantic-blur {
+    border-radius: 999px;
+    filter: blur(95px);
+    opacity: 0.95;
+}
+
+.romantic-blur-left {
+    inset: auto auto 6% -8%;
+    width: 420px;
+    height: 420px;
+    background: rgba(88, 56, 40, 0.18);
+}
+
+.romantic-blur-center {
+    inset: 10% auto auto 50%;
+    width: 520px;
+    height: 520px;
+    transform: translateX(-50%);
+    background:
+        radial-gradient(circle, rgba(255, 230, 198, 0.16) 0%, rgba(214, 153, 89, 0.20) 42%, rgba(0, 0, 0, 0) 74%);
+}
+
+.romantic-blur-right {
+    inset: -4% -6% auto auto;
+    width: 500px;
+    height: 500px;
+    background: rgba(201, 140, 80, 0.16);
+}
+
+.floating-hearts {
+    z-index: 1;
+}
+
+.heart {
+    position: absolute;
+    color: rgba(255, 214, 224, 0.08);
+    font-size: 28px;
+    line-height: 1;
+    text-shadow: 0 0 18px rgba(255, 204, 220, 0.08);
+    animation: softHeartbeat 4.8s ease-in-out infinite;
+    user-select: none;
+}
+
+.heart-1 {
+    top: 16%;
+    left: 18%;
+    font-size: 18px;
+    animation-delay: 0s;
+}
+
+.heart-2 {
+    top: 30%;
+    right: 20%;
+    font-size: 24px;
+    animation-delay: 1.2s;
+}
+
+.heart-3 {
+    bottom: 18%;
+    left: 28%;
+    font-size: 16px;
+    animation-delay: 2.2s;
+}
+
+.light-particles {
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 240, 220, 0.9) 0%, rgba(255, 210, 160, 0.25) 55%, rgba(0, 0, 0, 0) 100%);
+    box-shadow: 0 0 18px rgba(255, 216, 170, 0.18);
+    opacity: 0.22;
+    animation: floatParticle 9s ease-in-out infinite;
+}
+
+.particle-1 { top: 18%; left: 34%; animation-delay: 0s; }
+.particle-2 { top: 26%; right: 26%; animation-delay: 1s; }
+.particle-3 { top: 58%; left: 22%; animation-delay: 2.2s; }
+.particle-4 { top: 68%; right: 18%; animation-delay: 3.1s; }
+.particle-5 { top: 46%; left: 72%; animation-delay: 1.7s; }
+.particle-6 { top: 76%; left: 54%; animation-delay: 2.8s; }
 
 
 .gift-scene {
@@ -87,16 +175,19 @@ a {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    transform-style: preserve-3d;
+    transition: transform 0.18s ease-out;
 }
 
 .gift-subtitle {
     margin-bottom: 18px;
     font-size: 16px;
     line-height: 1.4;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.72);
+    color: rgba(255, 244, 232, 0.82);
     text-align: center;
+    text-shadow: 0 0 16px rgba(255, 220, 180, 0.08);
 }
 
 .gift-box-wrap {
@@ -106,6 +197,7 @@ a {
     justify-content: center;
     margin-bottom: 18px;
     perspective: 1400px;
+    filter: drop-shadow(0 0 22px rgba(255, 204, 160, 0.08));
 }
 
 .gift-box {
@@ -267,14 +359,14 @@ a {
 .gift-inner-glow {
     position: absolute;
     left: 50%;
-    top: 24px;
-    width: 150px;
-    height: 110px;
+    top: 18px;
+    width: 190px;
+    height: 140px;
     transform: translateX(-50%);
     border-radius: 999px;
     background:
-        radial-gradient(circle, rgba(255, 245, 220, 0.7) 0%, rgba(197, 163, 107, 0.18) 40%, transparent 70%);
-    filter: blur(14px);
+        radial-gradient(circle, rgba(255, 245, 232, 0.85) 0%, rgba(255, 210, 156, 0.28) 38%, rgba(255, 170, 120, 0.12) 56%, transparent 76%);
+    filter: blur(18px);
     opacity: 0;
     transition: opacity 0.7s ease 0.15s, transform 0.9s ease;
     pointer-events: none;
@@ -450,6 +542,36 @@ a {
     100% {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+@keyframes softHeartbeat {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.06;
+    }
+    25% {
+        transform: scale(1.08);
+        opacity: 0.11;
+    }
+    50% {
+        transform: scale(0.98);
+        opacity: 0.07;
+    }
+    75% {
+        transform: scale(1.04);
+        opacity: 0.10;
+    }
+}
+
+@keyframes floatParticle {
+    0%, 100% {
+        transform: translateY(0) scale(1);
+        opacity: 0.14;
+    }
+    50% {
+        transform: translateY(-16px) scale(1.18);
+        opacity: 0.3;
     }
 }
 
