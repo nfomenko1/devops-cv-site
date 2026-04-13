@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Подарок</title>
+
+    <!-- ТВОЙ НОВЫЙ CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style-spa.css') }}">
+</head>
+<body>
+
+<main class="gift-page">
+
+    <!-- фоновые свечения -->
+    <div class="background-glow background-glow-left"></div>
+    <div class="background-glow background-glow-center"></div>
+    <div class="background-glow background-glow-right"></div>
+
+    <section class="gift-scene">
+
+        <p class="gift-subtitle">У меня для тебя подарок</p>
+
+        <!-- КОРОБКА -->
+        <div class="gift-box-wrap" id="giftBoxWrap">
+            <button class="gift-box" id="giftBox">
+
+                <div class="gift-box-lid">
+                    <span class="gift-ribbon gift-ribbon-vertical"></span>
+                    <span class="gift-ribbon gift-ribbon-horizontal"></span>
+                </div>
+
+                <div class="gift-box-body">
+                    <span class="gift-ribbon gift-ribbon-vertical"></span>
+                    <span class="gift-ribbon gift-ribbon-horizontal"></span>
+                    <span class="gift-inner-glow"></span>
+                </div>
+
+            </button>
+        </div>
+
+        <p class="gift-hint" id="giftHint">Нажми, чтобы открыть</p>
+
+        <!-- СЕРТИФИКАТ -->
+        <div class="certificate-block" id="certificateBlock">
+
+            <div class="certificate-card">
+                <img
+                    src="{{ url_for('static', filename='SPA-spa.png') }}"
+                    alt="Сертификат"
+                    class="certificate-image"
+                >
+            </div>
+
+            <a
+                href="{{ url_for('static', filename='SPA-spa.pdf') }}"
+                class="download-button"
+                download="SPA-certificate.pdf"
+            >
+                Скачать сертификат
+            </a>
+
+        </div>
+
+    </section>
+</main>
+
+<!-- ТВОЙ НОВЫЙ JS -->
+<script src="{{ url_for('static', filename='js/main-spa.js') }}"></script>
+
+</body>
+</html>
