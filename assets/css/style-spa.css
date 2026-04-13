@@ -35,13 +35,14 @@ html {
 body {
     min-height: 100vh;
     font-family: "Segoe UI", "Inter", Arial, sans-serif;
-    background:
-        radial-gradient(circle at 50% 38%, rgba(255, 244, 230, 0.18), transparent 20%),
-        radial-gradient(circle at 18% 82%, rgba(120, 78, 52, 0.14), transparent 30%),
-        radial-gradient(circle at 82% 18%, rgba(214, 184, 146, 0.10), transparent 24%),
-        linear-gradient(135deg, #181311 0%, #221a17 38%, #120f0d 100%);
-    color: var(--text-main);
+    color: #fff;
     overflow-x: hidden;
+
+    background:
+        radial-gradient(circle at 70% 30%, rgba(255, 190, 120, 0.25), transparent 40%),
+        radial-gradient(circle at 30% 70%, rgba(120, 90, 70, 0.15), transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(255, 220, 180, 0.08), transparent 60%),
+        linear-gradient(135deg, #0e0f11 0%, #1a1c20 50%, #0b0c0e 100%);
 }
 
 button,
@@ -76,30 +77,6 @@ a {
     pointer-events: none;
 }
 
-.background-glow-left {
-    width: 320px;
-    height: 320px;
-    left: -60px;
-    bottom: -60px;
-    background: rgba(126, 84, 58, 0.16);
-}
-
-.background-glow-center {
-    width: 460px;
-    height: 460px;
-    background: rgba(255, 238, 220, 0.08);
-    left: 50%;
-    top: 42%;
-    transform: translate(-50%, -50%);
-}
-
-.background-glow-right {
-    width: 280px;
-    height: 280px;
-    right: -40px;
-    top: 80px;
-    background: rgba(214, 184, 146, 0.08);
-}
 
 .gift-scene {
     position: relative;
