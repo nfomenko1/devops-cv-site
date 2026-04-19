@@ -42,7 +42,7 @@ def after_request(response):
 # Routes
 @app.route('/')
 def home():
-    return render_template('index-card.html')
+    return render_template('index.html')
 
 
 @app.route('/metrics')
