@@ -698,12 +698,10 @@
     <ul class="roadmap-modal-list">
       <li>Docker (сборка образов и запуск контейнеров)</li>
       <li>Dockerfile (описание процесса сборки приложения)</li>
-      <li>Управление контейнерами (run, stop, rm, exec, logs)</li>
+      <li>Управление и диагностика контейнеров (run, stop, rm, exec, logs, curl)</li>
       <li>Проброс портов и доступ к сервису извне</li>
       <li>Docker Compose (запуск нескольких сервисов)</li>
       <li>Контейнеризация Flask-приложения</li>
-      <li>PostgreSQL в Docker и взаимодействие сервисов</li>
-      <li>Проверка состояния сервисов (curl, docker exec, pg_isready)</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
@@ -838,22 +836,20 @@
   <div class="roadmap-modal-section">
     <div class="roadmap-modal-label">Работал с:</div>
     <ul class="roadmap-modal-list">
-      <li>PostgreSQL (установка и настройка на Linux)</li>
-      <li>SQL (SELECT, INSERT, UPDATE, DELETE, JOIN, агрегатные функции)</li>
-      <li>Создание и управление базами данных, таблицами и схемами</li>
-      <li>Пользователи, роли и права доступа</li>
-      <li>Индексы и базовая оптимизация запросов</li>
-      <li>Резервное копирование и восстановление (pg_dump, pg_restore)</li>
+      <li>Установка и запуск PostgreSQL на Linux (apt, systemctl)</li>
       <li>Подключение к БД через psql</li>
-      <li>Интеграция PostgreSQL с приложением (Flask, psycopg2 / SQLAlchemy)</li>
+      <li>Базовые SQL-запросы: SELECT, INSERT, UPDATE, DELETE</li>
+      <li>Создание таблиц и баз данных</li>
+      <li>Работа с пользователями и правами (CREATE USER, GRANT)</li>
+      <li>Базовое резервное копирование</li>
     </ul>
   </div>
   <div class="roadmap-modal-section roadmap-modal-result">
     <div class="roadmap-modal-label roadmap-modal-label--result">Результат:</div>
     <p>Развернул PostgreSQL на виртуальной машине и настроил базовую работу с БД.</p>
-    <p>Реализовал подключение backend-приложения к базе данных и хранение пользовательских событий (таблица visits).</p>
-    <p>Освоил базовые SQL-операции, работу с индексами, пользователями и правами доступа.</p>
-    <p>Отработал сценарии резервного копирования и восстановления, а также базовые задачи администрирования PostgreSQL в Linux-среде.</p>
+    <p>Освоил базовые SQL-запросы и операции с таблицами.</p>
+    <p>Отработал создание пользователей и управление доступом.</p>
+    <p>Выполнил резервное копирование базы данных.</p>
   </div>
 </div>' data-detail-title="PostgreSQL">
       <div class="time"><i class="fa-duotone fa-solid fa-circle-dot fa-fade mr--15"></i>Блок 4</div>
